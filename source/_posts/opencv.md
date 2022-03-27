@@ -7,6 +7,7 @@ tags:
 categories: OpenCV
 keywords: 'C++, OpenCV'
 description: 在 Ubuntu 18.04 上配置 C++ OpenCV 开发环境
+cover: cover.png
 ---
 懒癌拖了半年之后终于还是花了半天时间给博客搬了下家，之前的穷人阿里云 + wordpress + sakura 这种憨批组合实在卡到变形，搞得人根本没有点开的欲望。现在搭了新的，之后先把最重要的东西搬运过来。因为配 OpenCV 环境这件事经常要搞，这一篇优先搬过来。
 
