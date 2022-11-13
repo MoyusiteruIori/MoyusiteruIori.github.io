@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>rcore 课程笔记 | 程序员和他的雀庄</title><meta name="keywords" content="Rust, OS, 操作系统"><meta name="author" content="伊织Iori"><meta name="copyright" content="伊织Iori"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="清华大学 rCore 操作系统课程笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rcore 课程笔记">
+<meta property="og:url" content="http://example.com/2022/11/04/rcore-notes/index.html">
+<meta property="og:site_name" content="程序员和他的雀庄">
+<meta property="og:description" content="清华大学 rCore 操作系统课程笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/11/04/rcore-notes/cover.png">
+<meta property="article:published_time" content="2022-11-04T13:28:00.000Z">
+<meta property="article:modified_time" content="2022-11-10T07:18:23.405Z">
+<meta property="article:author" content="伊织Iori">
+<meta property="article:tag" content="OS">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="Rust">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/11/04/rcore-notes/cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/04/rcore-notes/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'rcore 课程笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-11-10 15:18:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2022/11/04/rcore-notes/cover.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">程序员和他的雀庄</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">rcore 课程笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-04T13:28:00.000Z" title="发表于 2022-11-04 21:28:00">2022-11-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-10T07:18:23.405Z" title="更新于 2022-11-10 15:18:23">2022-11-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="rcore 课程笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>rcore课程笔记，还在听课中，所以先胡乱记下，以后再排版和按章节整理。</p>
+<ol>
+<li><p>程序的函数调用和返回是在栈上增加与减少栈帧，而 trap 是换栈，自己以前一直概念混淆了。</p>
+</li>
+<li><p>考虑函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.global sum_then_double</span><br><span class="line">sum_then_double:</span><br><span class="line">    addi sp, sp, -16</span><br><span class="line">    sd ra, 0(sp)</span><br><span class="line"></span><br><span class="line">    call sum_to</span><br><span class="line">    li t0, 2</span><br><span class="line">    mul a0, a0, t0</span><br><span class="line"></span><br><span class="line">    ld ra, 0(sp)</span><br><span class="line">    addi sp, sp, 16</span><br><span class="line">    ret</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>如果仅仅写成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.global sum_then_double</span><br><span class="line">sum_then_double:</span><br><span class="line">    call sum_to</span><br><span class="line">    li t0, 2</span><br><span class="line">    mul a0, a0, t0</span><br><span class="line"></span><br><span class="line">    ret</span><br></pre></td></tr></table></figure>
+
+<p>会有什么问题？</p>
+<p>考虑被去掉的代码的作用，<code>addi sp, sp, -16</code> 将程序栈顶下移 16 个地址，即为函数 <code>sum_to</code> 分配了大小为 16 的栈帧，然后 <code>sd ra, 0(sp)</code> 将 ra 寄存器的值保存在了栈顶地址处</p>
+<p>函数逻辑执行完后，<code>ld ra, 0(sp)</code> 恢复 <code>ra</code> 寄存器（需要恢复是因为伪指令 <code>call</code> 会将 <code>ra</code> 的值修改为 <code>pc + 4</code> ），然后 <code>addi sp, sp, 16</code> 释放了当前函数的栈帧，最后伪指令 <code>ret</code> 将 <code>pc</code> 值修改为 <code>ra</code> 中的值，即完成了函数返回跳转。</p>
+<p>据此解答上面的问题，如果函数中去掉了保存 <code>ra</code> 的操作，则执行计算之后执行 <code>ret</code> 指令时，<code>ra</code> 的值仍然为 <code>li t0, 2</code> 这一指令所在的地址，因此程序成为了死循环。</p>
+<ol start="3">
+<li>关于 os 的栈的初始化</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    .section .bss.stack</span><br><span class="line">    .globl boot_stack</span><br><span class="line">boot_stack:</span><br><span class="line">    .space 4096 * 16</span><br><span class="line">    .globl boot_stack_top</span><br><span class="line">boot_stack_top:</span><br></pre></td></tr></table></figure>
+<p>按照 linker.ld ，linker 从低地址向高地址布局到 .bss 段，<code>boot_stack</code> 为低地址而 <code>boot_stack_top</code> 为高地址，在 .bss 段开辟一个 4096 * 16 大小的数组给内核作为栈来方便<b>内核内</b>的函数调用，这些调用的栈帧变化是 rust 编译器帮我们实现的。</p>
+<ol start="4">
+<li>一张很大程度上帮助我理解 os 的图</li>
+</ol>
+<img src="/2022/11/04/rcore-notes/layout.png" class="" title="布局">
+
+<ol start="5">
+<li>Trap 是如何实现的</li>
+</ol>
+<p>首先 qemu 加电，执行 rustsbi 的一系列初始化任务，然后按照约定跳转到 <code>rust_main</code> 将控制器交给 rust ，<code>rust_main</code> 中执行了 <code>trap::init</code>，其代码如下：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">init</span>() &#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line">        <span class="keyword">fn</span> <span class="title function_">__alltraps</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">unsafe</span> &#123;</span><br><span class="line">        stvec::<span class="title function_ invoke__">write</span>(__alltraps <span class="keyword">as</span> <span class="type">usize</span>, TrapMode::Direct);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>即将寄存器 <code>stvec</code> 的值设为了 <code>__alltraps</code> 的地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">__alltraps:</span><br><span class="line">    csrrw sp, sscratch, sp</span><br><span class="line">    # now sp-&gt;kernel stack, sscratch-&gt;user stack</span><br><span class="line">    # allocate a TrapContext on kernel stack</span><br><span class="line">    addi sp, sp, -34*8</span><br><span class="line">    # save general-purpose registers</span><br><span class="line">    sd x1, 1*8(sp)</span><br><span class="line">    # skip sp(x2), we will save it later</span><br><span class="line">    sd x3, 3*8(sp)</span><br><span class="line">    # skip tp(x4), application does not use it</span><br><span class="line">    # save x5~x31</span><br><span class="line">    .set n, 5</span><br><span class="line">    .rept 27</span><br><span class="line">        SAVE_GP %n</span><br><span class="line">        .set n, n+1</span><br><span class="line">    .endr</span><br><span class="line">    # we can use t0/t1/t2 freely, because they were saved on kernel stack</span><br><span class="line">    csrr t0, sstatus</span><br><span class="line">    csrr t1, sepc</span><br><span class="line">    sd t0, 32*8(sp)</span><br><span class="line">    sd t1, 33*8(sp)</span><br><span class="line">    # read user stack from sscratch and save it on the kernel stack</span><br><span class="line">    csrr t2, sscratch</span><br><span class="line">    sd t2, 2*8(sp)</span><br><span class="line">    # set input argument of trap_handler(cx: &amp;mut TrapContext)</span><br><span class="line">    mv a0, sp</span><br><span class="line">    call trap_handler</span><br></pre></td></tr></table></figure>
+<p><code>__alltraps</code> 处向后的指令即为进行上下文保存的操作，随后 <code>call trap_handler</code> 将控制权正式移交给内核。</p>
+<p>因此整体流程即为：用户态程序发出 <code>ecall</code> 指令，一些 CSR （如 <code>scause</code>, <code>stval</code> 等）的值将被相应地设置，PC 值将被设置为 <code>stvec</code> 中保存的值（PC 原来的值保存在 <code>sepc</code> ，方便之后 <code>sret</code> 返回），也就是 CPU 开始执行 <code>__alltraps</code> 处的指令，从此处开始向后执行上下文的保存（这时其实 PC 已经指向内核中了，应该可以说是已经进入了内核态？），完成上下文保存后调用内核的 <code>trap_handler</code> 函数，开始内核代码的执行。</p>
+<ol start="6">
+<li>关于 ch2 中 app 是如何开始运行的</li>
+</ol>
+<p>主要是理解全局 <code>APP_MANAGER</code> 的初始化和 <code>load_app</code>。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">lazy_static! &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">ref</span> APP_MANAGER: UPSafeCell&lt;AppManager&gt; = <span class="keyword">unsafe</span> &#123;</span><br><span class="line">        UPSafeCell::<span class="title function_ invoke__">new</span>(&#123;</span><br><span class="line">            <span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line">                <span class="keyword">fn</span> <span class="title function_">_num_app</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">num_app_ptr</span> = _num_app <span class="keyword">as</span> <span class="type">usize</span> <span class="keyword">as</span> *<span class="keyword">const</span> <span class="type">usize</span>;</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">num_app</span> = num_app_ptr.<span class="title function_ invoke__">read_volatile</span>();</span><br><span class="line">            <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">app_start</span>: [<span class="type">usize</span>; MAX_APP_NUM + <span class="number">1</span>] = [<span class="number">0</span>; MAX_APP_NUM + <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">app_start_raw</span>: &amp;[<span class="type">usize</span>] =</span><br><span class="line">                core::slice::<span class="title function_ invoke__">from_raw_parts</span>(num_app_ptr.<span class="title function_ invoke__">add</span>(<span class="number">1</span>), num_app + <span class="number">1</span>);</span><br><span class="line">            app_start[..=num_app].<span class="title function_ invoke__">copy_from_slice</span>(app_start_raw);</span><br><span class="line">            AppManager &#123;</span><br><span class="line">                num_app,</span><br><span class="line">                current_app: <span class="number">0</span>,</span><br><span class="line">                app_start,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先找到 <code>_num_app</code> ，让 <code>num_app_ptr</code> 指向 <code>_num_app</code> 的地址，变量 <code>num_app</code> 保存 <code>_num_app</code> 的值，即 7 ，<code>app_start</code> 是一个数组，其中保存了所有 app 程序的起始地址（从 <code>link_app.S</code> 可以知道所有 app 程序都已经放在了操作系统的 <code>.data</code> 段这片内存上，即还是编译成了一个整体），最后追加了一个最后一个 app 的结束地址（前面的 app 不需要结束地址，因为下一个 app 的开始地址就是上一个的结束地址）。</p>
+<p>接下来是 <code>load_app</code></p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsafe</span> <span class="keyword">fn</span> <span class="title function_">load_app</span>(&amp;<span class="keyword">self</span>, app_id: <span class="type">usize</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> app_id &gt;= <span class="keyword">self</span>.num_app &#123;</span><br><span class="line">        <span class="built_in">panic!</span>(<span class="string">&quot;All applications completed!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    info!(<span class="string">&quot;[kernel] Loading app_&#123;&#125;&quot;</span>, app_id);</span><br><span class="line">    <span class="comment">// clear icache</span></span><br><span class="line">    core::arch::asm!(<span class="string">&quot;fence.i&quot;</span>);</span><br><span class="line">    <span class="comment">// clear app area</span></span><br><span class="line">    core::slice::<span class="title function_ invoke__">from_raw_parts_mut</span>(APP_BASE_ADDRESS <span class="keyword">as</span> *<span class="keyword">mut</span> <span class="type">u8</span>, APP_SIZE_LIMIT).<span class="title function_ invoke__">fill</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">app_src</span> = core::slice::<span class="title function_ invoke__">from_raw_parts</span>(</span><br><span class="line">        <span class="keyword">self</span>.app_start[app_id] <span class="keyword">as</span> *<span class="keyword">const</span> <span class="type">u8</span>,</span><br><span class="line">        <span class="keyword">self</span>.app_start[app_id + <span class="number">1</span>] - <span class="keyword">self</span>.app_start[app_id],</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">app_dst</span> = core::slice::<span class="title function_ invoke__">from_raw_parts_mut</span>(APP_BASE_ADDRESS <span class="keyword">as</span> *<span class="keyword">mut</span> <span class="type">u8</span>, app_src.<span class="title function_ invoke__">len</span>());</span><br><span class="line">    app_dst.<span class="title function_ invoke__">copy_from_slice</span>(app_src);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先把 icache 和 0x80400000 开始的一段内存清零，然后把下一个 app 程序从内核的数据区拷贝到 0x80400000 开始的这段内存中。</p>
+<p>再接下来是 <code>run_next_app</code> </p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">run_next_app</span>() <span class="punctuation">-&gt;</span> ! &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">app_manager</span> = APP_MANAGER.<span class="title function_ invoke__">exclusive_access</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">current_app</span> = app_manager.<span class="title function_ invoke__">get_current_app</span>();</span><br><span class="line">    <span class="keyword">unsafe</span> &#123;</span><br><span class="line">        app_manager.<span class="title function_ invoke__">load_app</span>(current_app);</span><br><span class="line">    &#125;</span><br><span class="line">    app_manager.<span class="title function_ invoke__">move_to_next_app</span>();</span><br><span class="line">    <span class="title function_ invoke__">drop</span>(app_manager);</span><br><span class="line">    <span class="comment">// before this we have to drop local variables related to resources manually</span></span><br><span class="line">    <span class="comment">// and release the resources</span></span><br><span class="line">    <span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line">        <span class="keyword">fn</span> <span class="title function_">__restore</span>(cx_addr: <span class="type">usize</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">unsafe</span> &#123;</span><br><span class="line">        __restore(KERNEL_STACK.<span class="title function_ invoke__">push_context</span>(TrapContext::<span class="title function_ invoke__">app_init_context</span>(</span><br><span class="line">            APP_BASE_ADDRESS,</span><br><span class="line">            USER_STACK.<span class="title function_ invoke__">get_sp</span>(),</span><br><span class="line">        )) <span class="keyword">as</span> *<span class="keyword">const</span> _ <span class="keyword">as</span> <span class="type">usize</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">panic!</span>(<span class="string">&quot;Unreachable in batch::run_current_app!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里感觉理解得不一定对，先放一个 TODO</p>
+<p>此处的 <code>KERNEL_STACK</code> 和 <code>USER_STACK</code> 两个静态全局变量应该都是放在内核的 ro 数据段的，也就是把用户栈放在了内核的数据段？这一段似乎是向 <code>KERNEL_STACK</code> 压入了一个初始化的 trap 上下文，然后也许是通过 a0 把此时的内核栈顶，也就是刚压入的上下文的最低地址，赋给了 sp ，使得第一次开始执行 app 的操作也能复用 <code>__restore</code> 的代码。那这里有了  一开始的 <code>boot_stack</code> 干嘛去了呢？</p>
+<p>指导书的回复：</p>
+<blockquote>
+<p>@bswaterb 64KiB的空间是启动栈，仅在内核初始化自身，也就是调用rust_main函数直到task::run_first_task之前由内核使用。在此之后应用使用UserStack而内核使用KernelStack，启动栈不再被使用。</p>
+</blockquote>
+<ol start="7">
+<li>ch2 的思考：sscratch 是何时被设置为内核栈顶的？</li>
+</ol>
+<p>可以反过来思考，进入第一个应用程序执行的前一步，是内核第一次执行 <code>__restore</code> ，在 <code>__restore</code> 中有这样的操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mv sp, a0</span><br><span class="line">...</span><br><span class="line">ld t2, 2*8(sp)</span><br><span class="line">...</span><br><span class="line">csrw sscratch, t2</span><br></pre></td></tr></table></figure>
+<p><code>a0</code> 中保存的内容是压入初始化 trap 上下文的内核栈的栈顶，之后传递给了 <code>sp</code> ，然后将 <code>sp</code> 往上偏移 2*8 字节处的内容写入了 <code>sscratch</code> ，那这个偏移处的内容是什么呢？查看 <code>TrapContext</code> 的定义：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">TrapContext</span> &#123;</span><br><span class="line">    <span class="keyword">pub</span> x: [<span class="type">usize</span>; <span class="number">32</span>],</span><br><span class="line">    <span class="keyword">pub</span> sstatus: Sstatus,</span><br><span class="line">    <span class="keyword">pub</span> sepc: <span class="type">usize</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过这个定义可以知道写入 <code>sscratch</code> 的就是 <code>x[2]</code> 。那 <code>x[2]</code> 又是啥？</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">set_sp</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, sp: <span class="type">usize</span>) &#123;</span><br><span class="line">    <span class="keyword">self</span>.x[<span class="number">2</span>] = sp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原来 x[2] 就是用户栈的栈顶。那么这个思考题就解决了，在内核启动后第一次进入用户态执行应用时，也就是 trap.S 的 <code>__restore</code> 函数中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">__restore:</span><br><span class="line">    mv sp, a0       </span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    ld t2, 2*8(sp)</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    csrw sscratch, t2   # sscratch 设为用户栈顶</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    csrrw sp, sscratch, sp  # sscratch 设为内核栈顶</span><br><span class="line">    sret</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>当一个 app 执行结束后是如何开始执行下一个的</li>
+</ol>
+<p>每个应用程序的 .bin 文件中都有一份 lib 中的代码，他们的入口点都是 <code>_start</code> ，在 <code>_start</code> 完成初始化工作之后调用对应 app 的 <code>main</code> ，将 <code>main</code> 的返回值传给系统调用 <code>exit</code> ，从 <code>exit</code> 处发出 <code>ecall</code> 陷入内核态，在内核态中，<code>sys_exit</code> 再次调用了 <code>run_next_app</code> ，于是下一个 app 程序被拷贝到了 0x80400000，实现了批处理。</p>
+<ol start="8">
+<li>串一下今天读的 ch2 源码，如果完整顺下来今天就休息了</li>
+</ol>
+<p>首先编译应用程序，之后编译内核，编译内核的过程中把应用程序也都集成在了内核里，放在了内核的数据区。内核启动的第一条指令是把 sp 放在一个预留的 4096 * 16 大小的 <code>boot_stack</code> 里作为内核启动栈。内核启动后要执行一些初始化，主要是初始化 trap 控制，即设置好 <code>stvec</code> ，使得 <code>ecall</code> 发生后能正确跳转到处理陷入的代码，也就是 <code>__alltraps</code>，另外，在内核的 <code>.rodata</code> 段初始化两块内存，分别作为用户栈和内核栈，启动时的启动栈之后就不再使用。然后就初始化一个全局的 app manager，完成初始化后，就通过 <code>load_app</code> 将第一个应用程序拷贝到 0x80400000，准备切换到用户态。</p>
+<p>首次切换到用户态时为了能够复用 <code>__restore</code> ，我们“假装”当前所在的内核态是之前的某个用户态切换过来的，因此我们在内核栈里压入一个经过设计假的 trap 上下文，<code>__restore</code> 根据这个我们设计的上下文进行寄存器的恢复，比如把 <code>sepc</code> 设置为 0x80400000，把 <code>sp</code> 设置为用户栈的栈顶（<code>USER_STACK.get_sp()</code>），然后 <code>sret</code> 让 <code>pc</code> 跳转到 <code>sepc</code> 指向的地址，也就是 0x80400000，开始执行第一个应用。</p>
+<p>对于一个应用，其入口点是 <code>lib.rs</code> 中的 <code>_start</code> ，也就是 0x80400000 处的程序就是这个用户库里的 <code>_start</code> ，<code>_start</code> 进行了一定的初始化工作，然后就调用了对应的 app 的 <code>main</code> 函数。<code>main</code> 函数返回之后，<code>_start</code> 中把 <code>main</code> 的返回值作为参数交给了系统调用 <code>sys_exit</code> ，而 <code>sys_exit</code> 做的事情就是 <code>run_next_app</code> ，于是下一个应用像上面一样被调用。</p>
+<p>看起来似乎每次 trap 进入内核态的时候，内核栈中会保存下一个 34*8 大小的上下文，而在内核态中，又会向内核栈压入一个我们设计好的上下文，而返回时 <code>__restore</code> 只会释放这个我们设计的上下文，那么似乎是运行应用时，每个应用会让这个批处理系统的内核栈里会产生 34 * 8 大小的不被清理的垃圾？但是 GDB 发现每次到 0x80400000 时，<code>sscratch</code> 保存的地址并没有变低，不知道是我忽略哪里，留做 todo 好了。</p>
+<ol start="9">
+<li>ch3 的整体逻辑是怎样的？</li>
+</ol>
+<p>首先 qemu 加电，内核启动，到 rust_main 接管控制权为止的部分都和之前一样。在 rust_main 中，ch3 相比 ch2 多了一步 <code>heap_alloc</code> ，但这里似乎不是本章任务切换的重点，暂且不管。之后 <code>trap::init</code> 的行为也是一样的，把 <code>stvec</code> 内的地址设置为 <code>__alltraps</code> 。</p>
+<p>然后是 ch3 的 <code>load_apps</code> ，虽然不同于 ch2 的方式，但是意思不难理解，是让内核启动时将所有的 app 都加载到内存上的不同区域而已，否则在之后进行任务切换时，还需要当场向内存上拷贝应用程序。</p>
+<p>之后的 <code>trap::enable_timer_interrupt</code> 启动 S 态的时钟中断，再之后的 <code>timer::set_next_trigger</code> 确保了在 <code>CLOCK_FREQ / TICKS_PER_SEC</code> 这个时间之后会发生一次陷入，好让内核切换应用。最后通过 <code>task::run_first_task</code> 开始执行应用程序。</p>
+<p>接下来就是探索 <code>task::run_first_task</code> 中具体发生了什么。可以发现它只是调用了一个全局任务管理器 <code>TASK_MANAGER</code> 的方法。我们查看 <code>TASK_MANAGER</code> 的定义，发现它里面包括的内容有：</p>
+<ul>
+<li>应用程序的个数</li>
+<li>所有应用程序的 TCB 数组</li>
+<li>当前正在被执行的应用的 id（TCB 数组中的索引）</li>
+</ul>
+<p>进一步查看 TCB，里面包含了对应任务的状态（如结束、挂起、执行中等）以及该任务的上下文。</p>
+<p>这个上下文的意思就是：过一会这个任务可能会执行一半就被时钟打断进入 trap 控制流进入内核，内核会把切换其他任务上来执行，那你这个被打断的任务当前使用的寄存器就需要被保存下来，特别是 <code>sp</code> 和 <code>ra</code>，这样之后再次轮到这个任务执行的时候，才能正常恢复。而这些内容保存的位置，就在这个任务对应的 TCB 的 <code>pub task_cx: TaskContext</code> 里。</p>
+<p>那么话说回来，内核调用了任务管理器的 <code>run_first_task</code> 方法，这个方法做的事情就是把队列里的第一个任务拿出来，通过 <code>__switch</code> 开始第一个任务的执行。</p>
+<p>这里又有很多可以说道的问题，<code>__switch</code> 怎么就能开始执行程序了？我们需要考察 <code>__switch</code> 的内部：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">__switch:</span><br><span class="line">    # __switch(</span><br><span class="line">    #     current_task_cx_ptr: *mut TaskContext,</span><br><span class="line">    #     next_task_cx_ptr: *const TaskContext</span><br><span class="line">    # )</span><br><span class="line">    # save kernel stack of current task</span><br><span class="line">    sd sp, 8(a0)</span><br><span class="line">    # save ra &amp; s0~s11 of current execution</span><br><span class="line">    sd ra, 0(a0)</span><br><span class="line">    .set n, 0</span><br><span class="line">    .rept 12</span><br><span class="line">        SAVE_SN %n</span><br><span class="line">        .set n, n + 1</span><br><span class="line">    .endr</span><br><span class="line">    # restore ra &amp; s0~s11 of next execution</span><br><span class="line">    ld ra, 0(a1)</span><br><span class="line">    .set n, 0</span><br><span class="line">    .rept 12</span><br><span class="line">        LOAD_SN %n</span><br><span class="line">        .set n, n + 1</span><br><span class="line">    .endr</span><br><span class="line">    # restore kernel stack of next task</span><br><span class="line">    ld sp, 8(a1)</span><br><span class="line">    ret</span><br></pre></td></tr></table></figure>
+<p><code>__switch</code> 接收两个任务上下文地址 current 和 next，它把当前的各个寄存器里的内容保存到 current 中，在把 next 里的数据读到各个寄存器中来。</p>
+<p>那么任务管理器第一次调用 <code>__switch</code> 时的参数是什么呢？首先当前没在执行任何任务，所以 current 就用了一个 <code>TaskContext::zero_init</code> 出来的没用的上下文，而 next 关系到我们接下来怎么跳转到第一个应用程序，所以不能瞎填，需要构造。</p>
+<p>我们可以停下来自己想一下这个上下文应该怎样构造。首先各个通用寄存器应该简单为 0 就可以了，因为这个应用还没开始执行，最重要的是 <code>ra</code> 的值如何填写。</p>
+<p><code>__switch</code> 之后，应该发生的事情和上一章差不多，应该要向内核栈压入一个构造好的假的上下文，利用这个上下文调用 <code>__restore</code> ，再让 <code>__restore</code> 通过 <code>sret</code> 开始执行用户程序。</p>
+<p>查看任务管理器的初始化，我们就会发现的确是上面说的道理：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">for</span> (i, t) <span class="keyword">in</span> tasks.<span class="title function_ invoke__">iter_mut</span>().<span class="title function_ invoke__">enumerate</span>().<span class="title function_ invoke__">take</span>(num_app) &#123;</span><br><span class="line">    t.task_cx = TaskContext::<span class="title function_ invoke__">goto_restore</span>(<span class="title function_ invoke__">init_app_cx</span>(i));</span><br><span class="line">    t.task_status = TaskStatus::Ready;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// init_app_cx</span></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">init_app_cx</span>(app_id: <span class="type">usize</span>) <span class="punctuation">-&gt;</span> <span class="type">usize</span> &#123;</span><br><span class="line">    KERNEL_STACK[app_id].<span class="title function_ invoke__">push_context</span>(TrapContext::<span class="title function_ invoke__">app_init_context</span>(</span><br><span class="line">        <span class="title function_ invoke__">get_base_i</span>(app_id),</span><br><span class="line">        USER_STACK[app_id].<span class="title function_ invoke__">get_sp</span>(),</span><br><span class="line">    ))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>__switch</code> 直接返回到了 <code>__restore</code> 处，并且返回到这里时，我们把 a0 设置好为我们构造好的 trap 上下文。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">伊织Iori</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/04/rcore-notes/">http://example.com/2022/11/04/rcore-notes/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">程序员和他的雀庄</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OS/">OS</a><a class="post-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><a class="post-meta__tags" href="/tags/Rust/">Rust</a></div><div class="post_share"><div class="social-share" data-image="/2022/11/04/rcore-notes/cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/23/generic-unionfind-rust/"><img class="next-cover" src="/2022/10/23/generic-unionfind-rust/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">用 Rust 写一个泛型并查集</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/20/os-learning-record/" title="2022秋冬开源操作系统训练营学习日志"><img class="cover" src="/2022/10/20/os-learning-record/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-20</div><div class="title">2022秋冬开源操作系统训练营学习日志</div></div></a></div><div><a href="/2022/10/23/generic-unionfind-rust/" title="用 Rust 写一个泛型并查集"><img class="cover" src="/2022/10/23/generic-unionfind-rust/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-23</div><div class="title">用 Rust 写一个泛型并查集</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">伊织Iori</div><div class="author-info__description">不太有干劲的普通人</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/MoyusiteruIori"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/MoyusiteruIori" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/y.meng1@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://twitter.com/111Iori" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="tencent://message/?uin=1037655483" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Critter 博客翻译填坑中</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/04/rcore-notes/" title="rcore 课程笔记"><img src="/2022/11/04/rcore-notes/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="rcore 课程笔记"/></a><div class="content"><a class="title" href="/2022/11/04/rcore-notes/" title="rcore 课程笔记">rcore 课程笔记</a><time datetime="2022-11-04T13:28:00.000Z" title="发表于 2022-11-04 21:28:00">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/23/generic-unionfind-rust/" title="用 Rust 写一个泛型并查集"><img src="/2022/10/23/generic-unionfind-rust/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用 Rust 写一个泛型并查集"/></a><div class="content"><a class="title" href="/2022/10/23/generic-unionfind-rust/" title="用 Rust 写一个泛型并查集">用 Rust 写一个泛型并查集</a><time datetime="2022-10-23T07:58:39.000Z" title="发表于 2022-10-23 15:58:39">2022-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/20/os-learning-record/" title="2022秋冬开源操作系统训练营学习日志"><img src="/2022/10/20/os-learning-record/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022秋冬开源操作系统训练营学习日志"/></a><div class="content"><a class="title" href="/2022/10/20/os-learning-record/" title="2022秋冬开源操作系统训练营学习日志">2022秋冬开源操作系统训练营学习日志</a><time datetime="2022-10-20T10:13:43.000Z" title="发表于 2022-10-20 18:13:43">2022-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/12/tawashi4/" title="【雀魂】脱离玉之间败者组的讲座——「寻找安牌」"><img src="/2022/07/12/tawashi4/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【雀魂】脱离玉之间败者组的讲座——「寻找安牌」"/></a><div class="content"><a class="title" href="/2022/07/12/tawashi4/" title="【雀魂】脱离玉之间败者组的讲座——「寻找安牌」">【雀魂】脱离玉之间败者组的讲座——「寻找安牌」</a><time datetime="2022-07-12T00:34:52.000Z" title="发表于 2022-07-12 08:34:52">2022-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/tawashi3/" title="【雀魂】脱离玉之间败者组的讲座——「鸣牌的对策③」"><img src="/2022/05/17/tawashi3/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【雀魂】脱离玉之间败者组的讲座——「鸣牌的对策③」"/></a><div class="content"><a class="title" href="/2022/05/17/tawashi3/" title="【雀魂】脱离玉之间败者组的讲座——「鸣牌的对策③」">【雀魂】脱离玉之间败者组的讲座——「鸣牌的对策③」</a><time datetime="2022-05-17T02:29:50.000Z" title="发表于 2022-05-17 10:29:50">2022-05-17</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/2022/11/04/rcore-notes/cover.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 伊织Iori</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
