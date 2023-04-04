@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver/thread.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a222a28e5c087e1a4c54aff1012688fe.html">myserver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">thread.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="thread_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef __MYSERVER_THREAD_HPP__</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define __MYSERVER_THREAD_HPP__</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="mutex_8hpp.html">myserver/mutex.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="noncopyable_8hpp.html">myserver/noncopyable.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span>myserver {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classmyserver_1_1_thread.html">   24</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;Thread&gt;;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; cb, <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">name</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_function" href="classmyserver_1_1_thread.html#a47f53e5f751fb599a94cd18daa66f4c6">~Thread</a>(); </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classmyserver_1_1_thread.html#a9ab835187b68b4b6d11317714ce592cd">   47</a></span>        pid_t <a class="code hl_function" href="classmyserver_1_1_thread.html#a9ab835187b68b4b6d11317714ce592cd">id</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_id; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">   54</a></span>        <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_name; } </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_thread.html#a93d7ffed46d112a2d9d3ab764fb688ec">join</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">static</span> <a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>* <a class="code hl_function" href="classmyserver_1_1_thread.html#acea6c3a4443ca8b21addce5624f59bed">get_this</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keyword">static</span> <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classmyserver_1_1_thread.html#ac8049ca6da7c95f6a4f6a64931031bd7">get_current_thread_name</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_thread.html#ad1b5e080c4abc421193fe57aecdd6875">set_current_thread_name</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">name</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>(<a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>&amp; operator=(<span class="keyword">const</span> <a class="code hl_class" href="classmyserver_1_1_thread.html">Thread</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keyword">static</span> <span class="keywordtype">void</span>* run(<span class="keywordtype">void</span>* arg);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        pid_t m_id = -1;                </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        pthread_t m_thread =  0;        </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        std::function&lt;void()&gt; m_cb{};   </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        std::string m_name = <span class="stringliteral">&quot;UNKNOWN&quot;</span>; </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        Semaphore m_semaphore;          </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    };</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html"><div class="ttname"><a href="classmyserver_1_1_thread.html">myserver::Thread</a></div><div class="ttdoc">线程类</div><div class="ttdef"><b>Definition:</b> thread.hpp:24</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_a47f53e5f751fb599a94cd18daa66f4c6"><div class="ttname"><a href="classmyserver_1_1_thread.html#a47f53e5f751fb599a94cd18daa66f4c6">myserver::Thread::~Thread</a></div><div class="ttdeci">~Thread()</div><div class="ttdoc">析构函数</div><div class="ttdef"><b>Definition:</b> thread.cpp:41</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_a93d7ffed46d112a2d9d3ab764fb688ec"><div class="ttname"><a href="classmyserver_1_1_thread.html#a93d7ffed46d112a2d9d3ab764fb688ec">myserver::Thread::join</a></div><div class="ttdeci">void join()</div><div class="ttdoc">等待线程结束</div><div class="ttdef"><b>Definition:</b> thread.cpp:64</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_a9ab835187b68b4b6d11317714ce592cd"><div class="ttname"><a href="classmyserver_1_1_thread.html#a9ab835187b68b4b6d11317714ce592cd">myserver::Thread::id</a></div><div class="ttdeci">pid_t id() const</div><div class="ttdoc">获取线程 id</div><div class="ttdef"><b>Definition:</b> thread.hpp:47</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_ab03e3d539d5295ecfc907ffa96aeab75"><div class="ttname"><a href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">myserver::Thread::name</a></div><div class="ttdeci">const std::string &amp; name() const</div><div class="ttdoc">获取线程名</div><div class="ttdef"><b>Definition:</b> thread.hpp:54</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_ac8049ca6da7c95f6a4f6a64931031bd7"><div class="ttname"><a href="classmyserver_1_1_thread.html#ac8049ca6da7c95f6a4f6a64931031bd7">myserver::Thread::get_current_thread_name</a></div><div class="ttdeci">static const std::string &amp; get_current_thread_name()</div><div class="ttdoc">获取当前线程名称</div><div class="ttdef"><b>Definition:</b> thread.cpp:19</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_acea6c3a4443ca8b21addce5624f59bed"><div class="ttname"><a href="classmyserver_1_1_thread.html#acea6c3a4443ca8b21addce5624f59bed">myserver::Thread::get_this</a></div><div class="ttdeci">static Thread * get_this()</div><div class="ttdoc">获取当前线程</div><div class="ttdef"><b>Definition:</b> thread.cpp:15</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_ad1b5e080c4abc421193fe57aecdd6875"><div class="ttname"><a href="classmyserver_1_1_thread.html#ad1b5e080c4abc421193fe57aecdd6875">myserver::Thread::set_current_thread_name</a></div><div class="ttdeci">static void set_current_thread_name(const std::string &amp;name)</div><div class="ttdoc">设置当前线程名称</div><div class="ttdef"><b>Definition:</b> thread.cpp:23</div></div>
+<div class="ttc" id="amutex_8hpp_html"><div class="ttname"><a href="mutex_8hpp.html">mutex.hpp</a></div><div class="ttdoc">锁和互斥量</div></div>
+<div class="ttc" id="anoncopyable_8hpp_html"><div class="ttname"><a href="noncopyable_8hpp.html">noncopyable.hpp</a></div><div class="ttdoc">不可拷贝对象的基类</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

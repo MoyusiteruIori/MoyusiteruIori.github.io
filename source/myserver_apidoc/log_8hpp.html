@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver/log.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a222a28e5c087e1a4c54aff1012688fe.html">myserver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a>  </div>
+  <div class="headertitle"><div class="title">log.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>日志模块  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="thread_8hpp_source.html">myserver/thread.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="singleton_8hpp_source.html">myserver/singleton.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="util_8hpp_source.html">myserver/util.hpp</a>&quot;</code><br />
+</div>
+<p><a href="log_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html">myserver::LogEvent</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志事件  <a href="classmyserver_1_1_log_event.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_level.html">myserver::LogLevel</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志等级  <a href="classmyserver_1_1_log_level.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_formatter.html">myserver::LogFormatter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志格式化器  <a href="classmyserver_1_1_log_formatter.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_formatter_1_1_format_item.html">myserver::LogFormatter::FormatItem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志格式化内容项  <a href="classmyserver_1_1_log_formatter_1_1_format_item.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_appender.html">myserver::LogAppender</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">抽象基类，表示日志输出位置 一个 Appender 包含一个日志等级，日志等级不低于 Appender 等级时才会输出 一个 Appender 默认带有一个默认 Formatter  <a href="classmyserver_1_1_log_appender.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html">myserver::Logger</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志器 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 关联一组 Appender ，使用一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 输出日志时，向其关联的所有 Appender 输出日志 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 包含一个日志等级，日志等级不低于 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 等级时才会试图向其关联的 Appender 输出日志 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 包含一个 Formatter，作为关联到该 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 的 Appender 的默认格式化器  <a href="classmyserver_1_1_logger.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_stdout_log_appender.html">myserver::StdoutLogAppender</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出到标准输出的 Appender  <a href="classmyserver_1_1_stdout_log_appender.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_file_log_appender.html">myserver::FileLogAppender</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出到文件的 Appender  <a href="classmyserver_1_1_file_log_appender.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_wrapper.html">myserver::LogWrapper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志事件包装器，利用析构函数输出日志，增加易用性  <a href="classmyserver_1_1_log_wrapper.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1___logger_manager.html">myserver::_LoggerManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">单例全局日志管理器  <a href="classmyserver_1_1___logger_manager.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a8b0aeac821f39037c30a7cec49e2c40a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger,  level)</td></tr>
+<tr class="memdesc:a8b0aeac821f39037c30a7cec49e2c40a"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出日志  <br /></td></tr>
+<tr class="separator:a8b0aeac821f39037c30a7cec49e2c40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cca3fa4c6057a10a06955190958971b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a7cca3fa4c6057a10a06955190958971b">MYSERVER_LOG_DEBUG</a>(logger)&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::DEBUG)</td></tr>
+<tr class="memdesc:a7cca3fa4c6057a10a06955190958971b"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 debug 等级的日志  <br /></td></tr>
+<tr class="separator:a7cca3fa4c6057a10a06955190958971b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8898350fb448c852e7880ce8ccb418"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a1d8898350fb448c852e7880ce8ccb418">MYSERVER_LOG_INFO</a>(logger)&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::INFO)</td></tr>
+<tr class="memdesc:a1d8898350fb448c852e7880ce8ccb418"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 info 等级的日志  <br /></td></tr>
+<tr class="separator:a1d8898350fb448c852e7880ce8ccb418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84432b1cd26d4b5eedff119c5445491b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a84432b1cd26d4b5eedff119c5445491b">MYSERVER_LOG_WARN</a>(logger)&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::WARN)</td></tr>
+<tr class="memdesc:a84432b1cd26d4b5eedff119c5445491b"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 warn 等级的日志  <br /></td></tr>
+<tr class="separator:a84432b1cd26d4b5eedff119c5445491b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b8f447701adc7d8e7444513d14243b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#ab2b8f447701adc7d8e7444513d14243b">MYSERVER_LOG_ERROR</a>(logger)&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::ERROR)</td></tr>
+<tr class="memdesc:ab2b8f447701adc7d8e7444513d14243b"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 error 等级的日志  <br /></td></tr>
+<tr class="separator:ab2b8f447701adc7d8e7444513d14243b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e93ecfc27084b8886b5589d52839e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a06e93ecfc27084b8886b5589d52839e0">MYSERVER_LOG_FATAL</a>(logger)&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::FATAL)</td></tr>
+<tr class="memdesc:a06e93ecfc27084b8886b5589d52839e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 fatal 等级的日志  <br /></td></tr>
+<tr class="separator:a06e93ecfc27084b8886b5589d52839e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a41628aa64b0ae846af10f7a1326ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a58a41628aa64b0ae846af10f7a1326ba">MYSERVER_ROOT_LOGGER</a>&#160;&#160;&#160;myserver::LoggerManager::get_instance().root()</td></tr>
+<tr class="memdesc:a58a41628aa64b0ae846af10f7a1326ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 root 日志器  <br /></td></tr>
+<tr class="separator:a58a41628aa64b0ae846af10f7a1326ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e46e0dd410d8506dec11be5fcba7b3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a7e46e0dd410d8506dec11be5fcba7b3e">MYSERVER_LOGGER</a>(name)&#160;&#160;&#160;myserver::LoggerManager::get_instance().get_logger_else_insert(name)</td></tr>
+<tr class="memdesc:a7e46e0dd410d8506dec11be5fcba7b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">按名称查找日志器  <br /></td></tr>
+<tr class="separator:a7e46e0dd410d8506dec11be5fcba7b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f79266dcc270de66bfefaecd0ff7c65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a5f79266dcc270de66bfefaecd0ff7c65">MYSERVER_ADD_LOGGER</a>(name)&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a7e46e0dd410d8506dec11be5fcba7b3e">MYSERVER_LOGGER</a>(name)</td></tr>
+<tr class="memdesc:a5f79266dcc270de66bfefaecd0ff7c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">新建一个日志器  <br /></td></tr>
+<tr class="separator:a5f79266dcc270de66bfefaecd0ff7c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ab49ad285ac2eded239f623de1a6a39c1"><td class="memItemLeft" align="right" valign="top"><a id="ab49ad285ac2eded239f623de1a6a39c1" name="ab49ad285ac2eded239f623de1a6a39c1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>myserver::LoggerManager</b> = <a class="el" href="class_singleton.html">Singleton</a>&lt; _LoggerManager &gt;</td></tr>
+<tr class="separator:ab49ad285ac2eded239f623de1a6a39c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>日志模块 </p>
+<dl class="section author"><dt>作者</dt><dd>Moyusiteruiori (<a href="#" onclick="location.href='mai'+'lto:'+'y.m'+'en'+'g1@'+'ou'+'tlo'+'ok'+'.co'+'m'; return false;">y.men<span class="obfuscator">.nosp@m.</span>g1@o<span class="obfuscator">.nosp@m.</span>utloo<span class="obfuscator">.nosp@m.</span>k.co<span class="obfuscator">.nosp@m.</span>m</a>) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2023-01-29</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2023 </dd></dl>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a5f79266dcc270de66bfefaecd0ff7c65" name="a5f79266dcc270de66bfefaecd0ff7c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f79266dcc270de66bfefaecd0ff7c65">&#9670;&#160;</a></span>MYSERVER_ADD_LOGGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_ADD_LOGGER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a7e46e0dd410d8506dec11be5fcba7b3e">MYSERVER_LOGGER</a>(name)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>新建一个日志器 </p>
+<p>创建指定名称的日志器，若已存在则返回其共享指针</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>要创建的日志器的名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7cca3fa4c6057a10a06955190958971b" name="a7cca3fa4c6057a10a06955190958971b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cca3fa4c6057a10a06955190958971b">&#9670;&#160;</a></span>MYSERVER_LOG_DEBUG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_LOG_DEBUG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">logger</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::DEBUG)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 debug 等级的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>日志器对象的共享指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab2b8f447701adc7d8e7444513d14243b" name="ab2b8f447701adc7d8e7444513d14243b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b8f447701adc7d8e7444513d14243b">&#9670;&#160;</a></span>MYSERVER_LOG_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_LOG_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">logger</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::ERROR)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 error 等级的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>日志器对象的共享指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a06e93ecfc27084b8886b5589d52839e0" name="a06e93ecfc27084b8886b5589d52839e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e93ecfc27084b8886b5589d52839e0">&#9670;&#160;</a></span>MYSERVER_LOG_FATAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_LOG_FATAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">logger</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::FATAL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 fatal 等级的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>日志器对象的共享指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d8898350fb448c852e7880ce8ccb418" name="a1d8898350fb448c852e7880ce8ccb418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8898350fb448c852e7880ce8ccb418">&#9670;&#160;</a></span>MYSERVER_LOG_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_LOG_INFO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">logger</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::INFO)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 info 等级的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>日志器对象的共享指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8b0aeac821f39037c30a7cec49e2c40a" name="a8b0aeac821f39037c30a7cec49e2c40a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0aeac821f39037c30a7cec49e2c40a">&#9670;&#160;</a></span>MYSERVER_LOG_LEVEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_LOG_LEVEL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">logger, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">level&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (logger-&gt;get_level() &lt;= level) \</div>
+<div class="line">        myserver::LogWrapper(logger, myserver::LogEvent::ptr( \</div>
+<div class="line">            <span class="keyword">new</span> <a class="code hl_class" href="classmyserver_1_1_log_event.html">myserver::LogEvent</a>(__FILE__,  \</div>
+<div class="line">                                    __LINE__, \</div>
+<div class="line">                                    0,        \</div>
+<div class="line">                                    myserver::get_thread_id(), \</div>
+<div class="line">                                    myserver::get_fiber_id(),  \</div>
+<div class="line">                                    time(0), \</div>
+<div class="line">                                    <a class="code hl_function" href="classmyserver_1_1_thread.html#ac8049ca6da7c95f6a4f6a64931031bd7">myserver::Thread::get_current_thread_name</a>()) \</div>
+<div class="line">        ), level).getss()</div>
+<div class="ttc" id="aclassmyserver_1_1_log_event_html"><div class="ttname"><a href="classmyserver_1_1_log_event.html">myserver::LogEvent</a></div><div class="ttdoc">日志事件</div><div class="ttdef"><b>Definition:</b> log.hpp:112</div></div>
+<div class="ttc" id="aclassmyserver_1_1_thread_html_ac8049ca6da7c95f6a4f6a64931031bd7"><div class="ttname"><a href="classmyserver_1_1_thread.html#ac8049ca6da7c95f6a4f6a64931031bd7">myserver::Thread::get_current_thread_name</a></div><div class="ttdeci">static const std::string &amp; get_current_thread_name()</div><div class="ttdoc">获取当前线程名称</div><div class="ttdef"><b>Definition:</b> thread.cpp:19</div></div>
+</div><!-- fragment -->
+<p>输出日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>日志器对象的共享指针 </td></tr>
+    <tr><td class="paramname">level</td><td>日志等级 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a84432b1cd26d4b5eedff119c5445491b" name="a84432b1cd26d4b5eedff119c5445491b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84432b1cd26d4b5eedff119c5445491b">&#9670;&#160;</a></span>MYSERVER_LOG_WARN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_LOG_WARN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">logger</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="log_8hpp.html#a8b0aeac821f39037c30a7cec49e2c40a">MYSERVER_LOG_LEVEL</a>(logger, myserver::LogLevel::Level::WARN)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 warn 等级的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>日志器对象的共享指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e46e0dd410d8506dec11be5fcba7b3e" name="a7e46e0dd410d8506dec11be5fcba7b3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e46e0dd410d8506dec11be5fcba7b3e">&#9670;&#160;</a></span>MYSERVER_LOGGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_LOGGER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name</td><td>)</td>
+          <td>&#160;&#160;&#160;myserver::LoggerManager::get_instance().get_logger_else_insert(name)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>按名称查找日志器 </p>
+<p>按名称查找日志器，若不存在则创建一个日志器</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>日志器的名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a58a41628aa64b0ae846af10f7a1326ba" name="a58a41628aa64b0ae846af10f7a1326ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a41628aa64b0ae846af10f7a1326ba">&#9670;&#160;</a></span>MYSERVER_ROOT_LOGGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MYSERVER_ROOT_LOGGER&#160;&#160;&#160;myserver::LoggerManager::get_instance().root()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 root 日志器 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

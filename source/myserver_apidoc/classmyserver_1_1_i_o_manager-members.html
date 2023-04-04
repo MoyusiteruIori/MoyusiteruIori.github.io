@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: 成员列表</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_i_o_manager.html">IOManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">myserver::IOManager 成员列表</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>成员的完整列表，这些成员属于 <a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a>,包括所有继承而来的类成员</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#aeaf91bf708efa08008e8d5201d2b909b">add_condition_timer</a>(uint64_t ms, std::function&lt; void()&gt; cb, std::weak_ptr&lt; void &gt; weak_cond, bool recurring=false)</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a77e180a98b50a5525b32c6d53d544efc">add_event</a>(int fd, Event event, std::function&lt; void()&gt; cb=nullptr)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#a53d96a14c3ed1eeee737a20b7bc8eaab">add_timer</a>(uint64_t ms, std::function&lt; void()&gt; cb, bool recurring=false)</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#a8021dbc8445620bda6b510cc6f9f45bf">add_timer</a>(Timer::ptr val, myserver::WriteLock &amp;lock)</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#ab04fcc68ab496416edee1f3792c2d723">cancel_all</a>(int fd)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a75a237a40df0407379b71d6fcbaa0b8a">cancel_event</a>(int fd, Event event)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a47b20484b5f5bed97fe965de1da3ebd2">context_resize</a>(size_t size)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a4d83bddc12a1e93b8f96596894133fff">del_event</a>(int fd, Event event)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a> 枚举名称</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#af104a48888bad113db6379cde18e9df8">get_main_fiber</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a11b83dfd5198f7d30fd69b376dd46526">get_this</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#ab9d9dbc842b6706eb1f89ca52d25d2e2">has_idle_thread</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#a40f6352d0d125e4569c7c2fe8b9470e7">has_timer</a>() const</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a9b9e289e53cc32e9dead92a3962fe21c">idle</a>() override</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a148050a9d320cce562745e392733dafb">IOManager</a>(size_t threads=1, bool use_caller=true, const std::string &amp;name=&quot;DEFAULT&quot;)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#af35a66cb92f122420b65976ebecc849a">list_expired_cb</a>(std::vector&lt; std::function&lt; void()&gt; &gt; &amp;cbs)</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a7ab3b298dfbd33eb0164a2e9c52ce786">m_active_thread_count</a></td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#aad68d9328310b315946e00120912508d">m_auto_stop</a></td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a4eb0ff74baa93f1fc18d03cd60340717">m_idle_thread_count</a></td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a2a472940d743e3fa415c6bdf194b7d7b">m_root_thread_id</a></td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#ac69afa20bdd5861ebc4e2ff4011049f3">m_stopping</a></td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a367a698f0a16e6b99b98ffe739673ce6">m_thread_count</a></td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#aced3f89bc8af3b9884d1d1e9af835fe6">m_thread_ids</a></td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>MutexType</b> typedef (定义于 <a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a>)</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a04169a3c754e7f95d5eb379f3498fc6d">name</a>() const</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#a646c1c8e869ab932c80714afed357a48">next_timer</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>NONE</b> 枚举值 (定义于 <a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a>)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#ac1acf6ed36f5c82a3b909b577b718a7b">on_timer_insert_at_front</a>() override</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ptr</b> typedef (定义于 <a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a>)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>READ</b> 枚举值 (定义于 <a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a>)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#aac37cf16e1a453a3955a561b34bfdac2">run</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a53204cf5a81206fef5e125ea24af66d7">schedule</a>(T fc, int thread=-1)</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a442da29a1010ab10a93c17c8221ae00c">schedule</a>(InputIterator begin, InputIterator end)</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a92a7f9b9adbab410c55a24c6ba5f9628">Scheduler</a>(size_t thread_num=1, bool use_caller=true, const std::string &amp;name=&quot;    &quot;)</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#abed263b292761e753c9c3d13212cb220">set_this</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#a4f12a36332e2fbed5183de73904d98b8">start</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#ae3bcbf5c43984ee45bda9e2a933b8b3f">stop</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#abe127a648fd02ab4b072a62003af5ba1">stopping</a>() override</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#a62bb2921b469378c0e74402cca67f8f8">stopping</a>(uint64_t &amp;timeout)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#ac932da9a8a4ff63070d468d3016da2da">tickle</a>() override</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#a0c1e13ccc7467c212ce009d90789818a">TimerManager</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>WRITE</b> 枚举值 (定义于 <a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a>)</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html#abfbd8a792f2c878f3afc18b6feee94e9">~IOManager</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_i_o_manager.html">myserver::IOManager</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html#ae871e94a5c3ca3b9f7fab956c3cc8358">~Scheduler</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html#a131480ea9d2fa06fd6573c8eba94ba29">~TimerManager</a>()</td><td class="entry"><a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::http::HttpResponse类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><b>http</b></li><li class="navelem"><a class="el" href="classmyserver_1_1http_1_1_http_response.html">HttpResponse</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classmyserver_1_1http_1_1_http_response-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::http::HttpResponse类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>HTTP 响应结构体  
+ <a href="classmyserver_1_1http_1_1_http_response.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="http_8hpp_source.html">http.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:aeae75493b2bf71307d98bd2fe33f1ee5"><td class="memItemLeft" align="right" valign="top"><a id="aeae75493b2bf71307d98bd2fe33f1ee5" name="aeae75493b2bf71307d98bd2fe33f1ee5"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1http_1_1_http_response.html">HttpResponse</a> &gt;</td></tr>
+<tr class="memdesc:aeae75493b2bf71307d98bd2fe33f1ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP 响应结构智能指针 <br /></td></tr>
+<tr class="separator:aeae75493b2bf71307d98bd2fe33f1ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9930b8b20a49e66390eaff16f679fbf"><td class="memItemLeft" align="right" valign="top"><a id="ab9930b8b20a49e66390eaff16f679fbf" name="ab9930b8b20a49e66390eaff16f679fbf"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MapType</b> = std::map&lt; std::string, std::string, <a class="el" href="structmyserver_1_1http_1_1_case_insensitive_less.html">CaseInsensitiveLess</a> &gt;</td></tr>
+<tr class="memdesc:ab9930b8b20a49e66390eaff16f679fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">MapType <br /></td></tr>
+<tr class="separator:ab9930b8b20a49e66390eaff16f679fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1ba76278bca29bf6ab851ab8f0461f52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a1ba76278bca29bf6ab851ab8f0461f52">HttpResponse</a> (uint8_t <a class="el" href="classmyserver_1_1http_1_1_http_response.html#a092abe573647a7a18736626a91e717f2">version</a>=0x11, bool close=true)</td></tr>
+<tr class="memdesc:a1ba76278bca29bf6ab851ab8f0461f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a1ba76278bca29bf6ab851ab8f0461f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484e947263e567c9207f6b27bc5b4a0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="http_8hpp.html#aa2772b7f2a026d3d4f2d6e2fa2ffc389">HttpStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a484e947263e567c9207f6b27bc5b4a0f">status</a> () const</td></tr>
+<tr class="memdesc:a484e947263e567c9207f6b27bc5b4a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回响应状态  <br /></td></tr>
+<tr class="separator:a484e947263e567c9207f6b27bc5b4a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092abe573647a7a18736626a91e717f2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a092abe573647a7a18736626a91e717f2">version</a> () const</td></tr>
+<tr class="memdesc:a092abe573647a7a18736626a91e717f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回响应版本  <br /></td></tr>
+<tr class="separator:a092abe573647a7a18736626a91e717f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b4652454896f389dd93450689be8c6"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a30b4652454896f389dd93450689be8c6">body</a> () const</td></tr>
+<tr class="memdesc:a30b4652454896f389dd93450689be8c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回响应消息体  <br /></td></tr>
+<tr class="separator:a30b4652454896f389dd93450689be8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec7055d215e93f22f7acdbc4f79c297"><td class="memItemLeft" align="right" valign="top"><a id="adec7055d215e93f22f7acdbc4f79c297" name="adec7055d215e93f22f7acdbc4f79c297"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>reason</b> () const</td></tr>
+<tr class="memdesc:adec7055d215e93f22f7acdbc4f79c297"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回响应原因 <br /></td></tr>
+<tr class="separator:adec7055d215e93f22f7acdbc4f79c297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc53192f9b1f153d162c80a550bbeaa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmyserver_1_1http_1_1_http_response.html#ab9930b8b20a49e66390eaff16f679fbf">MapType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a7bc53192f9b1f153d162c80a550bbeaa">headers</a> () const</td></tr>
+<tr class="memdesc:a7bc53192f9b1f153d162c80a550bbeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回响应头部 MAP  <br /></td></tr>
+<tr class="separator:a7bc53192f9b1f153d162c80a550bbeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2227e372dbddfa66e08bd1e51893f25a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a2227e372dbddfa66e08bd1e51893f25a">set_status</a> (<a class="el" href="http_8hpp.html#aa2772b7f2a026d3d4f2d6e2fa2ffc389">HttpStatus</a> v)</td></tr>
+<tr class="memdesc:a2227e372dbddfa66e08bd1e51893f25a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置响应状态  <br /></td></tr>
+<tr class="separator:a2227e372dbddfa66e08bd1e51893f25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb28c898f893d9d9fa6c9f54d6177f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a2bb28c898f893d9d9fa6c9f54d6177f0">set_version</a> (uint8_t v)</td></tr>
+<tr class="memdesc:a2bb28c898f893d9d9fa6c9f54d6177f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置响应版本  <br /></td></tr>
+<tr class="separator:a2bb28c898f893d9d9fa6c9f54d6177f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76f8871968caa23d56d62f0d68f2e8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#ae76f8871968caa23d56d62f0d68f2e8e">set_body</a> (const std::string &amp;v)</td></tr>
+<tr class="memdesc:ae76f8871968caa23d56d62f0d68f2e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置响应消息体  <br /></td></tr>
+<tr class="separator:ae76f8871968caa23d56d62f0d68f2e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1daa25a60539039e11961cebdfb36c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a7d1daa25a60539039e11961cebdfb36c">set_reason</a> (const std::string &amp;v)</td></tr>
+<tr class="memdesc:a7d1daa25a60539039e11961cebdfb36c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置响应原因  <br /></td></tr>
+<tr class="separator:a7d1daa25a60539039e11961cebdfb36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af597820bead523e9d0c1e707f1d3b49b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#af597820bead523e9d0c1e707f1d3b49b">set_headers</a> (const <a class="el" href="classmyserver_1_1http_1_1_http_response.html#ab9930b8b20a49e66390eaff16f679fbf">MapType</a> &amp;v)</td></tr>
+<tr class="memdesc:af597820bead523e9d0c1e707f1d3b49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置响应头部MAP  <br /></td></tr>
+<tr class="separator:af597820bead523e9d0c1e707f1d3b49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4742d2a060e3e067c66a26a9d52f8b10"><td class="memItemLeft" align="right" valign="top"><a id="a4742d2a060e3e067c66a26a9d52f8b10" name="a4742d2a060e3e067c66a26a9d52f8b10"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_Close</b> () const</td></tr>
+<tr class="memdesc:a4742d2a060e3e067c66a26a9d52f8b10"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自动关闭 <br /></td></tr>
+<tr class="separator:a4742d2a060e3e067c66a26a9d52f8b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af94250c4d983e2407fdcfd5e45281fce"><td class="memItemLeft" align="right" valign="top"><a id="af94250c4d983e2407fdcfd5e45281fce" name="af94250c4d983e2407fdcfd5e45281fce"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_close</b> (bool v)</td></tr>
+<tr class="memdesc:af94250c4d983e2407fdcfd5e45281fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否自动关闭 <br /></td></tr>
+<tr class="separator:af94250c4d983e2407fdcfd5e45281fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766fd9b06b1d6d7ec6ab4cf383e21e63"><td class="memItemLeft" align="right" valign="top"><a id="a766fd9b06b1d6d7ec6ab4cf383e21e63" name="a766fd9b06b1d6d7ec6ab4cf383e21e63"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_websocket</b> () const</td></tr>
+<tr class="memdesc:a766fd9b06b1d6d7ec6ab4cf383e21e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否websocket <br /></td></tr>
+<tr class="separator:a766fd9b06b1d6d7ec6ab4cf383e21e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7a6e62457dcfa5c14d2facb43416ab4"><td class="memItemLeft" align="right" valign="top"><a id="aa7a6e62457dcfa5c14d2facb43416ab4" name="aa7a6e62457dcfa5c14d2facb43416ab4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_websocket</b> (bool v)</td></tr>
+<tr class="memdesc:aa7a6e62457dcfa5c14d2facb43416ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否websocket <br /></td></tr>
+<tr class="separator:aa7a6e62457dcfa5c14d2facb43416ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081ec394897368ffc1b6c7d901a86a9f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a081ec394897368ffc1b6c7d901a86a9f">header</a> (const std::string &amp;key, const std::string &amp;def=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a081ec394897368ffc1b6c7d901a86a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取响应头部参数  <br /></td></tr>
+<tr class="separator:a081ec394897368ffc1b6c7d901a86a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a9df04628fd18ae6459b1e2f2ccd50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#ae9a9df04628fd18ae6459b1e2f2ccd50">set_header</a> (const std::string &amp;key, const std::string &amp;val)</td></tr>
+<tr class="memdesc:ae9a9df04628fd18ae6459b1e2f2ccd50"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置响应头部参数  <br /></td></tr>
+<tr class="separator:ae9a9df04628fd18ae6459b1e2f2ccd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f28a93f09292eb3c464b268f7acef4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a92f28a93f09292eb3c464b268f7acef4">del_header</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:a92f28a93f09292eb3c464b268f7acef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除响应头部参数  <br /></td></tr>
+<tr class="separator:a92f28a93f09292eb3c464b268f7acef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2235372ab8e0abf6f887868616c93bb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:af2235372ab8e0abf6f887868616c93bb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#af2235372ab8e0abf6f887868616c93bb">check_get_header_as</a> (const std::string &amp;key, T &amp;val, const T &amp;def=T())</td></tr>
+<tr class="memdesc:af2235372ab8e0abf6f887868616c93bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并获取响应头部参数  <br /></td></tr>
+<tr class="separator:af2235372ab8e0abf6f887868616c93bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a964becf26a7481de8fe3478e1f1fc3c1"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a964becf26a7481de8fe3478e1f1fc3c1"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#a964becf26a7481de8fe3478e1f1fc3c1">get_header_as</a> (const std::string &amp;key, const T &amp;def=T())</td></tr>
+<tr class="memdesc:a964becf26a7481de8fe3478e1f1fc3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取响应的头部参数  <br /></td></tr>
+<tr class="separator:a964becf26a7481de8fe3478e1f1fc3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c5f6ff3a156b88499b1440d80d0e0c"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html#ab3c5f6ff3a156b88499b1440d80d0e0c">dump</a> (std::ostream &amp;os) const</td></tr>
+<tr class="memdesc:ab3c5f6ff3a156b88499b1440d80d0e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化输出到流  <br /></td></tr>
+<tr class="separator:ab3c5f6ff3a156b88499b1440d80d0e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1db91982b78cdcdd7b41f6c146ea4bc"><td class="memItemLeft" align="right" valign="top"><a id="aa1db91982b78cdcdd7b41f6c146ea4bc" name="aa1db91982b78cdcdd7b41f6c146ea4bc"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>to_string</b> () const</td></tr>
+<tr class="memdesc:aa1db91982b78cdcdd7b41f6c146ea4bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">转成字符串 <br /></td></tr>
+<tr class="separator:aa1db91982b78cdcdd7b41f6c146ea4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e41eb7ad2da94140df5825f49b1daa5"><td class="memItemLeft" align="right" valign="top"><a id="a6e41eb7ad2da94140df5825f49b1daa5" name="a6e41eb7ad2da94140df5825f49b1daa5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_redirect</b> (const std::string &amp;uri)</td></tr>
+<tr class="separator:a6e41eb7ad2da94140df5825f49b1daa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade5220dd3e6d607a4522d924e84e847b"><td class="memItemLeft" align="right" valign="top"><a id="ade5220dd3e6d607a4522d924e84e847b" name="ade5220dd3e6d607a4522d924e84e847b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_cookie</b> (const std::string &amp;key, const std::string &amp;val, time_t expired=0, const std::string &amp;path=&quot;&quot;, const std::string &amp;domain=&quot;&quot;, bool secure=false)</td></tr>
+<tr class="separator:ade5220dd3e6d607a4522d924e84e847b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>HTTP 响应结构体 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1ba76278bca29bf6ab851ab8f0461f52" name="a1ba76278bca29bf6ab851ab8f0461f52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ba76278bca29bf6ab851ab8f0461f52">&#9670;&#160;</a></span>HttpResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::http::HttpResponse::HttpResponse </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>version</em> = <code>0x11</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>close</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">version</td><td>版本 </td></tr>
+    <tr><td class="paramname">close</td><td>是否自动关闭 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a30b4652454896f389dd93450689be8c6" name="a30b4652454896f389dd93450689be8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b4652454896f389dd93450689be8c6">&#9670;&#160;</a></span>body()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; myserver::http::HttpResponse::body </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回响应消息体 </p>
+<dl class="section return"><dt>返回</dt><dd>消息体 </dd></dl>
+
+</div>
+</div>
+<a id="af2235372ab8e0abf6f887868616c93bb" name="af2235372ab8e0abf6f887868616c93bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2235372ab8e0abf6f887868616c93bb">&#9670;&#160;</a></span>check_get_header_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::HttpResponse::check_get_header_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查并获取响应头部参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>值类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>值 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回true,否则失败val=def </dd></dl>
+
+</div>
+</div>
+<a id="a92f28a93f09292eb3c464b268f7acef4" name="a92f28a93f09292eb3c464b268f7acef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f28a93f09292eb3c464b268f7acef4">&#9670;&#160;</a></span>del_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpResponse::del_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除响应头部参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab3c5f6ff3a156b88499b1440d80d0e0c" name="ab3c5f6ff3a156b88499b1440d80d0e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c5f6ff3a156b88499b1440d80d0e0c">&#9670;&#160;</a></span>dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; myserver::http::HttpResponse::dump </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>序列化输出到流 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>输出流 </dd></dl>
+
+</div>
+</div>
+<a id="a964becf26a7481de8fe3478e1f1fc3c1" name="a964becf26a7481de8fe3478e1f1fc3c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964becf26a7481de8fe3478e1f1fc3c1">&#9670;&#160;</a></span>get_header_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T myserver::http::HttpResponse::get_header_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取响应的头部参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回对应的值,否则返回def </dd></dl>
+
+</div>
+</div>
+<a id="a081ec394897368ffc1b6c7d901a86a9f" name="a081ec394897368ffc1b6c7d901a86a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081ec394897368ffc1b6c7d901a86a9f">&#9670;&#160;</a></span>header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::http::HttpResponse::header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取响应头部参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在返回对应值,否则返回def </dd></dl>
+
+</div>
+</div>
+<a id="a7bc53192f9b1f153d162c80a550bbeaa" name="a7bc53192f9b1f153d162c80a550bbeaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc53192f9b1f153d162c80a550bbeaa">&#9670;&#160;</a></span>headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmyserver_1_1http_1_1_http_response.html#ab9930b8b20a49e66390eaff16f679fbf">MapType</a> &amp; myserver::http::HttpResponse::headers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回响应头部 MAP </p>
+<dl class="section return"><dt>返回</dt><dd>MAP </dd></dl>
+
+</div>
+</div>
+<a id="ae76f8871968caa23d56d62f0d68f2e8e" name="ae76f8871968caa23d56d62f0d68f2e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76f8871968caa23d56d62f0d68f2e8e">&#9670;&#160;</a></span>set_body()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpResponse::set_body </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置响应消息体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>消息体 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9a9df04628fd18ae6459b1e2f2ccd50" name="ae9a9df04628fd18ae6459b1e2f2ccd50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9a9df04628fd18ae6459b1e2f2ccd50">&#9670;&#160;</a></span>set_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpResponse::set_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置响应头部参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af597820bead523e9d0c1e707f1d3b49b" name="af597820bead523e9d0c1e707f1d3b49b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af597820bead523e9d0c1e707f1d3b49b">&#9670;&#160;</a></span>set_headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpResponse::set_headers </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmyserver_1_1http_1_1_http_response.html#ab9930b8b20a49e66390eaff16f679fbf">MapType</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置响应头部MAP </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>MAP </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7d1daa25a60539039e11961cebdfb36c" name="a7d1daa25a60539039e11961cebdfb36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d1daa25a60539039e11961cebdfb36c">&#9670;&#160;</a></span>set_reason()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpResponse::set_reason </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置响应原因 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>原因 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2227e372dbddfa66e08bd1e51893f25a" name="a2227e372dbddfa66e08bd1e51893f25a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2227e372dbddfa66e08bd1e51893f25a">&#9670;&#160;</a></span>set_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpResponse::set_status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="http_8hpp.html#aa2772b7f2a026d3d4f2d6e2fa2ffc389">HttpStatus</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置响应状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>响应状态 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2bb28c898f893d9d9fa6c9f54d6177f0" name="a2bb28c898f893d9d9fa6c9f54d6177f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb28c898f893d9d9fa6c9f54d6177f0">&#9670;&#160;</a></span>set_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpResponse::set_version </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置响应版本 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>版本 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a484e947263e567c9207f6b27bc5b4a0f" name="a484e947263e567c9207f6b27bc5b4a0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a484e947263e567c9207f6b27bc5b4a0f">&#9670;&#160;</a></span>status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="http_8hpp.html#aa2772b7f2a026d3d4f2d6e2fa2ffc389">HttpStatus</a> myserver::http::HttpResponse::status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回响应状态 </p>
+<dl class="section return"><dt>返回</dt><dd>请求状态 </dd></dl>
+
+</div>
+</div>
+<a id="a092abe573647a7a18736626a91e717f2" name="a092abe573647a7a18736626a91e717f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092abe573647a7a18736626a91e717f2">&#9670;&#160;</a></span>version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myserver::http::HttpResponse::version </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回响应版本 </p>
+<dl class="section return"><dt>返回</dt><dd>版本 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/http/<a class="el" href="http_8hpp_source.html">http.hpp</a></li>
+<li>myserver/http/http.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

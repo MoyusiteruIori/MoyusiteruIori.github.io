@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::LogLevel类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_log_level.html">LogLevel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classmyserver_1_1_log_level-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::LogLevel类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>日志等级  
+ <a href="classmyserver_1_1_log_level.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="log_8hpp_source.html">log.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:aeca4893e9e063feb56b81001aca1ae76"><td class="memItemLeft" align="right" valign="top"><a id="aeca4893e9e063feb56b81001aca1ae76" name="aeca4893e9e063feb56b81001aca1ae76"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Level</b> { <br />
+&#160;&#160;<b>UNKNOWN</b> = 0
+, <b>DEBUG</b> = 1
+, <b>INFO</b> = 2
+, <b>WARN</b> = 3
+, <br />
+&#160;&#160;<b>ERROR</b> = 4
+, <b>FATAL</b> = 5
+<br />
+ }</td></tr>
+<tr class="separator:aeca4893e9e063feb56b81001aca1ae76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:acfe2c49cdec3619bc0a60403285164a2"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_level.html#acfe2c49cdec3619bc0a60403285164a2">to_string</a> (LogLevel::Level level)</td></tr>
+<tr class="memdesc:acfe2c49cdec3619bc0a60403285164a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">日志等级转换为字符串  <br /></td></tr>
+<tr class="separator:acfe2c49cdec3619bc0a60403285164a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23cc2d6131c24613ac9c09d82f5ed48b"><td class="memItemLeft" align="right" valign="top">static LogLevel::Level&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_level.html#a23cc2d6131c24613ac9c09d82f5ed48b">from_string</a> (const std::string &amp;src)</td></tr>
+<tr class="memdesc:a23cc2d6131c24613ac9c09d82f5ed48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符串转换为日志等级  <br /></td></tr>
+<tr class="separator:a23cc2d6131c24613ac9c09d82f5ed48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>日志等级 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a23cc2d6131c24613ac9c09d82f5ed48b" name="a23cc2d6131c24613ac9c09d82f5ed48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23cc2d6131c24613ac9c09d82f5ed48b">&#9670;&#160;</a></span>from_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LogLevel::Level myserver::LogLevel::from_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>字符串转换为日志等级 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>日志等级对应的字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>LogLevel::Level 日志等级 </dd></dl>
+
+</div>
+</div>
+<a id="acfe2c49cdec3619bc0a60403285164a2" name="acfe2c49cdec3619bc0a60403285164a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe2c49cdec3619bc0a60403285164a2">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * myserver::LogLevel::to_string </td>
+          <td>(</td>
+          <td class="paramtype">LogLevel::Level&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>日志等级转换为字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>日志等级 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>const char* 日志等级对应的字符串 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="log_8hpp_source.html">log.hpp</a></li>
+<li>myserver/log.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

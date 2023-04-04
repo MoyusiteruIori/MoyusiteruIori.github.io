@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::LogWrapper类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_log_wrapper.html">LogWrapper</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classmyserver_1_1_log_wrapper-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::LogWrapper类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>日志事件包装器，利用析构函数输出日志，增加易用性  
+ <a href="classmyserver_1_1_log_wrapper.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="log_8hpp_source.html">log.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae551a20664e2f1445ef22a5ccb9953bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_wrapper.html#ae551a20664e2f1445ef22a5ccb9953bb">LogWrapper</a> (Logger::constptr logger, LogEvent::ptr event, LogLevel::Level level)</td></tr>
+<tr class="memdesc:ae551a20664e2f1445ef22a5ccb9953bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个日志包装器  <br /></td></tr>
+<tr class="separator:ae551a20664e2f1445ef22a5ccb9953bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af967cef5c26611991b67bafca3b4a374"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_wrapper.html#af967cef5c26611991b67bafca3b4a374">~LogWrapper</a> ()</td></tr>
+<tr class="memdesc:af967cef5c26611991b67bafca3b4a374"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:af967cef5c26611991b67bafca3b4a374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa67b90dc1310f057e7a8021a87e21b0e"><td class="memItemLeft" align="right" valign="top">std::stringstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_wrapper.html#aa67b90dc1310f057e7a8021a87e21b0e">getss</a> ()</td></tr>
+<tr class="memdesc:aa67b90dc1310f057e7a8021a87e21b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取日志输出流  <br /></td></tr>
+<tr class="separator:aa67b90dc1310f057e7a8021a87e21b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed619c34519a2b6c967c02b8b51fe28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_wrapper.html#a9ed619c34519a2b6c967c02b8b51fe28">format</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a9ed619c34519a2b6c967c02b8b51fe28"><td class="mdescLeft">&#160;</td><td class="mdescRight">C 风格的格式化日志输出  <br /></td></tr>
+<tr class="separator:a9ed619c34519a2b6c967c02b8b51fe28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e7c52864c31fffb67da9ecd57b7d94a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_wrapper.html#a1e7c52864c31fffb67da9ecd57b7d94a">format</a> (const char *fmt, va_list al)</td></tr>
+<tr class="memdesc:a1e7c52864c31fffb67da9ecd57b7d94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">辅助 <a class="el" href="classmyserver_1_1_log_wrapper.html#a9ed619c34519a2b6c967c02b8b51fe28" title="C 风格的格式化日志输出">format(const char* fmt, ...)</a> 的实现  <br /></td></tr>
+<tr class="separator:a1e7c52864c31fffb67da9ecd57b7d94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>日志事件包装器，利用析构函数输出日志，增加易用性 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae551a20664e2f1445ef22a5ccb9953bb" name="ae551a20664e2f1445ef22a5ccb9953bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae551a20664e2f1445ef22a5ccb9953bb">&#9670;&#160;</a></span>LogWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::LogWrapper::LogWrapper </td>
+          <td>(</td>
+          <td class="paramtype">Logger::constptr&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LogEvent::ptr&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LogLevel::Level&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造一个日志包装器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>日志器 </td></tr>
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+    <tr><td class="paramname">level</td><td>日志等级 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af967cef5c26611991b67bafca3b4a374" name="af967cef5c26611991b67bafca3b4a374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af967cef5c26611991b67bafca3b4a374">&#9670;&#160;</a></span>~LogWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::LogWrapper::~LogWrapper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a1e7c52864c31fffb67da9ecd57b7d94a" name="a1e7c52864c31fffb67da9ecd57b7d94a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e7c52864c31fffb67da9ecd57b7d94a">&#9670;&#160;</a></span>format() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::LogWrapper::format </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list&#160;</td>
+          <td class="paramname"><em>al</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>辅助 <a class="el" href="classmyserver_1_1_log_wrapper.html#a9ed619c34519a2b6c967c02b8b51fe28" title="C 风格的格式化日志输出">format(const char* fmt, ...)</a> 的实现 </p>
+
+</div>
+</div>
+<a id="a9ed619c34519a2b6c967c02b8b51fe28" name="a9ed619c34519a2b6c967c02b8b51fe28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed619c34519a2b6c967c02b8b51fe28">&#9670;&#160;</a></span>format() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::LogWrapper::format </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>C 风格的格式化日志输出 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>类似 printf 的第一个参数 </td></tr>
+    <tr><td class="paramname">...</td><td>所有需要格式化的参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa67b90dc1310f057e7a8021a87e21b0e" name="aa67b90dc1310f057e7a8021a87e21b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa67b90dc1310f057e7a8021a87e21b0e">&#9670;&#160;</a></span>getss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stringstream &amp; myserver::LogWrapper::getss </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取日志输出流 </p>
+<dl class="section return"><dt>返回</dt><dd>std::stringstream&amp; 日志输出流 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="log_8hpp_source.html">log.hpp</a></li>
+<li>myserver/log.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::http::HttpRequest类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><b>http</b></li><li class="navelem"><a class="el" href="classmyserver_1_1http_1_1_http_request.html">HttpRequest</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classmyserver_1_1http_1_1_http_request-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::http::HttpRequest类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>HTTP 请求结构  
+ <a href="classmyserver_1_1http_1_1_http_request.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="http_8hpp_source.html">http.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ad029ba6dbd1ddc6f1582b8fe0b6814cf"><td class="memItemLeft" align="right" valign="top"><a id="ad029ba6dbd1ddc6f1582b8fe0b6814cf" name="ad029ba6dbd1ddc6f1582b8fe0b6814cf"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1http_1_1_http_request.html">HttpRequest</a> &gt;</td></tr>
+<tr class="memdesc:ad029ba6dbd1ddc6f1582b8fe0b6814cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP 请求的智能指针 <br /></td></tr>
+<tr class="separator:ad029ba6dbd1ddc6f1582b8fe0b6814cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4989b1e56c7f360cf2abcda2a7c67d"><td class="memItemLeft" align="right" valign="top"><a id="adc4989b1e56c7f360cf2abcda2a7c67d" name="adc4989b1e56c7f360cf2abcda2a7c67d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MapType</b> = std::map&lt; std::string, std::string, <a class="el" href="structmyserver_1_1http_1_1_case_insensitive_less.html">CaseInsensitiveLess</a> &gt;</td></tr>
+<tr class="memdesc:adc4989b1e56c7f360cf2abcda2a7c67d"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAP结构 <br /></td></tr>
+<tr class="separator:adc4989b1e56c7f360cf2abcda2a7c67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6cd006be449a772975ae2af58b20d641"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a6cd006be449a772975ae2af58b20d641">HttpRequest</a> (uint8_t <a class="el" href="classmyserver_1_1http_1_1_http_request.html#a886adfa4150e350b6e0d6baef1211bd8">version</a>=0x11, bool close=true)</td></tr>
+<tr class="memdesc:a6cd006be449a772975ae2af58b20d641"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a6cd006be449a772975ae2af58b20d641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98111c5a7e40f237ae1a0e55c8c60587"><td class="memItemLeft" align="right" valign="top"><a id="a98111c5a7e40f237ae1a0e55c8c60587" name="a98111c5a7e40f237ae1a0e55c8c60587"></a>
+std::shared_ptr&lt; <a class="el" href="classmyserver_1_1http_1_1_http_response.html">HttpResponse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>create_response</b> ()</td></tr>
+<tr class="separator:a98111c5a7e40f237ae1a0e55c8c60587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a451e2d63dc71af93f2859d1ddc080485"><td class="memItemLeft" align="right" valign="top"><a id="a451e2d63dc71af93f2859d1ddc080485" name="a451e2d63dc71af93f2859d1ddc080485"></a>
+<a class="el" href="http_8hpp.html#a339f68e9dc3d89f314c83a5f4a34f2ed">HttpMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><b>method</b> () const</td></tr>
+<tr class="memdesc:a451e2d63dc71af93f2859d1ddc080485"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 方法 <br /></td></tr>
+<tr class="separator:a451e2d63dc71af93f2859d1ddc080485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886adfa4150e350b6e0d6baef1211bd8"><td class="memItemLeft" align="right" valign="top"><a id="a886adfa4150e350b6e0d6baef1211bd8" name="a886adfa4150e350b6e0d6baef1211bd8"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>version</b> () const</td></tr>
+<tr class="memdesc:a886adfa4150e350b6e0d6baef1211bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 版本 <br /></td></tr>
+<tr class="separator:a886adfa4150e350b6e0d6baef1211bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3731bd4cc77f70f5ec272d2331dc20b0"><td class="memItemLeft" align="right" valign="top"><a id="a3731bd4cc77f70f5ec272d2331dc20b0" name="a3731bd4cc77f70f5ec272d2331dc20b0"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> () const</td></tr>
+<tr class="memdesc:a3731bd4cc77f70f5ec272d2331dc20b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 请求的路径 <br /></td></tr>
+<tr class="separator:a3731bd4cc77f70f5ec272d2331dc20b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3deade31147a5bd15a86e264800c2592"><td class="memItemLeft" align="right" valign="top"><a id="a3deade31147a5bd15a86e264800c2592" name="a3deade31147a5bd15a86e264800c2592"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>query</b> () const</td></tr>
+<tr class="memdesc:a3deade31147a5bd15a86e264800c2592"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 请求的查询参数 <br /></td></tr>
+<tr class="separator:a3deade31147a5bd15a86e264800c2592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e1a209f3b9644b0c079b8d3afc9c5ab"><td class="memItemLeft" align="right" valign="top"><a id="a9e1a209f3b9644b0c079b8d3afc9c5ab" name="a9e1a209f3b9644b0c079b8d3afc9c5ab"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>body</b> () const</td></tr>
+<tr class="memdesc:a9e1a209f3b9644b0c079b8d3afc9c5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 请求的消息体 <br /></td></tr>
+<tr class="separator:a9e1a209f3b9644b0c079b8d3afc9c5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0fe2c745f60c772d19ddfeccd41fee"><td class="memItemLeft" align="right" valign="top"><a id="a1e0fe2c745f60c772d19ddfeccd41fee" name="a1e0fe2c745f60c772d19ddfeccd41fee"></a>
+const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>headers</b> () const</td></tr>
+<tr class="memdesc:a1e0fe2c745f60c772d19ddfeccd41fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 请求的消息头MAP <br /></td></tr>
+<tr class="separator:a1e0fe2c745f60c772d19ddfeccd41fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f0afd89a003be22d95885ef5d2a9e9a"><td class="memItemLeft" align="right" valign="top"><a id="a3f0afd89a003be22d95885ef5d2a9e9a" name="a3f0afd89a003be22d95885ef5d2a9e9a"></a>
+const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>params</b> () const</td></tr>
+<tr class="memdesc:a3f0afd89a003be22d95885ef5d2a9e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 请求的参数 MAP <br /></td></tr>
+<tr class="separator:a3f0afd89a003be22d95885ef5d2a9e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d8249b5a66bd5da68eb072d0712cb7f"><td class="memItemLeft" align="right" valign="top"><a id="a7d8249b5a66bd5da68eb072d0712cb7f" name="a7d8249b5a66bd5da68eb072d0712cb7f"></a>
+const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getCookies</b> () const</td></tr>
+<tr class="memdesc:a7d8249b5a66bd5da68eb072d0712cb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回 HTTP 请求的 cookie MAP <br /></td></tr>
+<tr class="separator:a7d8249b5a66bd5da68eb072d0712cb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef124d617b93d8e10a19496c096dc6ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#aef124d617b93d8e10a19496c096dc6ef">set_method</a> (<a class="el" href="http_8hpp.html#a339f68e9dc3d89f314c83a5f4a34f2ed">HttpMethod</a> v)</td></tr>
+<tr class="memdesc:aef124d617b93d8e10a19496c096dc6ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的方法名  <br /></td></tr>
+<tr class="separator:aef124d617b93d8e10a19496c096dc6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74f2ac1a0c9a54f3e0113f4acf948116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a74f2ac1a0c9a54f3e0113f4acf948116">set_version</a> (uint8_t v)</td></tr>
+<tr class="memdesc:a74f2ac1a0c9a54f3e0113f4acf948116"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的协议版本  <br /></td></tr>
+<tr class="separator:a74f2ac1a0c9a54f3e0113f4acf948116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d2577c312c1a1e0fe0a0ecfa3f2572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a76d2577c312c1a1e0fe0a0ecfa3f2572">set_path</a> (const std::string &amp;v)</td></tr>
+<tr class="memdesc:a76d2577c312c1a1e0fe0a0ecfa3f2572"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的路径  <br /></td></tr>
+<tr class="separator:a76d2577c312c1a1e0fe0a0ecfa3f2572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8988084d06dc45f91438a6b4e0ba951d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a8988084d06dc45f91438a6b4e0ba951d">set_query</a> (const std::string &amp;v)</td></tr>
+<tr class="memdesc:a8988084d06dc45f91438a6b4e0ba951d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的查询参数  <br /></td></tr>
+<tr class="separator:a8988084d06dc45f91438a6b4e0ba951d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36b8d7b7261424a1b6c7cb142775d48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#ac36b8d7b7261424a1b6c7cb142775d48">set_fragment</a> (const std::string &amp;v)</td></tr>
+<tr class="memdesc:ac36b8d7b7261424a1b6c7cb142775d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的 Fragment  <br /></td></tr>
+<tr class="separator:ac36b8d7b7261424a1b6c7cb142775d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac7f669b1b52c2aa9c38fa9107d77660"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#aac7f669b1b52c2aa9c38fa9107d77660">set_body</a> (const std::string &amp;v)</td></tr>
+<tr class="memdesc:aac7f669b1b52c2aa9c38fa9107d77660"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的消息体  <br /></td></tr>
+<tr class="separator:aac7f669b1b52c2aa9c38fa9107d77660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3707da23189fe7e26f353ffae1824522"><td class="memItemLeft" align="right" valign="top"><a id="a3707da23189fe7e26f353ffae1824522" name="a3707da23189fe7e26f353ffae1824522"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_close</b> () const</td></tr>
+<tr class="memdesc:a3707da23189fe7e26f353ffae1824522"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自动关闭 <br /></td></tr>
+<tr class="separator:a3707da23189fe7e26f353ffae1824522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01163615baeb89f806b64cfcb3df72e6"><td class="memItemLeft" align="right" valign="top"><a id="a01163615baeb89f806b64cfcb3df72e6" name="a01163615baeb89f806b64cfcb3df72e6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_close</b> (bool v)</td></tr>
+<tr class="memdesc:a01163615baeb89f806b64cfcb3df72e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否自动关闭 <br /></td></tr>
+<tr class="separator:a01163615baeb89f806b64cfcb3df72e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac988ad3781db5420add4566f0fa62ebc"><td class="memItemLeft" align="right" valign="top"><a id="ac988ad3781db5420add4566f0fa62ebc" name="ac988ad3781db5420add4566f0fa62ebc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_websocket</b> () const</td></tr>
+<tr class="memdesc:ac988ad3781db5420add4566f0fa62ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否 websocket <br /></td></tr>
+<tr class="separator:ac988ad3781db5420add4566f0fa62ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a898de7fa79c83621b8ca114e00a3f134"><td class="memItemLeft" align="right" valign="top"><a id="a898de7fa79c83621b8ca114e00a3f134" name="a898de7fa79c83621b8ca114e00a3f134"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_websocket</b> (bool v)</td></tr>
+<tr class="memdesc:a898de7fa79c83621b8ca114e00a3f134"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否 websocket <br /></td></tr>
+<tr class="separator:a898de7fa79c83621b8ca114e00a3f134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9a1092b37cd2feff86b6ece2c836bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a2b9a1092b37cd2feff86b6ece2c836bb">set_headers</a> (const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;v)</td></tr>
+<tr class="memdesc:a2b9a1092b37cd2feff86b6ece2c836bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的头部 MAP  <br /></td></tr>
+<tr class="separator:a2b9a1092b37cd2feff86b6ece2c836bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9723953b392ac325a5b6f2ee533db4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#ad9723953b392ac325a5b6f2ee533db4f">set_params</a> (const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;v)</td></tr>
+<tr class="memdesc:ad9723953b392ac325a5b6f2ee533db4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的参数 MAP  <br /></td></tr>
+<tr class="separator:ad9723953b392ac325a5b6f2ee533db4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0975081840c4a3c6fc4dd7ba82140007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a0975081840c4a3c6fc4dd7ba82140007">set_cookies</a> (const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;v)</td></tr>
+<tr class="memdesc:a0975081840c4a3c6fc4dd7ba82140007"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的 Cookie MAP  <br /></td></tr>
+<tr class="separator:a0975081840c4a3c6fc4dd7ba82140007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a039d4b0c7455c7e6e65833d6a9ed5dc7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a039d4b0c7455c7e6e65833d6a9ed5dc7">header</a> (const std::string &amp;key, const std::string &amp;def=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a039d4b0c7455c7e6e65833d6a9ed5dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 HTTP 请求的头部参数  <br /></td></tr>
+<tr class="separator:a039d4b0c7455c7e6e65833d6a9ed5dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aba50d022b722a7748dbe7f2a643e44"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a0aba50d022b722a7748dbe7f2a643e44">param</a> (const std::string &amp;key, const std::string &amp;def=&quot;&quot;)</td></tr>
+<tr class="memdesc:a0aba50d022b722a7748dbe7f2a643e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 HTTP 请求的请求参数  <br /></td></tr>
+<tr class="separator:a0aba50d022b722a7748dbe7f2a643e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06d4aa22643e38fff53919c6709eb9ff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a06d4aa22643e38fff53919c6709eb9ff">cookie</a> (const std::string &amp;key, const std::string &amp;def=&quot;&quot;)</td></tr>
+<tr class="memdesc:a06d4aa22643e38fff53919c6709eb9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 HTTP 请求的 Cookie 参数  <br /></td></tr>
+<tr class="separator:a06d4aa22643e38fff53919c6709eb9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17740a2a8d6c2562abb2e9c090103842"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a17740a2a8d6c2562abb2e9c090103842">set_header</a> (const std::string &amp;key, const std::string &amp;val)</td></tr>
+<tr class="memdesc:a17740a2a8d6c2562abb2e9c090103842"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的头部参数  <br /></td></tr>
+<tr class="separator:a17740a2a8d6c2562abb2e9c090103842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af36900cdf7cf0349c4556024704694"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a2af36900cdf7cf0349c4556024704694">set_param</a> (const std::string &amp;key, const std::string &amp;val)</td></tr>
+<tr class="memdesc:a2af36900cdf7cf0349c4556024704694"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的请求参数  <br /></td></tr>
+<tr class="separator:a2af36900cdf7cf0349c4556024704694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff5fe8bb01999c56955e980ed805518e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#aff5fe8bb01999c56955e980ed805518e">set_cookie</a> (const std::string &amp;key, const std::string &amp;val)</td></tr>
+<tr class="memdesc:aff5fe8bb01999c56955e980ed805518e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 HTTP 请求的 Cookie 参数  <br /></td></tr>
+<tr class="separator:aff5fe8bb01999c56955e980ed805518e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f41bb39faf59592ae9b1a3bf93b540b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a8f41bb39faf59592ae9b1a3bf93b540b">del_header</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:a8f41bb39faf59592ae9b1a3bf93b540b"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除 HTTP 请求的头部参数  <br /></td></tr>
+<tr class="separator:a8f41bb39faf59592ae9b1a3bf93b540b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8b65b8f57baf87e2c398b6fe9c3f470"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#aa8b65b8f57baf87e2c398b6fe9c3f470">del_param</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:aa8b65b8f57baf87e2c398b6fe9c3f470"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除 HTTP 请求的请求参数  <br /></td></tr>
+<tr class="separator:aa8b65b8f57baf87e2c398b6fe9c3f470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e179eef5f6f2e1289bb805a3a270443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a3e179eef5f6f2e1289bb805a3a270443">del_cookie</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:a3e179eef5f6f2e1289bb805a3a270443"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除 HTTP 请求的 Cookie 参数  <br /></td></tr>
+<tr class="separator:a3e179eef5f6f2e1289bb805a3a270443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3483bb1399dd06becea724cf4e56d2f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a3483bb1399dd06becea724cf4e56d2f6">has_header</a> (const std::string &amp;key, std::string *val=nullptr)</td></tr>
+<tr class="memdesc:a3483bb1399dd06becea724cf4e56d2f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断 HTTP 请求的头部参数是否存在  <br /></td></tr>
+<tr class="separator:a3483bb1399dd06becea724cf4e56d2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad773262eb11b54510864418c13e4c904"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#ad773262eb11b54510864418c13e4c904">has_param</a> (const std::string &amp;key, std::string *val=nullptr)</td></tr>
+<tr class="memdesc:ad773262eb11b54510864418c13e4c904"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断 HTTP 请求的请求参数是否存在  <br /></td></tr>
+<tr class="separator:ad773262eb11b54510864418c13e4c904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c273f2da978c1417e1db00461931760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a8c273f2da978c1417e1db00461931760">has_cookie</a> (const std::string &amp;key, std::string *val=nullptr)</td></tr>
+<tr class="memdesc:a8c273f2da978c1417e1db00461931760"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断 HTTP 请求的 Cookie 参数是否存在  <br /></td></tr>
+<tr class="separator:a8c273f2da978c1417e1db00461931760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0213b53a58350fc764f47c9f12d6bc9"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa0213b53a58350fc764f47c9f12d6bc9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#aa0213b53a58350fc764f47c9f12d6bc9">check_get_header_as</a> (const std::string &amp;key, T &amp;val, const T &amp;def=T())</td></tr>
+<tr class="memdesc:aa0213b53a58350fc764f47c9f12d6bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并获取HTTP请求的头部参数  <br /></td></tr>
+<tr class="separator:aa0213b53a58350fc764f47c9f12d6bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef3b16baa7825ef5e48ed5e3d6f23fb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:adef3b16baa7825ef5e48ed5e3d6f23fb"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#adef3b16baa7825ef5e48ed5e3d6f23fb">get_header_as</a> (const std::string &amp;key, const T &amp;def=T())</td></tr>
+<tr class="memdesc:adef3b16baa7825ef5e48ed5e3d6f23fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 HTTP 请求的头部参数  <br /></td></tr>
+<tr class="separator:adef3b16baa7825ef5e48ed5e3d6f23fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48288f0229674ce38408045a67c98fa0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a48288f0229674ce38408045a67c98fa0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a48288f0229674ce38408045a67c98fa0">check_get_param_as</a> (const std::string &amp;key, T &amp;val, const T &amp;def=T())</td></tr>
+<tr class="memdesc:a48288f0229674ce38408045a67c98fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并获取 HTTP 请求的请求参数  <br /></td></tr>
+<tr class="separator:a48288f0229674ce38408045a67c98fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28636b23aad6704a26843dc58d96a8f8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a28636b23aad6704a26843dc58d96a8f8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a28636b23aad6704a26843dc58d96a8f8">get_param_as</a> (const std::string &amp;key, const T &amp;def=T())</td></tr>
+<tr class="memdesc:a28636b23aad6704a26843dc58d96a8f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 HTTP 请求的请求参数  <br /></td></tr>
+<tr class="separator:a28636b23aad6704a26843dc58d96a8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3edea4b0b7d557df6a01d6e7bb41df5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ab3edea4b0b7d557df6a01d6e7bb41df5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#ab3edea4b0b7d557df6a01d6e7bb41df5">check_get_cookie_as</a> (const std::string &amp;key, T &amp;val, const T &amp;def=T())</td></tr>
+<tr class="memdesc:ab3edea4b0b7d557df6a01d6e7bb41df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查并获取 HTTP 请求的 Cookie 参数  <br /></td></tr>
+<tr class="separator:ab3edea4b0b7d557df6a01d6e7bb41df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968539ddd1f8ef12f18ed2510f975a9a"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a968539ddd1f8ef12f18ed2510f975a9a"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a968539ddd1f8ef12f18ed2510f975a9a">get_cookie_as</a> (const std::string &amp;key, const T &amp;def=T())</td></tr>
+<tr class="memdesc:a968539ddd1f8ef12f18ed2510f975a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 HTTP 请求的 Cookie 参数  <br /></td></tr>
+<tr class="separator:a968539ddd1f8ef12f18ed2510f975a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65fcc5173e0670b31fa448689a067415"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a65fcc5173e0670b31fa448689a067415">dump</a> (std::ostream &amp;os) const</td></tr>
+<tr class="memdesc:a65fcc5173e0670b31fa448689a067415"><td class="mdescLeft">&#160;</td><td class="mdescRight">序列化输出到流中  <br /></td></tr>
+<tr class="separator:a65fcc5173e0670b31fa448689a067415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f30bde890c229617cdd3836759249b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html#a92f30bde890c229617cdd3836759249b">to_string</a> () const</td></tr>
+<tr class="memdesc:a92f30bde890c229617cdd3836759249b"><td class="mdescLeft">&#160;</td><td class="mdescRight">转成字符串类型  <br /></td></tr>
+<tr class="separator:a92f30bde890c229617cdd3836759249b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95f9f2690fd4095c302618596c3ee78"><td class="memItemLeft" align="right" valign="top"><a id="ac95f9f2690fd4095c302618596c3ee78" name="ac95f9f2690fd4095c302618596c3ee78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
+<tr class="separator:ac95f9f2690fd4095c302618596c3ee78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac86b52ca190a187ccea44d49ab2f64"><td class="memItemLeft" align="right" valign="top"><a id="a2ac86b52ca190a187ccea44d49ab2f64" name="a2ac86b52ca190a187ccea44d49ab2f64"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_param</b> ()</td></tr>
+<tr class="separator:a2ac86b52ca190a187ccea44d49ab2f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72d2f400554bee0a28aadb3713b651a"><td class="memItemLeft" align="right" valign="top"><a id="aa72d2f400554bee0a28aadb3713b651a" name="aa72d2f400554bee0a28aadb3713b651a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_query_param</b> ()</td></tr>
+<tr class="separator:aa72d2f400554bee0a28aadb3713b651a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa16a63b16bfbd01c4acc5cea103fe086"><td class="memItemLeft" align="right" valign="top"><a id="aa16a63b16bfbd01c4acc5cea103fe086" name="aa16a63b16bfbd01c4acc5cea103fe086"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_body_param</b> ()</td></tr>
+<tr class="separator:aa16a63b16bfbd01c4acc5cea103fe086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ed923a85692958ed55ee7d8a09524f"><td class="memItemLeft" align="right" valign="top"><a id="ac3ed923a85692958ed55ee7d8a09524f" name="ac3ed923a85692958ed55ee7d8a09524f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_cookies</b> ()</td></tr>
+<tr class="separator:ac3ed923a85692958ed55ee7d8a09524f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>HTTP 请求结构 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a6cd006be449a772975ae2af58b20d641" name="a6cd006be449a772975ae2af58b20d641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd006be449a772975ae2af58b20d641">&#9670;&#160;</a></span>HttpRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::http::HttpRequest::HttpRequest </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>version</em> = <code>0x11</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>close</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">version</td><td>版本 </td></tr>
+    <tr><td class="paramname">close</td><td>是否 keepalive </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab3edea4b0b7d557df6a01d6e7bb41df5" name="ab3edea4b0b7d557df6a01d6e7bb41df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3edea4b0b7d557df6a01d6e7bb41df5">&#9670;&#160;</a></span>check_get_cookie_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::HttpRequest::check_get_cookie_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查并获取 HTTP 请求的 Cookie 参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>返回值 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回 true,否则失败 val = def </dd></dl>
+
+</div>
+</div>
+<a id="aa0213b53a58350fc764f47c9f12d6bc9" name="aa0213b53a58350fc764f47c9f12d6bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0213b53a58350fc764f47c9f12d6bc9">&#9670;&#160;</a></span>check_get_header_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::HttpRequest::check_get_header_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查并获取HTTP请求的头部参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>返回值 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回true,否则失败 val = def </dd></dl>
+
+</div>
+</div>
+<a id="a48288f0229674ce38408045a67c98fa0" name="a48288f0229674ce38408045a67c98fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48288f0229674ce38408045a67c98fa0">&#9670;&#160;</a></span>check_get_param_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::HttpRequest::check_get_param_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查并获取 HTTP 请求的请求参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>返回值 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回 true , 否则失败 val = def </dd></dl>
+
+</div>
+</div>
+<a id="a06d4aa22643e38fff53919c6709eb9ff" name="a06d4aa22643e38fff53919c6709eb9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d4aa22643e38fff53919c6709eb9ff">&#9670;&#160;</a></span>cookie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::http::HttpRequest::cookie </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 HTTP 请求的 Cookie 参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在则返回对应值,否则返回默认值 </dd></dl>
+
+</div>
+</div>
+<a id="a3e179eef5f6f2e1289bb805a3a270443" name="a3e179eef5f6f2e1289bb805a3a270443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e179eef5f6f2e1289bb805a3a270443">&#9670;&#160;</a></span>del_cookie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::del_cookie </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除 HTTP 请求的 Cookie 参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8f41bb39faf59592ae9b1a3bf93b540b" name="a8f41bb39faf59592ae9b1a3bf93b540b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f41bb39faf59592ae9b1a3bf93b540b">&#9670;&#160;</a></span>del_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::del_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除 HTTP 请求的头部参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa8b65b8f57baf87e2c398b6fe9c3f470" name="aa8b65b8f57baf87e2c398b6fe9c3f470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b65b8f57baf87e2c398b6fe9c3f470">&#9670;&#160;</a></span>del_param()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::del_param </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除 HTTP 请求的请求参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a65fcc5173e0670b31fa448689a067415" name="a65fcc5173e0670b31fa448689a067415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fcc5173e0670b31fa448689a067415">&#9670;&#160;</a></span>dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; myserver::http::HttpRequest::dump </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>序列化输出到流中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>输出流 </dd></dl>
+
+</div>
+</div>
+<a id="a968539ddd1f8ef12f18ed2510f975a9a" name="a968539ddd1f8ef12f18ed2510f975a9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968539ddd1f8ef12f18ed2510f975a9a">&#9670;&#160;</a></span>get_cookie_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T myserver::http::HttpRequest::get_cookie_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取 HTTP 请求的 Cookie 参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回对应的值,否则返回 def </dd></dl>
+
+</div>
+</div>
+<a id="adef3b16baa7825ef5e48ed5e3d6f23fb" name="adef3b16baa7825ef5e48ed5e3d6f23fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef3b16baa7825ef5e48ed5e3d6f23fb">&#9670;&#160;</a></span>get_header_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T myserver::http::HttpRequest::get_header_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取 HTTP 请求的头部参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回对应的值,否则返回 def </dd></dl>
+
+</div>
+</div>
+<a id="a28636b23aad6704a26843dc58d96a8f8" name="a28636b23aad6704a26843dc58d96a8f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28636b23aad6704a26843dc58d96a8f8">&#9670;&#160;</a></span>get_param_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T myserver::http::HttpRequest::get_param_as </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取 HTTP 请求的请求参数 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回对应的值,否则返回 def </dd></dl>
+
+</div>
+</div>
+<a id="a8c273f2da978c1417e1db00461931760" name="a8c273f2da978c1417e1db00461931760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c273f2da978c1417e1db00461931760">&#9670;&#160;</a></span>has_cookie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::HttpRequest::has_cookie </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>val</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>判断 HTTP 请求的 Cookie 参数是否存在 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>如果存在, val 非空则赋值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否存在 </dd></dl>
+
+</div>
+</div>
+<a id="a3483bb1399dd06becea724cf4e56d2f6" name="a3483bb1399dd06becea724cf4e56d2f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3483bb1399dd06becea724cf4e56d2f6">&#9670;&#160;</a></span>has_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::HttpRequest::has_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>val</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>判断 HTTP 请求的头部参数是否存在 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>如果存在, val 非空则赋值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否存在 </dd></dl>
+
+</div>
+</div>
+<a id="ad773262eb11b54510864418c13e4c904" name="ad773262eb11b54510864418c13e4c904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad773262eb11b54510864418c13e4c904">&#9670;&#160;</a></span>has_param()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::HttpRequest::has_param </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>val</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>判断 HTTP 请求的请求参数是否存在 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>如果存在, val 非空则赋值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否存在 </dd></dl>
+
+</div>
+</div>
+<a id="a039d4b0c7455c7e6e65833d6a9ed5dc7" name="a039d4b0c7455c7e6e65833d6a9ed5dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a039d4b0c7455c7e6e65833d6a9ed5dc7">&#9670;&#160;</a></span>header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::http::HttpRequest::header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 HTTP 请求的头部参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在则返回对应值,否则返回默认值 </dd></dl>
+
+</div>
+</div>
+<a id="a0aba50d022b722a7748dbe7f2a643e44" name="a0aba50d022b722a7748dbe7f2a643e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aba50d022b722a7748dbe7f2a643e44">&#9670;&#160;</a></span>param()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::http::HttpRequest::param </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 HTTP 请求的请求参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在则返回对应值,否则返回默认值 </dd></dl>
+
+</div>
+</div>
+<a id="aac7f669b1b52c2aa9c38fa9107d77660" name="aac7f669b1b52c2aa9c38fa9107d77660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac7f669b1b52c2aa9c38fa9107d77660">&#9670;&#160;</a></span>set_body()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_body </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的消息体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>消息体 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aff5fe8bb01999c56955e980ed805518e" name="aff5fe8bb01999c56955e980ed805518e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff5fe8bb01999c56955e980ed805518e">&#9670;&#160;</a></span>set_cookie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_cookie </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的 Cookie 参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0975081840c4a3c6fc4dd7ba82140007" name="a0975081840c4a3c6fc4dd7ba82140007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0975081840c4a3c6fc4dd7ba82140007">&#9670;&#160;</a></span>set_cookies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_cookies </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的 Cookie MAP </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>map </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac36b8d7b7261424a1b6c7cb142775d48" name="ac36b8d7b7261424a1b6c7cb142775d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36b8d7b7261424a1b6c7cb142775d48">&#9670;&#160;</a></span>set_fragment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_fragment </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的 Fragment </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>fragment </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17740a2a8d6c2562abb2e9c090103842" name="a17740a2a8d6c2562abb2e9c090103842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17740a2a8d6c2562abb2e9c090103842">&#9670;&#160;</a></span>set_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_header </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的头部参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b9a1092b37cd2feff86b6ece2c836bb" name="a2b9a1092b37cd2feff86b6ece2c836bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9a1092b37cd2feff86b6ece2c836bb">&#9670;&#160;</a></span>set_headers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_headers </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的头部 MAP </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>map </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef124d617b93d8e10a19496c096dc6ef" name="aef124d617b93d8e10a19496c096dc6ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef124d617b93d8e10a19496c096dc6ef">&#9670;&#160;</a></span>set_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_method </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="http_8hpp.html#a339f68e9dc3d89f314c83a5f4a34f2ed">HttpMethod</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的方法名 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>HTTP 请求 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2af36900cdf7cf0349c4556024704694" name="a2af36900cdf7cf0349c4556024704694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af36900cdf7cf0349c4556024704694">&#9670;&#160;</a></span>set_param()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_param </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的请求参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad9723953b392ac325a5b6f2ee533db4f" name="ad9723953b392ac325a5b6f2ee533db4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9723953b392ac325a5b6f2ee533db4f">&#9670;&#160;</a></span>set_params()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_params </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmyserver_1_1http_1_1_http_request.html#adc4989b1e56c7f360cf2abcda2a7c67d">MapType</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的参数 MAP </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>map </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a76d2577c312c1a1e0fe0a0ecfa3f2572" name="a76d2577c312c1a1e0fe0a0ecfa3f2572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d2577c312c1a1e0fe0a0ecfa3f2572">&#9670;&#160;</a></span>set_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_path </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的路径 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>请求路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8988084d06dc45f91438a6b4e0ba951d" name="a8988084d06dc45f91438a6b4e0ba951d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8988084d06dc45f91438a6b4e0ba951d">&#9670;&#160;</a></span>set_query()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_query </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的查询参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>查询参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a74f2ac1a0c9a54f3e0113f4acf948116" name="a74f2ac1a0c9a54f3e0113f4acf948116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f2ac1a0c9a54f3e0113f4acf948116">&#9670;&#160;</a></span>set_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::http::HttpRequest::set_version </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置 HTTP 请求的协议版本 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>协议版本 0x11, 0x10 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92f30bde890c229617cdd3836759249b" name="a92f30bde890c229617cdd3836759249b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f30bde890c229617cdd3836759249b">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::http::HttpRequest::to_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>转成字符串类型 </p>
+<dl class="section return"><dt>返回</dt><dd>字符串 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/http/<a class="el" href="http_8hpp_source.html">http.hpp</a></li>
+<li>myserver/http/http.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

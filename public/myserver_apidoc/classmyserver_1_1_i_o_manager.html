@@ -1,0 +1,733 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::IOManager类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_i_o_manager.html">IOManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="classmyserver_1_1_i_o_manager-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::IOManager类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>IO 协程调度器  
+ <a href="classmyserver_1_1_i_o_manager.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="iomanager_8hpp_source.html">iomanager.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 myserver::IOManager 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_i_o_manager.png" usemap="#myserver::IOManager_map" alt=""/>
+  <map id="myserver::IOManager_map" name="myserver::IOManager_map">
+<area href="classmyserver_1_1_scheduler.html" alt="myserver::Scheduler" shape="rect" coords="0,0,153,24"/>
+<area href="classmyserver_1_1_timer_manager.html" title="定时器管理器" alt="myserver::TimerManager" shape="rect" coords="163,0,316,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:af2e8b737ea7018c2b0ba6938ff7e59a5"><td class="memItemLeft" align="right" valign="top"><a id="af2e8b737ea7018c2b0ba6938ff7e59a5" name="af2e8b737ea7018c2b0ba6938ff7e59a5"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a> { <b>NONE</b> = 0x0
+, <b>READ</b> = 0x1
+, <b>WRITE</b> = 0x4
+ }</td></tr>
+<tr class="memdesc:af2e8b737ea7018c2b0ba6938ff7e59a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">IO 事件类型 <br /></td></tr>
+<tr class="separator:af2e8b737ea7018c2b0ba6938ff7e59a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c57dbb4ad9955d486a49295c69ee5f"><td class="memItemLeft" align="right" valign="top"><a id="a30c57dbb4ad9955d486a49295c69ee5f" name="a30c57dbb4ad9955d486a49295c69ee5f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_i_o_manager.html">IOManager</a> &gt;</td></tr>
+<tr class="separator:a30c57dbb4ad9955d486a49295c69ee5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classmyserver_1_1_scheduler"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classmyserver_1_1_scheduler')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td></tr>
+<tr class="memitem:aa2c3712670195c8363e116b4c6856a3a inherit pub_types_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="aa2c3712670195c8363e116b4c6856a3a" name="aa2c3712670195c8363e116b4c6856a3a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_scheduler.html">Scheduler</a> &gt;</td></tr>
+<tr class="separator:aa2c3712670195c8363e116b4c6856a3a inherit pub_types_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c5f013bc6acb385afff4bb7a477a29 inherit pub_types_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="a04c5f013bc6acb385afff4bb7a477a29" name="a04c5f013bc6acb385afff4bb7a477a29"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MutexType</b> = <a class="el" href="classmyserver_1_1_mutex.html">myserver::Mutex</a></td></tr>
+<tr class="separator:a04c5f013bc6acb385afff4bb7a477a29 inherit pub_types_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a148050a9d320cce562745e392733dafb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a148050a9d320cce562745e392733dafb">IOManager</a> (size_t threads=1, bool use_caller=true, const std::string &amp;<a class="el" href="classmyserver_1_1_scheduler.html#a04169a3c754e7f95d5eb379f3498fc6d">name</a>=&quot;DEFAULT&quot;)</td></tr>
+<tr class="memdesc:a148050a9d320cce562745e392733dafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a148050a9d320cce562745e392733dafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfbd8a792f2c878f3afc18b6feee94e9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#abfbd8a792f2c878f3afc18b6feee94e9">~IOManager</a> ()</td></tr>
+<tr class="memdesc:abfbd8a792f2c878f3afc18b6feee94e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:abfbd8a792f2c878f3afc18b6feee94e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e180a98b50a5525b32c6d53d544efc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a77e180a98b50a5525b32c6d53d544efc">add_event</a> (int fd, <a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a> event, std::function&lt; void()&gt; cb=nullptr)</td></tr>
+<tr class="memdesc:a77e180a98b50a5525b32c6d53d544efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加事件  <br /></td></tr>
+<tr class="separator:a77e180a98b50a5525b32c6d53d544efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d83bddc12a1e93b8f96596894133fff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a4d83bddc12a1e93b8f96596894133fff">del_event</a> (int fd, <a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a> event)</td></tr>
+<tr class="memdesc:a4d83bddc12a1e93b8f96596894133fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除事件  <br /></td></tr>
+<tr class="separator:a4d83bddc12a1e93b8f96596894133fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a237a40df0407379b71d6fcbaa0b8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a75a237a40df0407379b71d6fcbaa0b8a">cancel_event</a> (int fd, <a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a> event)</td></tr>
+<tr class="memdesc:a75a237a40df0407379b71d6fcbaa0b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭事件（立即执行）  <br /></td></tr>
+<tr class="separator:a75a237a40df0407379b71d6fcbaa0b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04fcc68ab496416edee1f3792c2d723"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#ab04fcc68ab496416edee1f3792c2d723">cancel_all</a> (int fd)</td></tr>
+<tr class="memdesc:ab04fcc68ab496416edee1f3792c2d723"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭所有事件  <br /></td></tr>
+<tr class="separator:ab04fcc68ab496416edee1f3792c2d723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classmyserver_1_1_scheduler"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmyserver_1_1_scheduler')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td></tr>
+<tr class="memitem:a92a7f9b9adbab410c55a24c6ba5f9628 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a92a7f9b9adbab410c55a24c6ba5f9628">Scheduler</a> (size_t thread_num=1, bool use_caller=true, const std::string &amp;<a class="el" href="classmyserver_1_1_scheduler.html#a04169a3c754e7f95d5eb379f3498fc6d">name</a>=&quot;    &quot;)</td></tr>
+<tr class="memdesc:a92a7f9b9adbab410c55a24c6ba5f9628 inherit pub_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a92a7f9b9adbab410c55a24c6ba5f9628 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae871e94a5c3ca3b9f7fab956c3cc8358 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#ae871e94a5c3ca3b9f7fab956c3cc8358">~Scheduler</a> ()</td></tr>
+<tr class="memdesc:ae871e94a5c3ca3b9f7fab956c3cc8358 inherit pub_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:ae871e94a5c3ca3b9f7fab956c3cc8358 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04169a3c754e7f95d5eb379f3498fc6d inherit pub_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a04169a3c754e7f95d5eb379f3498fc6d">name</a> () const</td></tr>
+<tr class="memdesc:a04169a3c754e7f95d5eb379f3498fc6d inherit pub_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取调度器名称  <br /></td></tr>
+<tr class="separator:a04169a3c754e7f95d5eb379f3498fc6d inherit pub_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f12a36332e2fbed5183de73904d98b8 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a4f12a36332e2fbed5183de73904d98b8">start</a> ()</td></tr>
+<tr class="memdesc:a4f12a36332e2fbed5183de73904d98b8 inherit pub_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度器开始运行  <br /></td></tr>
+<tr class="separator:a4f12a36332e2fbed5183de73904d98b8 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bcbf5c43984ee45bda9e2a933b8b3f inherit pub_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#ae3bcbf5c43984ee45bda9e2a933b8b3f">stop</a> ()</td></tr>
+<tr class="memdesc:ae3bcbf5c43984ee45bda9e2a933b8b3f inherit pub_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止调度器  <br /></td></tr>
+<tr class="separator:ae3bcbf5c43984ee45bda9e2a933b8b3f inherit pub_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53204cf5a81206fef5e125ea24af66d7 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memTemplParams" colspan="2">template&lt;Executable T&gt; </td></tr>
+<tr class="memitem:a53204cf5a81206fef5e125ea24af66d7 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a53204cf5a81206fef5e125ea24af66d7">schedule</a> (T fc, int thread=-1)</td></tr>
+<tr class="memdesc:a53204cf5a81206fef5e125ea24af66d7 inherit pub_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">向任务队列中添加任务  <br /></td></tr>
+<tr class="separator:a53204cf5a81206fef5e125ea24af66d7 inherit pub_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a442da29a1010ab10a93c17c8221ae00c inherit pub_methods_classmyserver_1_1_scheduler"><td class="memTemplParams" colspan="2">template&lt;typename InputIterator &gt; <br />
+requires requires(InputIterator i) { Executable&lt;std::remove_reference_t&lt;decltype(*i)&gt;&gt;; }</td></tr>
+<tr class="memitem:a442da29a1010ab10a93c17c8221ae00c inherit pub_methods_classmyserver_1_1_scheduler"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a442da29a1010ab10a93c17c8221ae00c">schedule</a> (InputIterator begin, InputIterator end)</td></tr>
+<tr class="memdesc:a442da29a1010ab10a93c17c8221ae00c inherit pub_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">向任务队列中添加一批任务  <br /></td></tr>
+<tr class="separator:a442da29a1010ab10a93c17c8221ae00c inherit pub_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classmyserver_1_1_timer_manager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmyserver_1_1_timer_manager')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td></tr>
+<tr class="memitem:a0c1e13ccc7467c212ce009d90789818a inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a0c1e13ccc7467c212ce009d90789818a">TimerManager</a> ()</td></tr>
+<tr class="memdesc:a0c1e13ccc7467c212ce009d90789818a inherit pub_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a0c1e13ccc7467c212ce009d90789818a inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131480ea9d2fa06fd6573c8eba94ba29 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a131480ea9d2fa06fd6573c8eba94ba29">~TimerManager</a> ()</td></tr>
+<tr class="memdesc:a131480ea9d2fa06fd6573c8eba94ba29 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a131480ea9d2fa06fd6573c8eba94ba29 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d96a14c3ed1eeee737a20b7bc8eaab inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">Timer::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a53d96a14c3ed1eeee737a20b7bc8eaab">add_timer</a> (uint64_t ms, std::function&lt; void()&gt; cb, bool recurring=false)</td></tr>
+<tr class="memdesc:a53d96a14c3ed1eeee737a20b7bc8eaab inherit pub_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加定时器  <br /></td></tr>
+<tr class="separator:a53d96a14c3ed1eeee737a20b7bc8eaab inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaf91bf708efa08008e8d5201d2b909b inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">Timer::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#aeaf91bf708efa08008e8d5201d2b909b">add_condition_timer</a> (uint64_t ms, std::function&lt; void()&gt; cb, std::weak_ptr&lt; void &gt; weak_cond, bool recurring=false)</td></tr>
+<tr class="memdesc:aeaf91bf708efa08008e8d5201d2b909b inherit pub_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加条件定时器  <br /></td></tr>
+<tr class="separator:aeaf91bf708efa08008e8d5201d2b909b inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646c1c8e869ab932c80714afed357a48 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a646c1c8e869ab932c80714afed357a48">next_timer</a> ()</td></tr>
+<tr class="memdesc:a646c1c8e869ab932c80714afed357a48 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取距离下一个定时器触发时间的时间间隔  <br /></td></tr>
+<tr class="separator:a646c1c8e869ab932c80714afed357a48 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35a66cb92f122420b65976ebecc849a inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#af35a66cb92f122420b65976ebecc849a">list_expired_cb</a> (std::vector&lt; std::function&lt; void()&gt; &gt; &amp;cbs)</td></tr>
+<tr class="memdesc:af35a66cb92f122420b65976ebecc849a inherit pub_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取所有触发时间已到的定时器  <br /></td></tr>
+<tr class="separator:af35a66cb92f122420b65976ebecc849a inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f6352d0d125e4569c7c2fe8b9470e7 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a40f6352d0d125e4569c7c2fe8b9470e7">has_timer</a> () const</td></tr>
+<tr class="memdesc:a40f6352d0d125e4569c7c2fe8b9470e7 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前是否有定时器  <br /></td></tr>
+<tr class="separator:a40f6352d0d125e4569c7c2fe8b9470e7 inherit pub_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a11b83dfd5198f7d30fd69b376dd46526"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmyserver_1_1_i_o_manager.html">IOManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a11b83dfd5198f7d30fd69b376dd46526">get_this</a> ()</td></tr>
+<tr class="memdesc:a11b83dfd5198f7d30fd69b376dd46526"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 IO 协程调度器的指针  <br /></td></tr>
+<tr class="separator:a11b83dfd5198f7d30fd69b376dd46526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classmyserver_1_1_scheduler"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classmyserver_1_1_scheduler')"><img src="closed.png" alt="-"/>&#160;静态 Public 成员函数 继承自 <a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td></tr>
+<tr class="memitem:a3a306eb63b906e87deeafad8e1b756d2 inherit pub_static_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmyserver_1_1_scheduler.html">Scheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a3a306eb63b906e87deeafad8e1b756d2">get_this</a> ()</td></tr>
+<tr class="memdesc:a3a306eb63b906e87deeafad8e1b756d2 inherit pub_static_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取调度器指针  <br /></td></tr>
+<tr class="separator:a3a306eb63b906e87deeafad8e1b756d2 inherit pub_static_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af104a48888bad113db6379cde18e9df8 inherit pub_static_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmyserver_1_1_fiber.html">Fiber</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#af104a48888bad113db6379cde18e9df8">get_main_fiber</a> ()</td></tr>
+<tr class="memdesc:af104a48888bad113db6379cde18e9df8 inherit pub_static_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取调度协程  <br /></td></tr>
+<tr class="separator:af104a48888bad113db6379cde18e9df8 inherit pub_static_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:ac932da9a8a4ff63070d468d3016da2da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#ac932da9a8a4ff63070d468d3016da2da">tickle</a> () override</td></tr>
+<tr class="memdesc:ac932da9a8a4ff63070d468d3016da2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">唤醒其他线程  <br /></td></tr>
+<tr class="separator:ac932da9a8a4ff63070d468d3016da2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe127a648fd02ab4b072a62003af5ba1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#abe127a648fd02ab4b072a62003af5ba1">stopping</a> () override</td></tr>
+<tr class="memdesc:abe127a648fd02ab4b072a62003af5ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断调度是否将要结束  <br /></td></tr>
+<tr class="separator:abe127a648fd02ab4b072a62003af5ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62bb2921b469378c0e74402cca67f8f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a62bb2921b469378c0e74402cca67f8f8">stopping</a> (uint64_t &amp;timeout)</td></tr>
+<tr class="memdesc:a62bb2921b469378c0e74402cca67f8f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断调度是否将要，并获取下一个计时器的触发时间  <br /></td></tr>
+<tr class="separator:a62bb2921b469378c0e74402cca67f8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9e289e53cc32e9dead92a3962fe21c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a9b9e289e53cc32e9dead92a3962fe21c">idle</a> () override</td></tr>
+<tr class="memdesc:a9b9e289e53cc32e9dead92a3962fe21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">在空闲的线程上执行的函数 线程 idle 时阻塞在 epoll_wait 中  <br /></td></tr>
+<tr class="separator:a9b9e289e53cc32e9dead92a3962fe21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47b20484b5f5bed97fe965de1da3ebd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#a47b20484b5f5bed97fe965de1da3ebd2">context_resize</a> (size_t size)</td></tr>
+<tr class="memdesc:a47b20484b5f5bed97fe965de1da3ebd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">重新分配 fd 集合  <br /></td></tr>
+<tr class="separator:a47b20484b5f5bed97fe965de1da3ebd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1acf6ed36f5c82a3b909b577b718a7b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_i_o_manager.html#ac1acf6ed36f5c82a3b909b577b718a7b">on_timer_insert_at_front</a> () override</td></tr>
+<tr class="memdesc:ac1acf6ed36f5c82a3b909b577b718a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">当新插入的定时器恰好是下一个触发的定时器时执行的回调  <br /></td></tr>
+<tr class="separator:ac1acf6ed36f5c82a3b909b577b718a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classmyserver_1_1_scheduler"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmyserver_1_1_scheduler')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td></tr>
+<tr class="memitem:a7949e619a87b77826e44ea67188acb26 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a7949e619a87b77826e44ea67188acb26">tickle</a> ()</td></tr>
+<tr class="memdesc:a7949e619a87b77826e44ea67188acb26 inherit pro_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">唤醒其他线程  <br /></td></tr>
+<tr class="separator:a7949e619a87b77826e44ea67188acb26 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac37cf16e1a453a3955a561b34bfdac2 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#aac37cf16e1a453a3955a561b34bfdac2">run</a> ()</td></tr>
+<tr class="memdesc:aac37cf16e1a453a3955a561b34bfdac2 inherit pro_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度方法 所有的调度协程中将执行此函数  <br /></td></tr>
+<tr class="separator:aac37cf16e1a453a3955a561b34bfdac2 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f76395928144ae6868c6c00fb7bfda8 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a1f76395928144ae6868c6c00fb7bfda8">stopping</a> ()</td></tr>
+<tr class="memdesc:a1f76395928144ae6868c6c00fb7bfda8 inherit pro_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断调度是否将要结束  <br /></td></tr>
+<tr class="separator:a1f76395928144ae6868c6c00fb7bfda8 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3610ef0999ba3e2c4b1cb5a74bd106bc inherit pro_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#a3610ef0999ba3e2c4b1cb5a74bd106bc">idle</a> ()</td></tr>
+<tr class="memdesc:a3610ef0999ba3e2c4b1cb5a74bd106bc inherit pro_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">在空闲的线程上执行的函数  <br /></td></tr>
+<tr class="separator:a3610ef0999ba3e2c4b1cb5a74bd106bc inherit pro_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed263b292761e753c9c3d13212cb220 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#abed263b292761e753c9c3d13212cb220">set_this</a> ()</td></tr>
+<tr class="memdesc:abed263b292761e753c9c3d13212cb220 inherit pro_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置调度器指针  <br /></td></tr>
+<tr class="separator:abed263b292761e753c9c3d13212cb220 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d9dbc842b6706eb1f89ca52d25d2e2 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_scheduler.html#ab9d9dbc842b6706eb1f89ca52d25d2e2">has_idle_thread</a> ()</td></tr>
+<tr class="memdesc:ab9d9dbc842b6706eb1f89ca52d25d2e2 inherit pro_methods_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">查看当前是否存在闲置线程  <br /></td></tr>
+<tr class="separator:ab9d9dbc842b6706eb1f89ca52d25d2e2 inherit pro_methods_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classmyserver_1_1_timer_manager"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmyserver_1_1_timer_manager')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classmyserver_1_1_timer_manager.html">myserver::TimerManager</a></td></tr>
+<tr class="memitem:a8bc7865791968e24e7b6889ed05903e9 inherit pro_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a8bc7865791968e24e7b6889ed05903e9">on_timer_insert_at_front</a> ()=0</td></tr>
+<tr class="memdesc:a8bc7865791968e24e7b6889ed05903e9 inherit pro_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">当新插入的定时器恰好是下一个触发的定时器时执行的回调  <br /></td></tr>
+<tr class="separator:a8bc7865791968e24e7b6889ed05903e9 inherit pro_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8021dbc8445620bda6b510cc6f9f45bf inherit pro_methods_classmyserver_1_1_timer_manager"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a8021dbc8445620bda6b510cc6f9f45bf">add_timer</a> (Timer::ptr val, <a class="el" href="structmyserver_1_1_write_scoped_lock_impl.html">myserver::WriteLock</a> &amp;lock)</td></tr>
+<tr class="memdesc:a8021dbc8445620bda6b510cc6f9f45bf inherit pro_methods_classmyserver_1_1_timer_manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加定时器，并解除 lock 锁  <br /></td></tr>
+<tr class="separator:a8021dbc8445620bda6b510cc6f9f45bf inherit pro_methods_classmyserver_1_1_timer_manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_classmyserver_1_1_scheduler"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classmyserver_1_1_scheduler')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classmyserver_1_1_scheduler.html">myserver::Scheduler</a></td></tr>
+<tr class="memitem:aced3f89bc8af3b9884d1d1e9af835fe6 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="aced3f89bc8af3b9884d1d1e9af835fe6" name="aced3f89bc8af3b9884d1d1e9af835fe6"></a>
+std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_thread_ids</b></td></tr>
+<tr class="memdesc:aced3f89bc8af3b9884d1d1e9af835fe6 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">线程池中的线程 id <br /></td></tr>
+<tr class="separator:aced3f89bc8af3b9884d1d1e9af835fe6 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a367a698f0a16e6b99b98ffe739673ce6 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="a367a698f0a16e6b99b98ffe739673ce6" name="a367a698f0a16e6b99b98ffe739673ce6"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>m_thread_count</b> = 0</td></tr>
+<tr class="memdesc:a367a698f0a16e6b99b98ffe739673ce6 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">线程数 <br /></td></tr>
+<tr class="separator:a367a698f0a16e6b99b98ffe739673ce6 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ab3b298dfbd33eb0164a2e9c52ce786 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="a7ab3b298dfbd33eb0164a2e9c52ce786" name="a7ab3b298dfbd33eb0164a2e9c52ce786"></a>
+std::atomic&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_active_thread_count</b> = { 0 }</td></tr>
+<tr class="memdesc:a7ab3b298dfbd33eb0164a2e9c52ce786 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">正在执行工作协程的线程数 <br /></td></tr>
+<tr class="separator:a7ab3b298dfbd33eb0164a2e9c52ce786 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb0ff74baa93f1fc18d03cd60340717 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="a4eb0ff74baa93f1fc18d03cd60340717" name="a4eb0ff74baa93f1fc18d03cd60340717"></a>
+std::atomic&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_idle_thread_count</b> = { 0 }</td></tr>
+<tr class="memdesc:a4eb0ff74baa93f1fc18d03cd60340717 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">空闲线程数 <br /></td></tr>
+<tr class="separator:a4eb0ff74baa93f1fc18d03cd60340717 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69afa20bdd5861ebc4e2ff4011049f3 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="ac69afa20bdd5861ebc4e2ff4011049f3" name="ac69afa20bdd5861ebc4e2ff4011049f3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_stopping</b> = true</td></tr>
+<tr class="memdesc:ac69afa20bdd5861ebc4e2ff4011049f3 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否即将停止调度 <br /></td></tr>
+<tr class="separator:ac69afa20bdd5861ebc4e2ff4011049f3 inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad68d9328310b315946e00120912508d inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="aad68d9328310b315946e00120912508d" name="aad68d9328310b315946e00120912508d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_auto_stop</b> = false</td></tr>
+<tr class="memdesc:aad68d9328310b315946e00120912508d inherit pro_attribs_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自动停止 <br /></td></tr>
+<tr class="separator:aad68d9328310b315946e00120912508d inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a472940d743e3fa415c6bdf194b7d7b inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memItemLeft" align="right" valign="top"><a id="a2a472940d743e3fa415c6bdf194b7d7b" name="a2a472940d743e3fa415c6bdf194b7d7b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_root_thread_id</b> = 0</td></tr>
+<tr class="memdesc:a2a472940d743e3fa415c6bdf194b7d7b inherit pro_attribs_classmyserver_1_1_scheduler"><td class="mdescLeft">&#160;</td><td class="mdescRight">主线程 id <br /></td></tr>
+<tr class="separator:a2a472940d743e3fa415c6bdf194b7d7b inherit pro_attribs_classmyserver_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>IO 协程调度器 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a148050a9d320cce562745e392733dafb" name="a148050a9d320cce562745e392733dafb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148050a9d320cce562745e392733dafb">&#9670;&#160;</a></span>IOManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::IOManager::IOManager </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>threads</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_caller</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;DEFAULT&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">threads</td><td>线程数 </td></tr>
+    <tr><td class="paramname">use_caller</td><td>主线程是否参与调度 </td></tr>
+    <tr><td class="paramname">name</td><td>调度器名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abfbd8a792f2c878f3afc18b6feee94e9" name="abfbd8a792f2c878f3afc18b6feee94e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfbd8a792f2c878f3afc18b6feee94e9">&#9670;&#160;</a></span>~IOManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::IOManager::~IOManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a77e180a98b50a5525b32c6d53d544efc" name="a77e180a98b50a5525b32c6d53d544efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e180a98b50a5525b32c6d53d544efc">&#9670;&#160;</a></span>add_event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int myserver::IOManager::add_event </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a>&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>cb</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>添加事件到描述符 fd 上 </td></tr>
+    <tr><td class="paramname">event</td><td>事件类型 </td></tr>
+    <tr><td class="paramname">cb</td><td>发生事件时执行的回调 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 添加成功返回 0 ，添加失败返回 1 </dd></dl>
+
+</div>
+</div>
+<a id="ab04fcc68ab496416edee1f3792c2d723" name="ab04fcc68ab496416edee1f3792c2d723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04fcc68ab496416edee1f3792c2d723">&#9670;&#160;</a></span>cancel_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::IOManager::cancel_all </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭所有事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>关闭事件的文件描述符 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 关闭成功 </dd>
+<dd>
+false 关闭失败 </dd></dl>
+
+</div>
+</div>
+<a id="a75a237a40df0407379b71d6fcbaa0b8a" name="a75a237a40df0407379b71d6fcbaa0b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a237a40df0407379b71d6fcbaa0b8a">&#9670;&#160;</a></span>cancel_event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::IOManager::cancel_event </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a>&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>关闭事件（立即执行） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>关闭事件的文件描述符 </td></tr>
+    <tr><td class="paramname">event</td><td>关闭事件的类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 关闭成功 </dd>
+<dd>
+false 关闭失败 </dd></dl>
+
+</div>
+</div>
+<a id="a47b20484b5f5bed97fe965de1da3ebd2" name="a47b20484b5f5bed97fe965de1da3ebd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47b20484b5f5bed97fe965de1da3ebd2">&#9670;&#160;</a></span>context_resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::IOManager::context_resize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重新分配 fd 集合 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>fd 集合大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4d83bddc12a1e93b8f96596894133fff" name="a4d83bddc12a1e93b8f96596894133fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d83bddc12a1e93b8f96596894133fff">&#9670;&#160;</a></span>del_event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::IOManager::del_event </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmyserver_1_1_i_o_manager.html#af2e8b737ea7018c2b0ba6938ff7e59a5">Event</a>&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>从文件描述符 fd 上删除事件 </td></tr>
+    <tr><td class="paramname">event</td><td>删除事件的类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 删除成功 </dd>
+<dd>
+false 删除失败 </dd></dl>
+
+</div>
+</div>
+<a id="a11b83dfd5198f7d30fd69b376dd46526" name="a11b83dfd5198f7d30fd69b376dd46526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b83dfd5198f7d30fd69b376dd46526">&#9670;&#160;</a></span>get_this()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmyserver_1_1_i_o_manager.html">IOManager</a> * myserver::IOManager::get_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取 IO 协程调度器的指针 </p>
+<dl class="section return"><dt>返回</dt><dd>IOManager* 指向 IO 协程调度器的指针 </dd></dl>
+
+</div>
+</div>
+<a id="a9b9e289e53cc32e9dead92a3962fe21c" name="a9b9e289e53cc32e9dead92a3962fe21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9e289e53cc32e9dead92a3962fe21c">&#9670;&#160;</a></span>idle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::IOManager::idle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在空闲的线程上执行的函数 线程 idle 时阻塞在 epoll_wait 中 </p>
+
+<p>重载 <a class="el" href="classmyserver_1_1_scheduler.html#a3610ef0999ba3e2c4b1cb5a74bd106bc">myserver::Scheduler</a> .</p>
+
+</div>
+</div>
+<a id="ac1acf6ed36f5c82a3b909b577b718a7b" name="ac1acf6ed36f5c82a3b909b577b718a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1acf6ed36f5c82a3b909b577b718a7b">&#9670;&#160;</a></span>on_timer_insert_at_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::IOManager::on_timer_insert_at_front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当新插入的定时器恰好是下一个触发的定时器时执行的回调 </p>
+
+<p>实现了 <a class="el" href="classmyserver_1_1_timer_manager.html#a8bc7865791968e24e7b6889ed05903e9">myserver::TimerManager</a>.</p>
+
+</div>
+</div>
+<a id="abe127a648fd02ab4b072a62003af5ba1" name="abe127a648fd02ab4b072a62003af5ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe127a648fd02ab4b072a62003af5ba1">&#9670;&#160;</a></span>stopping() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::IOManager::stopping </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断调度是否将要结束 </p>
+<dl class="section return"><dt>返回</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p>重载 <a class="el" href="classmyserver_1_1_scheduler.html#a1f76395928144ae6868c6c00fb7bfda8">myserver::Scheduler</a> .</p>
+
+</div>
+</div>
+<a id="a62bb2921b469378c0e74402cca67f8f8" name="a62bb2921b469378c0e74402cca67f8f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bb2921b469378c0e74402cca67f8f8">&#9670;&#160;</a></span>stopping() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::IOManager::stopping </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t &amp;&#160;</td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断调度是否将要，并获取下一个计时器的触发时间 </p>
+<dl class="section return"><dt>返回</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
+<a id="ac932da9a8a4ff63070d468d3016da2da" name="ac932da9a8a4ff63070d468d3016da2da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac932da9a8a4ff63070d468d3016da2da">&#9670;&#160;</a></span>tickle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::IOManager::tickle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>唤醒其他线程 </p>
+
+<p>重载 <a class="el" href="classmyserver_1_1_scheduler.html#a7949e619a87b77826e44ea67188acb26">myserver::Scheduler</a> .</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="iomanager_8hpp_source.html">iomanager.hpp</a></li>
+<li>myserver/iomanager.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

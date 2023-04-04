@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::Fiber类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_fiber.html">Fiber</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="classmyserver_1_1_fiber-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::Fiber类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>协程类  
+ <a href="classmyserver_1_1_fiber.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="fiber_8hpp_source.html">fiber.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 myserver::Fiber 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_fiber.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a7f99ee0cb71945a16d3c6c277e7ba324"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324">State</a> { <br />
+&#160;&#160;<a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324aae1b3df6ff4151a92b769a18a51e74b8">INIT</a>
+, <a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324aacf4947d6afa04ca0c7befeb5d0723c4">HOLD</a>
+, <a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324a87dba0f126ecce869903acfd6db27712">EXEC</a>
+, <a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324a114d857aee425a63e5beb05bcb3f24c2">TERM</a>
+, <br />
+&#160;&#160;<a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324aeb7a144c255d64f0b5663c0d167678ca">READY</a>
+, <a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324a611de48fb95ec4668e101d1a458f754a">EXCEPT</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a7f99ee0cb71945a16d3c6c277e7ba324"><td class="mdescLeft">&#160;</td><td class="mdescRight">协程状态  <a href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324">更多...</a><br /></td></tr>
+<tr class="separator:a7f99ee0cb71945a16d3c6c277e7ba324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c8f145da571d970d58d1be4f7c013e"><td class="memItemLeft" align="right" valign="top"><a id="ac7c8f145da571d970d58d1be4f7c013e" name="ac7c8f145da571d970d58d1be4f7c013e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_fiber.html">Fiber</a> &gt;</td></tr>
+<tr class="separator:ac7c8f145da571d970d58d1be4f7c013e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a57eb14df17879f98e505c0d3e97edc0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a57eb14df17879f98e505c0d3e97edc0b">Fiber</a> (std::function&lt; void()&gt; cb, size_t stacksize=0, bool use_caller=false)</td></tr>
+<tr class="memdesc:a57eb14df17879f98e505c0d3e97edc0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a57eb14df17879f98e505c0d3e97edc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be2832fd0cad21cc391f7d4bb9aece6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a0be2832fd0cad21cc391f7d4bb9aece6">~Fiber</a> ()</td></tr>
+<tr class="memdesc:a0be2832fd0cad21cc391f7d4bb9aece6"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a0be2832fd0cad21cc391f7d4bb9aece6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6788eacfd113d8221d98cb30cc4720f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#af6788eacfd113d8221d98cb30cc4720f">reset</a> (std::function&lt; void()&gt; cb)</td></tr>
+<tr class="memdesc:af6788eacfd113d8221d98cb30cc4720f"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置协程  <br /></td></tr>
+<tr class="separator:af6788eacfd113d8221d98cb30cc4720f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dcfc7e18fa5db086bed6bb63a9348a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#af5dcfc7e18fa5db086bed6bb63a9348a">swap_in</a> ()</td></tr>
+<tr class="memdesc:af5dcfc7e18fa5db086bed6bb63a9348a"><td class="mdescLeft">&#160;</td><td class="mdescRight">从调度协程切换到该协程  <br /></td></tr>
+<tr class="separator:af5dcfc7e18fa5db086bed6bb63a9348a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520abb137891d043610344744562ef97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a520abb137891d043610344744562ef97">swap_out</a> ()</td></tr>
+<tr class="memdesc:a520abb137891d043610344744562ef97"><td class="mdescLeft">&#160;</td><td class="mdescRight">从该协程切换到调度协程  <br /></td></tr>
+<tr class="separator:a520abb137891d043610344744562ef97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a600d781cae913d99d52541fd8bcf4453"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a600d781cae913d99d52541fd8bcf4453">call</a> ()</td></tr>
+<tr class="memdesc:a600d781cae913d99d52541fd8bcf4453"><td class="mdescLeft">&#160;</td><td class="mdescRight">从 main 函数协程切换到该协程  <br /></td></tr>
+<tr class="separator:a600d781cae913d99d52541fd8bcf4453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e15282b38bc5e333d857ee3041fa791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a9e15282b38bc5e333d857ee3041fa791">back</a> ()</td></tr>
+<tr class="memdesc:a9e15282b38bc5e333d857ee3041fa791"><td class="mdescLeft">&#160;</td><td class="mdescRight">从该协程切换到 main 函数协程  <br /></td></tr>
+<tr class="separator:a9e15282b38bc5e333d857ee3041fa791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6754c37b4d610173781e475db915a6d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#af6754c37b4d610173781e475db915a6d">id</a> () const</td></tr>
+<tr class="memdesc:af6754c37b4d610173781e475db915a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取协程 id  <br /></td></tr>
+<tr class="separator:af6754c37b4d610173781e475db915a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0153a019a605883eff8a19933082f5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324">Fiber::State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#af0153a019a605883eff8a19933082f5e">state</a> () const</td></tr>
+<tr class="memdesc:af0153a019a605883eff8a19933082f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取协程状态  <br /></td></tr>
+<tr class="separator:af0153a019a605883eff8a19933082f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a126837b917d52bf86227201d19dd2bf6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a126837b917d52bf86227201d19dd2bf6">set_this</a> (<a class="el" href="classmyserver_1_1_fiber.html">Fiber</a> *f)</td></tr>
+<tr class="memdesc:a126837b917d52bf86227201d19dd2bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前线程执行的协程对象  <br /></td></tr>
+<tr class="separator:a126837b917d52bf86227201d19dd2bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d6ef3c5549ccedbb8d2f1b9e8b27a8"><td class="memItemLeft" align="right" valign="top">static Fiber::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#ad5d6ef3c5549ccedbb8d2f1b9e8b27a8">get_this</a> ()</td></tr>
+<tr class="memdesc:ad5d6ef3c5549ccedbb8d2f1b9e8b27a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前线程执行的协程对象  <br /></td></tr>
+<tr class="separator:ad5d6ef3c5549ccedbb8d2f1b9e8b27a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fdc26f386c5648ed2f4d3cea50d758f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a0fdc26f386c5648ed2f4d3cea50d758f">yield_to_ready</a> ()</td></tr>
+<tr class="memdesc:a0fdc26f386c5648ed2f4d3cea50d758f"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换到调度协程并把当前协程状态设为就绪  <br /></td></tr>
+<tr class="separator:a0fdc26f386c5648ed2f4d3cea50d758f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d46e4d7937f7ffaf4e48fec73ff0bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#a94d46e4d7937f7ffaf4e48fec73ff0bd">yield_to_hold</a> ()</td></tr>
+<tr class="memdesc:a94d46e4d7937f7ffaf4e48fec73ff0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换到调度协程并把当前协程状态设为挂起  <br /></td></tr>
+<tr class="separator:a94d46e4d7937f7ffaf4e48fec73ff0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90fdc388d0b114a9c8b48131146240d"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#aa90fdc388d0b114a9c8b48131146240d">total_fibers_count</a> ()</td></tr>
+<tr class="memdesc:aa90fdc388d0b114a9c8b48131146240d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取协程总数  <br /></td></tr>
+<tr class="separator:aa90fdc388d0b114a9c8b48131146240d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a53d9ca4524ab930aaec4ac087bb7d"><td class="memItemLeft" align="right" valign="top"><a id="a30a53d9ca4524ab930aaec4ac087bb7d" name="a30a53d9ca4524ab930aaec4ac087bb7d"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>main_func</b> ()</td></tr>
+<tr class="memdesc:a30a53d9ca4524ab930aaec4ac087bb7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">由调度器管理的协程真正执行的函数，包装 m_cb 挂起或结束时返回调度器协程 <br /></td></tr>
+<tr class="separator:a30a53d9ca4524ab930aaec4ac087bb7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a501225773b54279b1028f052ef85af44"><td class="memItemLeft" align="right" valign="top"><a id="a501225773b54279b1028f052ef85af44" name="a501225773b54279b1028f052ef85af44"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>caller_main_func</b> ()</td></tr>
+<tr class="memdesc:a501225773b54279b1028f052ef85af44"><td class="mdescLeft">&#160;</td><td class="mdescRight">由 main 函数协程管理的协程真正执行的函数，包装 m_cb 挂起或结束时返回 main 函数 <br /></td></tr>
+<tr class="separator:a501225773b54279b1028f052ef85af44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb84b9175fe8648864172c2c5a1ef181"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_fiber.html#abb84b9175fe8648864172c2c5a1ef181">get_fiber_id</a> ()</td></tr>
+<tr class="memdesc:abb84b9175fe8648864172c2c5a1ef181"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前协程 id  <br /></td></tr>
+<tr class="separator:abb84b9175fe8648864172c2c5a1ef181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:afb88c77ea5daaefa6c8fa6bc5b9aa5c1"><td class="memItemLeft" align="right" valign="top"><a id="afb88c77ea5daaefa6c8fa6bc5b9aa5c1" name="afb88c77ea5daaefa6c8fa6bc5b9aa5c1"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>Scheduler</b></td></tr>
+<tr class="separator:afb88c77ea5daaefa6c8fa6bc5b9aa5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>协程类 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a7f99ee0cb71945a16d3c6c277e7ba324" name="a7f99ee0cb71945a16d3c6c277e7ba324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f99ee0cb71945a16d3c6c277e7ba324">&#9670;&#160;</a></span>State</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324">myserver::Fiber::State</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>协程状态 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a7f99ee0cb71945a16d3c6c277e7ba324aae1b3df6ff4151a92b769a18a51e74b8" name="a7f99ee0cb71945a16d3c6c277e7ba324aae1b3df6ff4151a92b769a18a51e74b8"></a>INIT&#160;</td><td class="fielddoc"><p>初始化 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7f99ee0cb71945a16d3c6c277e7ba324aacf4947d6afa04ca0c7befeb5d0723c4" name="a7f99ee0cb71945a16d3c6c277e7ba324aacf4947d6afa04ca0c7befeb5d0723c4"></a>HOLD&#160;</td><td class="fielddoc"><p>挂起 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7f99ee0cb71945a16d3c6c277e7ba324a87dba0f126ecce869903acfd6db27712" name="a7f99ee0cb71945a16d3c6c277e7ba324a87dba0f126ecce869903acfd6db27712"></a>EXEC&#160;</td><td class="fielddoc"><p>执行中 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7f99ee0cb71945a16d3c6c277e7ba324a114d857aee425a63e5beb05bcb3f24c2" name="a7f99ee0cb71945a16d3c6c277e7ba324a114d857aee425a63e5beb05bcb3f24c2"></a>TERM&#160;</td><td class="fielddoc"><p>结束 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7f99ee0cb71945a16d3c6c277e7ba324aeb7a144c255d64f0b5663c0d167678ca" name="a7f99ee0cb71945a16d3c6c277e7ba324aeb7a144c255d64f0b5663c0d167678ca"></a>READY&#160;</td><td class="fielddoc"><p>就绪 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7f99ee0cb71945a16d3c6c277e7ba324a611de48fb95ec4668e101d1a458f754a" name="a7f99ee0cb71945a16d3c6c277e7ba324a611de48fb95ec4668e101d1a458f754a"></a>EXCEPT&#160;</td><td class="fielddoc"><p>异常 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a57eb14df17879f98e505c0d3e97edc0b" name="a57eb14df17879f98e505c0d3e97edc0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57eb14df17879f98e505c0d3e97edc0b">&#9670;&#160;</a></span>Fiber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::Fiber::Fiber </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>stacksize</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_caller</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cb</td><td>协程执行的函数 </td></tr>
+    <tr><td class="paramname">stacksize</td><td>协程占大小 </td></tr>
+    <tr><td class="paramname">use_caller</td><td>是否由 main 函数协程创建 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0be2832fd0cad21cc391f7d4bb9aece6" name="a0be2832fd0cad21cc391f7d4bb9aece6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be2832fd0cad21cc391f7d4bb9aece6">&#9670;&#160;</a></span>~Fiber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::Fiber::~Fiber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a9e15282b38bc5e333d857ee3041fa791" name="a9e15282b38bc5e333d857ee3041fa791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e15282b38bc5e333d857ee3041fa791">&#9670;&#160;</a></span>back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从该协程切换到 main 函数协程 </p>
+
+</div>
+</div>
+<a id="a600d781cae913d99d52541fd8bcf4453" name="a600d781cae913d99d52541fd8bcf4453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600d781cae913d99d52541fd8bcf4453">&#9670;&#160;</a></span>call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::call </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从 main 函数协程切换到该协程 </p>
+
+</div>
+</div>
+<a id="abb84b9175fe8648864172c2c5a1ef181" name="abb84b9175fe8648864172c2c5a1ef181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb84b9175fe8648864172c2c5a1ef181">&#9670;&#160;</a></span>get_fiber_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t myserver::Fiber::get_fiber_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前协程 id </p>
+<dl class="section return"><dt>返回</dt><dd>uint64_t 当前协程 id </dd></dl>
+
+</div>
+</div>
+<a id="ad5d6ef3c5549ccedbb8d2f1b9e8b27a8" name="ad5d6ef3c5549ccedbb8d2f1b9e8b27a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d6ef3c5549ccedbb8d2f1b9e8b27a8">&#9670;&#160;</a></span>get_this()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Fiber::ptr myserver::Fiber::get_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前线程执行的协程对象 </p>
+<dl class="section return"><dt>返回</dt><dd>Fiber::ptr 指向当前线程执行的协程对象的共享指针 </dd></dl>
+
+</div>
+</div>
+<a id="af6754c37b4d610173781e475db915a6d" name="af6754c37b4d610173781e475db915a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6754c37b4d610173781e475db915a6d">&#9670;&#160;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t myserver::Fiber::id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取协程 id </p>
+<dl class="section return"><dt>返回</dt><dd>uint64_t 协程 id </dd></dl>
+
+</div>
+</div>
+<a id="af6788eacfd113d8221d98cb30cc4720f" name="af6788eacfd113d8221d98cb30cc4720f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6788eacfd113d8221d98cb30cc4720f">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::reset </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重置协程 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cb</td><td>协程执行的函数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a126837b917d52bf86227201d19dd2bf6" name="a126837b917d52bf86227201d19dd2bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126837b917d52bf86227201d19dd2bf6">&#9670;&#160;</a></span>set_this()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::set_this </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmyserver_1_1_fiber.html">Fiber</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置当前线程执行的协程对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>当前线程执行的协程对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af0153a019a605883eff8a19933082f5e" name="af0153a019a605883eff8a19933082f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0153a019a605883eff8a19933082f5e">&#9670;&#160;</a></span>state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324">Fiber::State</a> myserver::Fiber::state </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取协程状态 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classmyserver_1_1_fiber.html#a7f99ee0cb71945a16d3c6c277e7ba324" title="协程状态">Fiber::State</a> 协程状态 </dd></dl>
+
+</div>
+</div>
+<a id="af5dcfc7e18fa5db086bed6bb63a9348a" name="af5dcfc7e18fa5db086bed6bb63a9348a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5dcfc7e18fa5db086bed6bb63a9348a">&#9670;&#160;</a></span>swap_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::swap_in </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从调度协程切换到该协程 </p>
+
+</div>
+</div>
+<a id="a520abb137891d043610344744562ef97" name="a520abb137891d043610344744562ef97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a520abb137891d043610344744562ef97">&#9670;&#160;</a></span>swap_out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::swap_out </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从该协程切换到调度协程 </p>
+
+</div>
+</div>
+<a id="aa90fdc388d0b114a9c8b48131146240d" name="aa90fdc388d0b114a9c8b48131146240d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90fdc388d0b114a9c8b48131146240d">&#9670;&#160;</a></span>total_fibers_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t myserver::Fiber::total_fibers_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取协程总数 </p>
+<dl class="section return"><dt>返回</dt><dd>uint64_t 协程总数 </dd></dl>
+
+</div>
+</div>
+<a id="a94d46e4d7937f7ffaf4e48fec73ff0bd" name="a94d46e4d7937f7ffaf4e48fec73ff0bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d46e4d7937f7ffaf4e48fec73ff0bd">&#9670;&#160;</a></span>yield_to_hold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::yield_to_hold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>切换到调度协程并把当前协程状态设为挂起 </p>
+
+</div>
+</div>
+<a id="a0fdc26f386c5648ed2f4d3cea50d758f" name="a0fdc26f386c5648ed2f4d3cea50d758f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fdc26f386c5648ed2f4d3cea50d758f">&#9670;&#160;</a></span>yield_to_ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Fiber::yield_to_ready </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>切换到调度协程并把当前协程状态设为就绪 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="fiber_8hpp_source.html">fiber.hpp</a></li>
+<li>myserver/fiber.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

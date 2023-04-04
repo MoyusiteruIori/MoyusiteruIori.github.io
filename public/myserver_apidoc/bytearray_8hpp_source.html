@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver/bytearray.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a222a28e5c087e1a4c54aff1012688fe.html">myserver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">bytearray.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="bytearray_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef __MYSERVER_BYTEARRAY_HPP__</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define __MYSERVER_BYTEARRAY_HPP__</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span>myserver {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classmyserver_1_1_byte_array.html">   25</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_byte_array.html">ByteArray</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;ByteArray&gt;;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structmyserver_1_1_byte_array_1_1_node.html">   30</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structmyserver_1_1_byte_array_1_1_node.html">Node</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_struct" href="structmyserver_1_1_byte_array_1_1_node.html">Node</a>(<span class="keywordtype">size_t</span> s);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <a class="code hl_struct" href="structmyserver_1_1_byte_array_1_1_node.html">Node</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_struct" href="structmyserver_1_1_byte_array_1_1_node.html">~Node</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordtype">char</span>* ptr;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordtype">size_t</span> size;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_struct" href="structmyserver_1_1_byte_array_1_1_node.html">Node</a>* next;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        };</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_class" href="classmyserver_1_1_byte_array.html">ByteArray</a>(<span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aea7257ea878692fe28ca8a46c8d6dfcc">base_size</a> = 4096);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ac2557879d75b685f5cc62c6781817314">~ByteArray</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a4858307597ec96db147856e250834a2c">write_fix_int8</a>  (int8_t value);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a5d53e40e797f7ce5b58a8fa1642c3f68">write_fix_uint8</a> (uint8_t value);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ad7166aae221d1a0394f83ba761886aaa">write_fix_int16</a> (int16_t value);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#acee181845d326b0078cfb53fa631489e">write_fix_uint16</a>(uint16_t value);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aec54dcb96541f36b0c3326ba96a64bde">write_fix_int32</a> (int32_t value);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aa75c3bb91f797495446f41cf5b19ee99">write_fix_uint32</a>(uint32_t value);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aaf89ea675d6f523dccff480c598285e5">write_fix_int64</a> (int64_t value);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#add8dfee7f62de35654b3893431b4b1d1">write_fix_uint64</a>(uint64_t value);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a46b2af24ede9cee987c0764c72688b87">write_int32</a>     (int32_t value);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a2bb1526bfc3ce5ad16ede6eadcfeb3b8">write_uint32</a>    (uint32_t value);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a6e0994fbb7872cf49b81e253c95c49f2">write_int64</a>     (int64_t value);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a93a90e1a13e0fb8f8f1a3ccdece4d011">write_uint64</a>    (uint64_t value);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a1c9ba8c005a83146a81b12634c6596bc">write_float</a>     (<span class="keywordtype">float</span> value);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ac856ca78cbaecf2208e6b9ec9aa662fc">write_double</a>    (<span class="keywordtype">double</span> value);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a0f3fc20f07c6495999d8cf948b275fcf">write_string_fix16</a>  (<span class="keyword">const</span> std::string&amp; value);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ae4c6a702f78c2b5d45dcd59f1cd31580">write_string_fix32</a>  (<span class="keyword">const</span> std::string&amp; value);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a8b139755a350928168d1e5f4ff6aea1c">write_string_fix64</a>  (<span class="keyword">const</span> std::string&amp; value);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a720a89d12e77b558369783850cf34538">write_string_varint</a> (<span class="keyword">const</span> std::string&amp; value);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aa159fad8210c3b776327844e209d5073">write_string_without_length</a>(<span class="keyword">const</span> std::string&amp; value);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        int8_t   <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ae2178dbac69d3e561cb9c333c6255220">read_fix_int8</a>();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        uint8_t  <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ab9402886f7bf0679d77872b47e00b614">read_fix_uint8</a>();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        int16_t  <a class="code hl_function" href="classmyserver_1_1_byte_array.html#afd137d4ee1da3693051949bb0349b4ad">read_fix_int16</a>();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        uint16_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a203442987f05e13bfd392ecbf88904fd">read_fix_uint16</a>();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        int32_t  <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a3917fbfe367949c4e314f336f76301e9">read_fix_int32</a>();</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        uint32_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ad124913252acb13e01cf49515d0c34b7">read_fix_uint32</a>();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        int64_t  <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ad8b9d2bc4630e31b40eb276cd0872156">read_fix_int64</a>();</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        uint64_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a204cd2fed08980b6b4d99e8de9e34b39">read_fix_uint64</a>();</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        int32_t  <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a07c5a5f8ba6e22512bf3b6bfcb05e66e">read_int32</a>();</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        uint32_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a39f95903fa520371d2028e08a6259068">read_uint32</a>();</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        int64_t  <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a84e853ad4fef7525c037fce641bd69ce">read_int64</a>();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        uint64_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#af840b08fe8ec9341c15f989d98867d1d">read_uint64</a>();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordtype">float</span>    <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ae50b054a6f4828aef10d7ae0ec5fb377">read_float</a>();</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keywordtype">double</span>   <a class="code hl_function" href="classmyserver_1_1_byte_array.html#af8eed1d1cdc920429b924372d1461088">read_double</a>();</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        std::string <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a08142a19ba9fb7ac3eb93ecfa4f0f89f">read_string_fix16</a>();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        std::string <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a8654b7b6a8ab51333db8267b6f95b31a">read_string_fix32</a>();</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        std::string <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a1b80325194eb363215b0d95b744d684f">read_string_fix64</a>();</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        std::string <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a526830077119c3e2bdf3ba39a1156c4e">read_string_varint</a>();</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a21f6ac5077f0be9941e7db5d6fb72e8b">clear</a>();</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#afbcaa316177fdde612e6db4e6e785297">write</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* buf, <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a9abda7dea2948426b35f02e60a5dcd03">size</a>);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#adda297e370e60a3f364f70d2b40aba19">read</a> (<span class="keywordtype">void</span>* buf, <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a9abda7dea2948426b35f02e60a5dcd03">size</a>);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#adda297e370e60a3f364f70d2b40aba19">read</a> (<span class="keywordtype">void</span>* buf, <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a9abda7dea2948426b35f02e60a5dcd03">size</a>, <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a15a1164a9dc5749f44dd61d9e4e1be5e">position</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="classmyserver_1_1_byte_array.html#a15a1164a9dc5749f44dd61d9e4e1be5e">  348</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a15a1164a9dc5749f44dd61d9e4e1be5e">position</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_position; }</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ae9e96c5b035e37e96637edd81829f6a8">set_position</a>(<span class="keywordtype">size_t</span> v);</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aac45a7a205de574d234658cb3be7ef37">write_to_file</a> (<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aa2fcf9bc89efc26b2a2ce0fa77151899">read_from_file</a>(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno"><a class="line" href="classmyserver_1_1_byte_array.html#a9abda7dea2948426b35f02e60a5dcd03">  380</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a9abda7dea2948426b35f02e60a5dcd03">size</a>()<span class="keyword">          const </span>{ <span class="keywordflow">return</span> m_size; }</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="classmyserver_1_1_byte_array.html#aea7257ea878692fe28ca8a46c8d6dfcc">  387</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aea7257ea878692fe28ca8a46c8d6dfcc">base_size</a>()<span class="keyword">     const </span>{ <span class="keywordflow">return</span> m_base_size; }</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span> </div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno"><a class="line" href="classmyserver_1_1_byte_array.html#aec2c7467e3af8375ebf21e19227dec7f">  394</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aec2c7467e3af8375ebf21e19227dec7f">readable_size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_size - m_position; }</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#ae138f0e89a71ef44d1b81200602a738f">is_little_endian</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#aebdf5e2a33091d11b9f8948bb8131fb3">set_is_little_endian</a>(<span class="keywordtype">bool</span> val);</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        std::string <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a8a614821d538f894ab96aa12cf1e2943">to_string</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        std::string <a class="code hl_function" href="classmyserver_1_1_byte_array.html#affba2c71607d4e47067dbcc694cbb068">to_hex_string</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        uint64_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#adef9a401f62daac1aa28143311abad70">read_buffers</a>(std::vector&lt;iovec&gt;&amp; buffers, uint64_t len = ~0ull) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>        uint64_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#adef9a401f62daac1aa28143311abad70">read_buffers</a>(std::vector&lt;iovec&gt;&amp; buffers, uint64_t len, uint64_t <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a15a1164a9dc5749f44dd61d9e4e1be5e">position</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>        uint64_t write_buffers(std::vector&lt;iovec&gt;&amp; buffers, uint64_t len);</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span> </div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>        <span class="keywordtype">void</span> add_capacity(<span class="keywordtype">size_t</span> <a class="code hl_function" href="classmyserver_1_1_byte_array.html#a9abda7dea2948426b35f02e60a5dcd03">size</a>);</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>        <span class="keywordtype">size_t</span> capacity()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_capacity - m_position; }</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span> </div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>        <span class="keywordtype">size_t</span> m_base_size; </div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>        <span class="keywordtype">size_t</span> m_position;  </div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>        <span class="keywordtype">size_t</span> m_capacity;  </div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        <span class="keywordtype">size_t</span> m_size;      </div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        int8_t m_endian;    </div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>        Node* m_root;       </div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        Node* m_cur;        </div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span> </div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>    };</div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span> </div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>}</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span> </div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html"><div class="ttname"><a href="classmyserver_1_1_byte_array.html">myserver::ByteArray</a></div><div class="ttdoc">字节序列</div><div class="ttdef"><b>Definition:</b> bytearray.hpp:25</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a07c5a5f8ba6e22512bf3b6bfcb05e66e"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a07c5a5f8ba6e22512bf3b6bfcb05e66e">myserver::ByteArray::read_int32</a></div><div class="ttdeci">int32_t read_int32()</div><div class="ttdoc">读取变长 32 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:228</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a08142a19ba9fb7ac3eb93ecfa4f0f89f"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a08142a19ba9fb7ac3eb93ecfa4f0f89f">myserver::ByteArray::read_string_fix16</a></div><div class="ttdeci">std::string read_string_fix16()</div><div class="ttdoc">读取字符串，长度固定 16 位表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:278</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a0f3fc20f07c6495999d8cf948b275fcf"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a0f3fc20f07c6495999d8cf948b275fcf">myserver::ByteArray::write_string_fix16</a></div><div class="ttdeci">void write_string_fix16(const std::string &amp;value)</div><div class="ttdoc">写入字符串，长度用固定 16 位表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:156</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a15a1164a9dc5749f44dd61d9e4e1be5e"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a15a1164a9dc5749f44dd61d9e4e1be5e">myserver::ByteArray::position</a></div><div class="ttdeci">size_t position() const</div><div class="ttdoc">返回序列当前位置</div><div class="ttdef"><b>Definition:</b> bytearray.hpp:348</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a1b80325194eb363215b0d95b744d684f"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a1b80325194eb363215b0d95b744d684f">myserver::ByteArray::read_string_fix64</a></div><div class="ttdeci">std::string read_string_fix64()</div><div class="ttdoc">读取字符串，长度固定 64 位表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:294</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a1c9ba8c005a83146a81b12634c6596bc"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a1c9ba8c005a83146a81b12634c6596bc">myserver::ByteArray::write_float</a></div><div class="ttdeci">void write_float(float value)</div><div class="ttdoc">写入 32 位浮点数，长度使用压缩算法</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:144</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a203442987f05e13bfd392ecbf88904fd"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a203442987f05e13bfd392ecbf88904fd">myserver::ByteArray::read_fix_uint16</a></div><div class="ttdeci">uint16_t read_fix_uint16()</div><div class="ttdoc">读取固定 16 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:206</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a204cd2fed08980b6b4d99e8de9e34b39"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a204cd2fed08980b6b4d99e8de9e34b39">myserver::ByteArray::read_fix_uint64</a></div><div class="ttdeci">uint64_t read_fix_uint64()</div><div class="ttdoc">读取固定 64 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:222</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a21f6ac5077f0be9941e7db5d6fb72e8b"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a21f6ac5077f0be9941e7db5d6fb72e8b">myserver::ByteArray::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">清空字节序列</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:310</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a2bb1526bfc3ce5ad16ede6eadcfeb3b8"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a2bb1526bfc3ce5ad16ede6eadcfeb3b8">myserver::ByteArray::write_uint32</a></div><div class="ttdeci">void write_uint32(uint32_t value)</div><div class="ttdoc">写入 32 位无符号整数，长度使用压缩算法</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:118</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a3917fbfe367949c4e314f336f76301e9"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a3917fbfe367949c4e314f336f76301e9">myserver::ByteArray::read_fix_int32</a></div><div class="ttdeci">int32_t read_fix_int32()</div><div class="ttdoc">读取固定 32 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:210</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a39f95903fa520371d2028e08a6259068"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a39f95903fa520371d2028e08a6259068">myserver::ByteArray::read_uint32</a></div><div class="ttdeci">uint32_t read_uint32()</div><div class="ttdoc">读取变长 32 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:232</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a46b2af24ede9cee987c0764c72688b87"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a46b2af24ede9cee987c0764c72688b87">myserver::ByteArray::write_int32</a></div><div class="ttdeci">void write_int32(int32_t value)</div><div class="ttdoc">写入 32 位有符号整数，长度使用压缩算法</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:114</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a4858307597ec96db147856e250834a2c"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a4858307597ec96db147856e250834a2c">myserver::ByteArray::write_fix_int8</a></div><div class="ttdeci">void write_fix_int8(int8_t value)</div><div class="ttdoc">写入定长 8 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:48</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a526830077119c3e2bdf3ba39a1156c4e"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a526830077119c3e2bdf3ba39a1156c4e">myserver::ByteArray::read_string_varint</a></div><div class="ttdeci">std::string read_string_varint()</div><div class="ttdoc">读取字符串，长度变长表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:302</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a5d53e40e797f7ce5b58a8fa1642c3f68"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a5d53e40e797f7ce5b58a8fa1642c3f68">myserver::ByteArray::write_fix_uint8</a></div><div class="ttdeci">void write_fix_uint8(uint8_t value)</div><div class="ttdoc">写入定长 8 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:52</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a6e0994fbb7872cf49b81e253c95c49f2"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a6e0994fbb7872cf49b81e253c95c49f2">myserver::ByteArray::write_int64</a></div><div class="ttdeci">void write_int64(int64_t value)</div><div class="ttdoc">写入 64 位有符号整数，长度使用压缩算法</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:129</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a720a89d12e77b558369783850cf34538"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a720a89d12e77b558369783850cf34538">myserver::ByteArray::write_string_varint</a></div><div class="ttdeci">void write_string_varint(const std::string &amp;value)</div><div class="ttdoc">写入字符串，长度不固定表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:171</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a84e853ad4fef7525c037fce641bd69ce"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a84e853ad4fef7525c037fce641bd69ce">myserver::ByteArray::read_int64</a></div><div class="ttdeci">int64_t read_int64()</div><div class="ttdoc">读取变长 64 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:246</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a8654b7b6a8ab51333db8267b6f95b31a"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a8654b7b6a8ab51333db8267b6f95b31a">myserver::ByteArray::read_string_fix32</a></div><div class="ttdeci">std::string read_string_fix32()</div><div class="ttdoc">读取字符串，长度固定 32 位表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:286</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a8a614821d538f894ab96aa12cf1e2943"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a8a614821d538f894ab96aa12cf1e2943">myserver::ByteArray::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">转换为字符串</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:521</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a8b139755a350928168d1e5f4ff6aea1c"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a8b139755a350928168d1e5f4ff6aea1c">myserver::ByteArray::write_string_fix64</a></div><div class="ttdeci">void write_string_fix64(const std::string &amp;value)</div><div class="ttdoc">写入字符串，长度用固定 64 位表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:166</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a93a90e1a13e0fb8f8f1a3ccdece4d011"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a93a90e1a13e0fb8f8f1a3ccdece4d011">myserver::ByteArray::write_uint64</a></div><div class="ttdeci">void write_uint64(uint64_t value)</div><div class="ttdoc">写入 64 位无符号整数，长度使用压缩算法</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:133</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_a9abda7dea2948426b35f02e60a5dcd03"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#a9abda7dea2948426b35f02e60a5dcd03">myserver::ByteArray::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">获取序列大小</div><div class="ttdef"><b>Definition:</b> bytearray.hpp:380</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aa159fad8210c3b776327844e209d5073"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aa159fad8210c3b776327844e209d5073">myserver::ByteArray::write_string_without_length</a></div><div class="ttdeci">void write_string_without_length(const std::string &amp;value)</div><div class="ttdoc">写入字符串，不附带长度</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:176</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aa2fcf9bc89efc26b2a2ce0fa77151899"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aa2fcf9bc89efc26b2a2ce0fa77151899">myserver::ByteArray::read_from_file</a></div><div class="ttdeci">bool read_from_file(const std::string &amp;name)</div><div class="ttdoc">从文件中读取</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:460</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aa75c3bb91f797495446f41cf5b19ee99"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aa75c3bb91f797495446f41cf5b19ee99">myserver::ByteArray::write_fix_uint32</a></div><div class="ttdeci">void write_fix_uint32(uint32_t value)</div><div class="ttdoc">写入定长 32 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:77</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aac45a7a205de574d234658cb3be7ef37"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aac45a7a205de574d234658cb3be7ef37">myserver::ByteArray::write_to_file</a></div><div class="ttdeci">bool write_to_file(const std::string &amp;name) const</div><div class="ttdoc">写入到文件</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:435</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aaf89ea675d6f523dccff480c598285e5"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aaf89ea675d6f523dccff480c598285e5">myserver::ByteArray::write_fix_int64</a></div><div class="ttdeci">void write_fix_int64(int64_t value)</div><div class="ttdoc">写入定长 64 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:84</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ab9402886f7bf0679d77872b47e00b614"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ab9402886f7bf0679d77872b47e00b614">myserver::ByteArray::read_fix_uint8</a></div><div class="ttdeci">uint8_t read_fix_uint8()</div><div class="ttdoc">读取固定 8 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:186</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ac2557879d75b685f5cc62c6781817314"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ac2557879d75b685f5cc62c6781817314">myserver::ByteArray::~ByteArray</a></div><div class="ttdeci">~ByteArray()</div><div class="ttdoc">析构函数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:39</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ac856ca78cbaecf2208e6b9ec9aa662fc"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ac856ca78cbaecf2208e6b9ec9aa662fc">myserver::ByteArray::write_double</a></div><div class="ttdeci">void write_double(double value)</div><div class="ttdoc">写入 64 位浮点数，长度使用压缩算法</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:150</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_acee181845d326b0078cfb53fa631489e"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#acee181845d326b0078cfb53fa631489e">myserver::ByteArray::write_fix_uint16</a></div><div class="ttdeci">void write_fix_uint16(uint16_t value)</div><div class="ttdoc">写入定长 16 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:63</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ad124913252acb13e01cf49515d0c34b7"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ad124913252acb13e01cf49515d0c34b7">myserver::ByteArray::read_fix_uint32</a></div><div class="ttdeci">uint32_t read_fix_uint32()</div><div class="ttdoc">读取固定 32 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:214</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ad7166aae221d1a0394f83ba761886aaa"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ad7166aae221d1a0394f83ba761886aaa">myserver::ByteArray::write_fix_int16</a></div><div class="ttdeci">void write_fix_int16(int16_t value)</div><div class="ttdoc">写入定长 16 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:56</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ad8b9d2bc4630e31b40eb276cd0872156"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ad8b9d2bc4630e31b40eb276cd0872156">myserver::ByteArray::read_fix_int64</a></div><div class="ttdeci">int64_t read_fix_int64()</div><div class="ttdoc">读取固定 64 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:218</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_add8dfee7f62de35654b3893431b4b1d1"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#add8dfee7f62de35654b3893431b4b1d1">myserver::ByteArray::write_fix_uint64</a></div><div class="ttdeci">void write_fix_uint64(uint64_t value)</div><div class="ttdoc">写入定长 64 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:91</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_adda297e370e60a3f364f70d2b40aba19"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#adda297e370e60a3f364f70d2b40aba19">myserver::ByteArray::read</a></div><div class="ttdeci">void read(void *buf, size_t size)</div><div class="ttdoc">从序列读出 size 字节数据存入 buf 开始的内存</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:358</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_adef9a401f62daac1aa28143311abad70"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#adef9a401f62daac1aa28143311abad70">myserver::ByteArray::read_buffers</a></div><div class="ttdeci">uint64_t read_buffers(std::vector&lt; iovec &gt; &amp;buffers, uint64_t len=~0ull) const</div><div class="ttdoc">获取可读的缓冲区，保存为 iovec 数组</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:546</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ae138f0e89a71ef44d1b81200602a738f"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ae138f0e89a71ef44d1b81200602a738f">myserver::ByteArray::is_little_endian</a></div><div class="ttdeci">bool is_little_endian() const</div><div class="ttdoc">字节序是否为小端序</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:477</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ae2178dbac69d3e561cb9c333c6255220"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ae2178dbac69d3e561cb9c333c6255220">myserver::ByteArray::read_fix_int8</a></div><div class="ttdeci">int8_t read_fix_int8()</div><div class="ttdoc">读取固定 8 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:180</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ae4c6a702f78c2b5d45dcd59f1cd31580"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ae4c6a702f78c2b5d45dcd59f1cd31580">myserver::ByteArray::write_string_fix32</a></div><div class="ttdeci">void write_string_fix32(const std::string &amp;value)</div><div class="ttdoc">写入字符串，长度用固定 32 位表示</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:161</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ae50b054a6f4828aef10d7ae0ec5fb377"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ae50b054a6f4828aef10d7ae0ec5fb377">myserver::ByteArray::read_float</a></div><div class="ttdeci">float read_float()</div><div class="ttdoc">读取 32 位浮点数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:264</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_ae9e96c5b035e37e96637edd81829f6a8"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#ae9e96c5b035e37e96637edd81829f6a8">myserver::ByteArray::set_position</a></div><div class="ttdeci">void set_position(size_t v)</div><div class="ttdoc">设置序列当前位置</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:417</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aea7257ea878692fe28ca8a46c8d6dfcc"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aea7257ea878692fe28ca8a46c8d6dfcc">myserver::ByteArray::base_size</a></div><div class="ttdeci">size_t base_size() const</div><div class="ttdoc">获取序列结点大小</div><div class="ttdef"><b>Definition:</b> bytearray.hpp:387</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aebdf5e2a33091d11b9f8948bb8131fb3"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aebdf5e2a33091d11b9f8948bb8131fb3">myserver::ByteArray::set_is_little_endian</a></div><div class="ttdeci">void set_is_little_endian(bool val)</div><div class="ttdoc">设置字节序</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:481</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aec2c7467e3af8375ebf21e19227dec7f"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aec2c7467e3af8375ebf21e19227dec7f">myserver::ByteArray::readable_size</a></div><div class="ttdeci">size_t readable_size() const</div><div class="ttdoc">获取序列可读长度</div><div class="ttdef"><b>Definition:</b> bytearray.hpp:394</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_aec54dcb96541f36b0c3326ba96a64bde"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#aec54dcb96541f36b0c3326ba96a64bde">myserver::ByteArray::write_fix_int32</a></div><div class="ttdeci">void write_fix_int32(int32_t value)</div><div class="ttdoc">写入定长 32 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:70</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_af840b08fe8ec9341c15f989d98867d1d"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#af840b08fe8ec9341c15f989d98867d1d">myserver::ByteArray::read_uint64</a></div><div class="ttdeci">uint64_t read_uint64()</div><div class="ttdoc">读取变长 64 位无符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:250</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_af8eed1d1cdc920429b924372d1461088"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#af8eed1d1cdc920429b924372d1461088">myserver::ByteArray::read_double</a></div><div class="ttdeci">double read_double()</div><div class="ttdoc">读取 64 位浮点数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:271</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_afbcaa316177fdde612e6db4e6e785297"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#afbcaa316177fdde612e6db4e6e785297">myserver::ByteArray::write</a></div><div class="ttdeci">void write(const void *buf, size_t size)</div><div class="ttdoc">向序列写入从 buf 开始的 size 字节数据</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:323</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_afd137d4ee1da3693051949bb0349b4ad"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#afd137d4ee1da3693051949bb0349b4ad">myserver::ByteArray::read_fix_int16</a></div><div class="ttdeci">int16_t read_fix_int16()</div><div class="ttdoc">读取固定 16 位有符号整数</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:202</div></div>
+<div class="ttc" id="aclassmyserver_1_1_byte_array_html_affba2c71607d4e47067dbcc694cbb068"><div class="ttname"><a href="classmyserver_1_1_byte_array.html#affba2c71607d4e47067dbcc694cbb068">myserver::ByteArray::to_hex_string</a></div><div class="ttdeci">std::string to_hex_string() const</div><div class="ttdoc">转换为十六进制字符串</div><div class="ttdef"><b>Definition:</b> bytearray.cpp:531</div></div>
+<div class="ttc" id="astructmyserver_1_1_byte_array_1_1_node_html"><div class="ttname"><a href="structmyserver_1_1_byte_array_1_1_node.html">myserver::ByteArray::Node</a></div><div class="ttdoc">序列链表节点</div><div class="ttdef"><b>Definition:</b> bytearray.hpp:30</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

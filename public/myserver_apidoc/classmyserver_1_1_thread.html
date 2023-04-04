@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::Thread类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_thread.html">Thread</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classmyserver_1_1_thread-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::Thread类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>线程类  
+ <a href="classmyserver_1_1_thread.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="thread_8hpp_source.html">thread.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a999808012e0931b527c1e628e976012d"><td class="memItemLeft" align="right" valign="top"><a id="a999808012e0931b527c1e628e976012d" name="a999808012e0931b527c1e628e976012d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_thread.html">Thread</a> &gt;</td></tr>
+<tr class="separator:a999808012e0931b527c1e628e976012d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae3938595e40054fa9762bbc5e989e341"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#ae3938595e40054fa9762bbc5e989e341">Thread</a> (std::function&lt; void()&gt; cb, const std::string &amp;<a class="el" href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">name</a>)</td></tr>
+<tr class="memdesc:ae3938595e40054fa9762bbc5e989e341"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个线程  <br /></td></tr>
+<tr class="separator:ae3938595e40054fa9762bbc5e989e341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f53e5f751fb599a94cd18daa66f4c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#a47f53e5f751fb599a94cd18daa66f4c6">~Thread</a> ()</td></tr>
+<tr class="memdesc:a47f53e5f751fb599a94cd18daa66f4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a47f53e5f751fb599a94cd18daa66f4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab835187b68b4b6d11317714ce592cd"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#a9ab835187b68b4b6d11317714ce592cd">id</a> () const</td></tr>
+<tr class="memdesc:a9ab835187b68b4b6d11317714ce592cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程 id  <br /></td></tr>
+<tr class="separator:a9ab835187b68b4b6d11317714ce592cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03e3d539d5295ecfc907ffa96aeab75"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">name</a> () const</td></tr>
+<tr class="memdesc:ab03e3d539d5295ecfc907ffa96aeab75"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程名  <br /></td></tr>
+<tr class="separator:ab03e3d539d5295ecfc907ffa96aeab75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d7ffed46d112a2d9d3ab764fb688ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#a93d7ffed46d112a2d9d3ab764fb688ec">join</a> ()</td></tr>
+<tr class="memdesc:a93d7ffed46d112a2d9d3ab764fb688ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">等待线程结束  <br /></td></tr>
+<tr class="separator:a93d7ffed46d112a2d9d3ab764fb688ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:acea6c3a4443ca8b21addce5624f59bed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmyserver_1_1_thread.html">Thread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#acea6c3a4443ca8b21addce5624f59bed">get_this</a> ()</td></tr>
+<tr class="memdesc:acea6c3a4443ca8b21addce5624f59bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前线程  <br /></td></tr>
+<tr class="separator:acea6c3a4443ca8b21addce5624f59bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8049ca6da7c95f6a4f6a64931031bd7"><td class="memItemLeft" align="right" valign="top">static const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#ac8049ca6da7c95f6a4f6a64931031bd7">get_current_thread_name</a> ()</td></tr>
+<tr class="memdesc:ac8049ca6da7c95f6a4f6a64931031bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前线程名称  <br /></td></tr>
+<tr class="separator:ac8049ca6da7c95f6a4f6a64931031bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b5e080c4abc421193fe57aecdd6875"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_thread.html#ad1b5e080c4abc421193fe57aecdd6875">set_current_thread_name</a> (const std::string &amp;<a class="el" href="classmyserver_1_1_thread.html#ab03e3d539d5295ecfc907ffa96aeab75">name</a>)</td></tr>
+<tr class="memdesc:ad1b5e080c4abc421193fe57aecdd6875"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前线程名称  <br /></td></tr>
+<tr class="separator:ad1b5e080c4abc421193fe57aecdd6875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>线程类 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae3938595e40054fa9762bbc5e989e341" name="ae3938595e40054fa9762bbc5e989e341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3938595e40054fa9762bbc5e989e341">&#9670;&#160;</a></span>Thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::Thread::Thread </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造一个线程 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cb</td><td>线程执行的函数 </td></tr>
+    <tr><td class="paramname">name</td><td>线程名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47f53e5f751fb599a94cd18daa66f4c6" name="a47f53e5f751fb599a94cd18daa66f4c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f53e5f751fb599a94cd18daa66f4c6">&#9670;&#160;</a></span>~Thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::Thread::~Thread </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac8049ca6da7c95f6a4f6a64931031bd7" name="ac8049ca6da7c95f6a4f6a64931031bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8049ca6da7c95f6a4f6a64931031bd7">&#9670;&#160;</a></span>get_current_thread_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; myserver::Thread::get_current_thread_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前线程名称 </p>
+<dl class="section return"><dt>返回</dt><dd>const std::string&amp; 当前线程名称 </dd></dl>
+
+</div>
+</div>
+<a id="acea6c3a4443ca8b21addce5624f59bed" name="acea6c3a4443ca8b21addce5624f59bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea6c3a4443ca8b21addce5624f59bed">&#9670;&#160;</a></span>get_this()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmyserver_1_1_thread.html">Thread</a> * myserver::Thread::get_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前线程 </p>
+<dl class="section return"><dt>返回</dt><dd>Thread* 指向当前线程指针 </dd></dl>
+
+</div>
+</div>
+<a id="a9ab835187b68b4b6d11317714ce592cd" name="a9ab835187b68b4b6d11317714ce592cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab835187b68b4b6d11317714ce592cd">&#9670;&#160;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t myserver::Thread::id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取线程 id </p>
+<dl class="section return"><dt>返回</dt><dd>pid_t 线程 id </dd></dl>
+
+</div>
+</div>
+<a id="a93d7ffed46d112a2d9d3ab764fb688ec" name="a93d7ffed46d112a2d9d3ab764fb688ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d7ffed46d112a2d9d3ab764fb688ec">&#9670;&#160;</a></span>join()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Thread::join </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>等待线程结束 </p>
+
+</div>
+</div>
+<a id="ab03e3d539d5295ecfc907ffa96aeab75" name="ab03e3d539d5295ecfc907ffa96aeab75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03e3d539d5295ecfc907ffa96aeab75">&#9670;&#160;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; myserver::Thread::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取线程名 </p>
+<dl class="section return"><dt>返回</dt><dd>const std::string&amp; 线程名 </dd></dl>
+
+</div>
+</div>
+<a id="ad1b5e080c4abc421193fe57aecdd6875" name="ad1b5e080c4abc421193fe57aecdd6875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b5e080c4abc421193fe57aecdd6875">&#9670;&#160;</a></span>set_current_thread_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Thread::set_current_thread_name </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置当前线程名称 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>当前线程名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="thread_8hpp_source.html">thread.hpp</a></li>
+<li>myserver/thread.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

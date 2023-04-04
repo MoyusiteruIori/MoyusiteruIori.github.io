@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::LogFormatter::FormatItem类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_log_formatter.html">LogFormatter</a></li><li class="navelem"><a class="el" href="classmyserver_1_1_log_formatter_1_1_format_item.html">FormatItem</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classmyserver_1_1_log_formatter_1_1_format_item-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::LogFormatter::FormatItem类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>日志格式化内容项  
+ <a href="classmyserver_1_1_log_formatter_1_1_format_item.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="log_8hpp_source.html">log.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 myserver::LogFormatter::FormatItem 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_log_formatter_1_1_format_item.png" usemap="#myserver::LogFormatter::FormatItem_map" alt=""/>
+  <map id="myserver::LogFormatter::FormatItem_map" name="myserver::LogFormatter::FormatItem_map">
+<area href="classmyserver_1_1_date_time_format_item.html" alt="myserver::DateTimeFormatItem" shape="rect" coords="223,56,436,80"/>
+<area href="classmyserver_1_1_elapse_format_item.html" alt="myserver::ElapseFormatItem" shape="rect" coords="223,112,436,136"/>
+<area href="classmyserver_1_1_fiber_id_format_item.html" alt="myserver::FiberIdFormatItem" shape="rect" coords="223,168,436,192"/>
+<area href="classmyserver_1_1_filename_format_item.html" alt="myserver::FilenameFormatItem" shape="rect" coords="223,224,436,248"/>
+<area href="classmyserver_1_1_level_format_item.html" alt="myserver::LevelFormatItem" shape="rect" coords="223,280,436,304"/>
+<area href="classmyserver_1_1_line_format_item.html" alt="myserver::LineFormatItem" shape="rect" coords="223,336,436,360"/>
+<area href="classmyserver_1_1_message_format_item.html" alt="myserver::MessageFormatItem" shape="rect" coords="223,392,436,416"/>
+<area href="classmyserver_1_1_name_format_item.html" alt="myserver::NameFormatItem" shape="rect" coords="223,448,436,472"/>
+<area href="classmyserver_1_1_new_line_format_item.html" alt="myserver::NewLineFormatItem" shape="rect" coords="223,504,436,528"/>
+<area href="classmyserver_1_1_string_format_item.html" alt="myserver::StringFormatItem" shape="rect" coords="223,560,436,584"/>
+<area href="classmyserver_1_1_tab_format_item.html" alt="myserver::TabFormatItem" shape="rect" coords="223,616,436,640"/>
+<area href="classmyserver_1_1_thread_id_format_item.html" alt="myserver::ThreadIdFormatItem" shape="rect" coords="223,672,436,696"/>
+<area href="classmyserver_1_1_thread_name_format_item.html" alt="myserver::ThreadNameFormatItem" shape="rect" coords="223,728,436,752"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a5030a85c22ad79cf7b03d2472095cd57"><td class="memItemLeft" align="right" valign="top"><a id="a5030a85c22ad79cf7b03d2472095cd57" name="a5030a85c22ad79cf7b03d2472095cd57"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_log_formatter_1_1_format_item.html">FormatItem</a> &gt;</td></tr>
+<tr class="separator:a5030a85c22ad79cf7b03d2472095cd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a496169e8d7016f0b6adc84699764bd5d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_formatter_1_1_format_item.html#a496169e8d7016f0b6adc84699764bd5d">~FormatItem</a> ()</td></tr>
+<tr class="memdesc:a496169e8d7016f0b6adc84699764bd5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构日志格式化内容项  <br /></td></tr>
+<tr class="separator:a496169e8d7016f0b6adc84699764bd5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d80437cbd4d128766a7c46566259792"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_formatter_1_1_format_item.html#a7d80437cbd4d128766a7c46566259792">format</a> (std::ostream &amp;os, std::shared_ptr&lt; const <a class="el" href="classmyserver_1_1_logger.html">Logger</a> &gt; logger, LogLevel::Level level, LogEvent::constptr event)=0</td></tr>
+<tr class="memdesc:a7d80437cbd4d128766a7c46566259792"><td class="mdescLeft">&#160;</td><td class="mdescRight">格式化日志事件  <br /></td></tr>
+<tr class="separator:a7d80437cbd4d128766a7c46566259792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>日志格式化内容项 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a496169e8d7016f0b6adc84699764bd5d" name="a496169e8d7016f0b6adc84699764bd5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496169e8d7016f0b6adc84699764bd5d">&#9670;&#160;</a></span>~FormatItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual myserver::LogFormatter::FormatItem::~FormatItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构日志格式化内容项 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7d80437cbd4d128766a7c46566259792" name="a7d80437cbd4d128766a7c46566259792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d80437cbd4d128766a7c46566259792">&#9670;&#160;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void myserver::LogFormatter::FormatItem::format </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; const <a class="el" href="classmyserver_1_1_logger.html">Logger</a> &gt;&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LogLevel::Level&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LogEvent::constptr&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>格式化日志事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>格式化结果的输出流 </td></tr>
+    <tr><td class="paramname">logger</td><td>日志器 </td></tr>
+    <tr><td class="paramname">level</td><td>日志等级 </td></tr>
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="classmyserver_1_1_message_format_item.html#ad53a7dd44bd8ee67f3ce55299f7351e7">myserver::MessageFormatItem</a>, <a class="el" href="classmyserver_1_1_level_format_item.html#ac795dd371eaf29a5c2ca9a0ad31fe336">myserver::LevelFormatItem</a>, <a class="el" href="classmyserver_1_1_elapse_format_item.html#a2ebd2aee990c1832e87a8ad90af057fe">myserver::ElapseFormatItem</a>, <a class="el" href="classmyserver_1_1_name_format_item.html#af4bf0ded2d44b4cab729f0f3b122b68e">myserver::NameFormatItem</a>, <a class="el" href="classmyserver_1_1_thread_id_format_item.html#a276570aab8ad7faf99445328d0172f19">myserver::ThreadIdFormatItem</a>, <a class="el" href="classmyserver_1_1_fiber_id_format_item.html#a9aa57507af9bcf33581140e8815c4e92">myserver::FiberIdFormatItem</a>, <a class="el" href="classmyserver_1_1_thread_name_format_item.html#a1d81c352a33d77971e6f41bdbcf99c69">myserver::ThreadNameFormatItem</a>, <a class="el" href="classmyserver_1_1_date_time_format_item.html#aa76c387782159266aeda87aca5b2a579">myserver::DateTimeFormatItem</a>, <a class="el" href="classmyserver_1_1_filename_format_item.html#a2ca159ed43e43a0b1752bca37be492bb">myserver::FilenameFormatItem</a>, <a class="el" href="classmyserver_1_1_line_format_item.html#ac60f2c799a6a3fd6ff840a56bbc593ee">myserver::LineFormatItem</a>, <a class="el" href="classmyserver_1_1_new_line_format_item.html#a12447c4963cfc2b58b3570de4797cc32">myserver::NewLineFormatItem</a>, <a class="el" href="classmyserver_1_1_tab_format_item.html#a909e27200587763d5e91a3a5050d9dcd">myserver::TabFormatItem</a> , 以及 <a class="el" href="classmyserver_1_1_string_format_item.html#a2e912ec1c46874132ddd3399f837ff65">myserver::StringFormatItem</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="log_8hpp_source.html">log.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

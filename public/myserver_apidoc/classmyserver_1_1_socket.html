@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::Socket类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_socket.html">Socket</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classmyserver_1_1_socket-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::Socket类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+类 myserver::Socket 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_socket.png" usemap="#myserver::Socket_map" alt=""/>
+  <map id="myserver::Socket_map" name="myserver::Socket_map">
+<area href="classmyserver_1_1_noncopyable.html" title="禁止拷贝接口" alt="myserver::Noncopyable" shape="rect" coords="248,0,486,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a31fd519e5b7bf5de1846a7828eb18a3b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_socket.html#a31fd519e5b7bf5de1846a7828eb18a3b">Type</a> { <a class="el" href="classmyserver_1_1_socket.html#a31fd519e5b7bf5de1846a7828eb18a3bad1c758f81ccb3ea958f958203ac7ef1d">TCP</a> = SOCK_STREAM
+, <a class="el" href="classmyserver_1_1_socket.html#a31fd519e5b7bf5de1846a7828eb18a3badabccebd5f438838352f25324a10dd3c">UDP</a> = SOCK_DGRAM
+ }</td></tr>
+<tr class="separator:a31fd519e5b7bf5de1846a7828eb18a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0c9061f7edd7163e59091639b72672"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_socket.html#a0e0c9061f7edd7163e59091639b72672">Family</a> { <a class="el" href="classmyserver_1_1_socket.html#a0e0c9061f7edd7163e59091639b72672a822327617f7e42d02e1e0ec2a615be65">IPv4</a> = AF_INET
+, <a class="el" href="classmyserver_1_1_socket.html#a0e0c9061f7edd7163e59091639b72672aa334513caaba656a894f00fb64273c74">IPv6</a> = AF_INET6
+, <a class="el" href="classmyserver_1_1_socket.html#a0e0c9061f7edd7163e59091639b72672a3e855ed8fc969b03cf6739858b478502">UNIX</a> = AF_UNIX
+ }</td></tr>
+<tr class="separator:a0e0c9061f7edd7163e59091639b72672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83199a4a3ed0cd75676161b3c2a8054a"><td class="memItemLeft" align="right" valign="top"><a id="a83199a4a3ed0cd75676161b3c2a8054a" name="a83199a4a3ed0cd75676161b3c2a8054a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_socket.html">Socket</a> &gt;</td></tr>
+<tr class="separator:a83199a4a3ed0cd75676161b3c2a8054a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad198e58b0299500c312c77cc3f6ba532"><td class="memItemLeft" align="right" valign="top"><a id="ad198e58b0299500c312c77cc3f6ba532" name="ad198e58b0299500c312c77cc3f6ba532"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>wptr</b> = std::weak_ptr&lt; <a class="el" href="classmyserver_1_1_socket.html">Socket</a> &gt;</td></tr>
+<tr class="separator:ad198e58b0299500c312c77cc3f6ba532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a3fd3e6ada8cb7a7c3d99a7efa5b81a3d"><td class="memItemLeft" align="right" valign="top"><a id="a3fd3e6ada8cb7a7c3d99a7efa5b81a3d" name="a3fd3e6ada8cb7a7c3d99a7efa5b81a3d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Socket</b> (int family, int type, int protocol=0)</td></tr>
+<tr class="separator:a3fd3e6ada8cb7a7c3d99a7efa5b81a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f61469524088af682a4bc16fb685aa5"><td class="memItemLeft" align="right" valign="top"><a id="a5f61469524088af682a4bc16fb685aa5" name="a5f61469524088af682a4bc16fb685aa5"></a>
+int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>send_timeout</b> () const</td></tr>
+<tr class="separator:a5f61469524088af682a4bc16fb685aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1174e013c73e5b33979b79a99e1ba399"><td class="memItemLeft" align="right" valign="top"><a id="a1174e013c73e5b33979b79a99e1ba399" name="a1174e013c73e5b33979b79a99e1ba399"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_send_timeout</b> (int64_t v)</td></tr>
+<tr class="separator:a1174e013c73e5b33979b79a99e1ba399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbcf0f12fd7c7b22cc5d28d3a69e4439"><td class="memItemLeft" align="right" valign="top"><a id="abbcf0f12fd7c7b22cc5d28d3a69e4439" name="abbcf0f12fd7c7b22cc5d28d3a69e4439"></a>
+int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>recv_timeout</b> () const</td></tr>
+<tr class="separator:abbcf0f12fd7c7b22cc5d28d3a69e4439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d6aedde97b1d1401f047a12a2ea281"><td class="memItemLeft" align="right" valign="top"><a id="ad3d6aedde97b1d1401f047a12a2ea281" name="ad3d6aedde97b1d1401f047a12a2ea281"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_recv_timeout</b> (int64_t v)</td></tr>
+<tr class="separator:ad3d6aedde97b1d1401f047a12a2ea281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be4490c7583250feae2dd25b693f22d"><td class="memItemLeft" align="right" valign="top"><a id="a3be4490c7583250feae2dd25b693f22d" name="a3be4490c7583250feae2dd25b693f22d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>option</b> (int level, int opt, void *result, socklen_t *len) const</td></tr>
+<tr class="separator:a3be4490c7583250feae2dd25b693f22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6546fb5f74fdb3351090425d1979f78"><td class="memTemplParams" colspan="2"><a id="ac6546fb5f74fdb3351090425d1979f78" name="ac6546fb5f74fdb3351090425d1979f78"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac6546fb5f74fdb3351090425d1979f78"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>option</b> (int level, int opt, T &amp;result) const</td></tr>
+<tr class="separator:ac6546fb5f74fdb3351090425d1979f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79015486727ce56d66a549613aec12af"><td class="memItemLeft" align="right" valign="top"><a id="a79015486727ce56d66a549613aec12af" name="a79015486727ce56d66a549613aec12af"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>set_option</b> (int level, int opt, const void *result, socklen_t len)</td></tr>
+<tr class="separator:a79015486727ce56d66a549613aec12af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cedf7df455a08e2a4f810954d5e3f19"><td class="memTemplParams" colspan="2"><a id="a1cedf7df455a08e2a4f810954d5e3f19" name="a1cedf7df455a08e2a4f810954d5e3f19"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1cedf7df455a08e2a4f810954d5e3f19"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>set_option</b> (int level, int opt, const T &amp;value)</td></tr>
+<tr class="separator:a1cedf7df455a08e2a4f810954d5e3f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8c566e5d9f346fa7ebb46eb9d2bcca"><td class="memItemLeft" align="right" valign="top"><a id="a3e8c566e5d9f346fa7ebb46eb9d2bcca" name="a3e8c566e5d9f346fa7ebb46eb9d2bcca"></a>
+virtual Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>accept</b> ()</td></tr>
+<tr class="separator:a3e8c566e5d9f346fa7ebb46eb9d2bcca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefaa7340cebf77add6abadfbd19652a7"><td class="memItemLeft" align="right" valign="top"><a id="aefaa7340cebf77add6abadfbd19652a7" name="aefaa7340cebf77add6abadfbd19652a7"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>bind</b> (const Address::ptr addr)</td></tr>
+<tr class="separator:aefaa7340cebf77add6abadfbd19652a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba02a9271f4b411074fad3a912fa3a14"><td class="memItemLeft" align="right" valign="top"><a id="aba02a9271f4b411074fad3a912fa3a14" name="aba02a9271f4b411074fad3a912fa3a14"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>connect</b> (const Address::ptr addr, uint64_t timeout_ms=-1)</td></tr>
+<tr class="separator:aba02a9271f4b411074fad3a912fa3a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eed9e0d5f63e116ead677c0b6e132ee"><td class="memItemLeft" align="right" valign="top"><a id="a2eed9e0d5f63e116ead677c0b6e132ee" name="a2eed9e0d5f63e116ead677c0b6e132ee"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>reconnect</b> (uint64_t timeout_ms=-1)</td></tr>
+<tr class="separator:a2eed9e0d5f63e116ead677c0b6e132ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29cc2a5bd17388bf9f51e1d2d2a58ff"><td class="memItemLeft" align="right" valign="top"><a id="af29cc2a5bd17388bf9f51e1d2d2a58ff" name="af29cc2a5bd17388bf9f51e1d2d2a58ff"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>listen</b> (int backlog=SOMAXCONN)</td></tr>
+<tr class="separator:af29cc2a5bd17388bf9f51e1d2d2a58ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7b8d783edbe283676197e09527ee93"><td class="memItemLeft" align="right" valign="top"><a id="a9a7b8d783edbe283676197e09527ee93" name="a9a7b8d783edbe283676197e09527ee93"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr>
+<tr class="separator:a9a7b8d783edbe283676197e09527ee93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d2119f0e4fca1e91e6382a68cd22e42"><td class="memItemLeft" align="right" valign="top"><a id="a7d2119f0e4fca1e91e6382a68cd22e42" name="a7d2119f0e4fca1e91e6382a68cd22e42"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>send</b> (const void *buffer, size_t length, int flags=0)</td></tr>
+<tr class="separator:a7d2119f0e4fca1e91e6382a68cd22e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99ed178bee59dcabd36cf5caa41cc88"><td class="memItemLeft" align="right" valign="top"><a id="ab99ed178bee59dcabd36cf5caa41cc88" name="ab99ed178bee59dcabd36cf5caa41cc88"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>send</b> (const iovec *buffers, size_t length, int flags=0)</td></tr>
+<tr class="separator:ab99ed178bee59dcabd36cf5caa41cc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8498d1e372c8fe1c3a73420cb389c1dd"><td class="memItemLeft" align="right" valign="top"><a id="a8498d1e372c8fe1c3a73420cb389c1dd" name="a8498d1e372c8fe1c3a73420cb389c1dd"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>send_to</b> (const void *buffer, size_t length, const Address::ptr to, int flags=0)</td></tr>
+<tr class="separator:a8498d1e372c8fe1c3a73420cb389c1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac986fca92fbce7280057fc6809abe981"><td class="memItemLeft" align="right" valign="top"><a id="ac986fca92fbce7280057fc6809abe981" name="ac986fca92fbce7280057fc6809abe981"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>send_to</b> (const iovec *buffers, size_t length, const Address::ptr to, int flags=0)</td></tr>
+<tr class="separator:ac986fca92fbce7280057fc6809abe981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6c9dbd084d1a774a51780c5d05b23b5"><td class="memItemLeft" align="right" valign="top"><a id="ac6c9dbd084d1a774a51780c5d05b23b5" name="ac6c9dbd084d1a774a51780c5d05b23b5"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>recv</b> (void *buffer, size_t length, int flags=0)</td></tr>
+<tr class="separator:ac6c9dbd084d1a774a51780c5d05b23b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63aadc3040a20bc703f76b642f85e802"><td class="memItemLeft" align="right" valign="top"><a id="a63aadc3040a20bc703f76b642f85e802" name="a63aadc3040a20bc703f76b642f85e802"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>recv</b> (iovec *buffers, size_t length, int flags=0)</td></tr>
+<tr class="separator:a63aadc3040a20bc703f76b642f85e802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474fe000fedce04737e7e81c375f8730"><td class="memItemLeft" align="right" valign="top"><a id="a474fe000fedce04737e7e81c375f8730" name="a474fe000fedce04737e7e81c375f8730"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>recv_from</b> (void *buffer, size_t length, Address::ptr from, int flags=0)</td></tr>
+<tr class="separator:a474fe000fedce04737e7e81c375f8730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c201a2c215e107931cbcaa0f6f0a13"><td class="memItemLeft" align="right" valign="top"><a id="ac9c201a2c215e107931cbcaa0f6f0a13" name="ac9c201a2c215e107931cbcaa0f6f0a13"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>recv_from</b> (iovec *buffers, size_t length, Address::ptr from, int flags=0)</td></tr>
+<tr class="separator:ac9c201a2c215e107931cbcaa0f6f0a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae996d9bb91ccb9259af2ef8a0f3af5c2"><td class="memItemLeft" align="right" valign="top"><a id="ae996d9bb91ccb9259af2ef8a0f3af5c2" name="ae996d9bb91ccb9259af2ef8a0f3af5c2"></a>
+Address::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>get_remote_address</b> ()</td></tr>
+<tr class="separator:ae996d9bb91ccb9259af2ef8a0f3af5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7531d2a7bef46feb1e6ddc676cf11a4"><td class="memItemLeft" align="right" valign="top"><a id="ab7531d2a7bef46feb1e6ddc676cf11a4" name="ab7531d2a7bef46feb1e6ddc676cf11a4"></a>
+Address::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>get_local_address</b> ()</td></tr>
+<tr class="separator:ab7531d2a7bef46feb1e6ddc676cf11a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ff254f806173e776f6441e2c918489"><td class="memItemLeft" align="right" valign="top"><a id="a58ff254f806173e776f6441e2c918489" name="a58ff254f806173e776f6441e2c918489"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>family</b> () const</td></tr>
+<tr class="separator:a58ff254f806173e776f6441e2c918489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b44701732741a013f2e020ba29a8d80"><td class="memItemLeft" align="right" valign="top"><a id="a1b44701732741a013f2e020ba29a8d80" name="a1b44701732741a013f2e020ba29a8d80"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> () const</td></tr>
+<tr class="separator:a1b44701732741a013f2e020ba29a8d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452c3b1e85925b90cf7c846fbb01c08d"><td class="memItemLeft" align="right" valign="top"><a id="a452c3b1e85925b90cf7c846fbb01c08d" name="a452c3b1e85925b90cf7c846fbb01c08d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>protocol</b> () const</td></tr>
+<tr class="separator:a452c3b1e85925b90cf7c846fbb01c08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab34a14b555299a6286af622dc60854a6"><td class="memItemLeft" align="right" valign="top"><a id="ab34a14b555299a6286af622dc60854a6" name="ab34a14b555299a6286af622dc60854a6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>connected</b> () const</td></tr>
+<tr class="separator:ab34a14b555299a6286af622dc60854a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfecfc02ddb7b56e29d02dcddeb3054b"><td class="memItemLeft" align="right" valign="top"><a id="abfecfc02ddb7b56e29d02dcddeb3054b" name="abfecfc02ddb7b56e29d02dcddeb3054b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>valid</b> () const</td></tr>
+<tr class="separator:abfecfc02ddb7b56e29d02dcddeb3054b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf989155924463be396a15a2fe679540"><td class="memItemLeft" align="right" valign="top"><a id="acf989155924463be396a15a2fe679540" name="acf989155924463be396a15a2fe679540"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>error</b> () const</td></tr>
+<tr class="separator:acf989155924463be396a15a2fe679540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ac300c4099c95fecf9b850938e49a0"><td class="memItemLeft" align="right" valign="top"><a id="a85ac300c4099c95fecf9b850938e49a0" name="a85ac300c4099c95fecf9b850938e49a0"></a>
+virtual std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>dump</b> (std::ostream &amp;os) const</td></tr>
+<tr class="separator:a85ac300c4099c95fecf9b850938e49a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68354ffc2768ff3b609adc332c8b8161"><td class="memItemLeft" align="right" valign="top"><a id="a68354ffc2768ff3b609adc332c8b8161" name="a68354ffc2768ff3b609adc332c8b8161"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>to_string</b> () const</td></tr>
+<tr class="separator:a68354ffc2768ff3b609adc332c8b8161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1995f356c11cfd5d4abdda9e672938"><td class="memItemLeft" align="right" valign="top"><a id="a2e1995f356c11cfd5d4abdda9e672938" name="a2e1995f356c11cfd5d4abdda9e672938"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>get_socket</b> () const</td></tr>
+<tr class="separator:a2e1995f356c11cfd5d4abdda9e672938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab89193ad90b5260aa7f72a4e662692f8"><td class="memItemLeft" align="right" valign="top"><a id="ab89193ad90b5260aa7f72a4e662692f8" name="ab89193ad90b5260aa7f72a4e662692f8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>cancel_read</b> ()</td></tr>
+<tr class="separator:ab89193ad90b5260aa7f72a4e662692f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae3176d839e513d34047ca30e2d24ce"><td class="memItemLeft" align="right" valign="top"><a id="abae3176d839e513d34047ca30e2d24ce" name="abae3176d839e513d34047ca30e2d24ce"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>cancel_write</b> ()</td></tr>
+<tr class="separator:abae3176d839e513d34047ca30e2d24ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13762128f9c37b527bc99bdfc6afe148"><td class="memItemLeft" align="right" valign="top"><a id="a13762128f9c37b527bc99bdfc6afe148" name="a13762128f9c37b527bc99bdfc6afe148"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>cancel_accept</b> ()</td></tr>
+<tr class="separator:a13762128f9c37b527bc99bdfc6afe148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdaeaf25231f8204d79dda69e79ba70e"><td class="memItemLeft" align="right" valign="top"><a id="afdaeaf25231f8204d79dda69e79ba70e" name="afdaeaf25231f8204d79dda69e79ba70e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>cancel_all</b> ()</td></tr>
+<tr class="separator:afdaeaf25231f8204d79dda69e79ba70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a0cf988ce4cc81860cf214de12a7a43fd"><td class="memItemLeft" align="right" valign="top"><a id="a0cf988ce4cc81860cf214de12a7a43fd" name="a0cf988ce4cc81860cf214de12a7a43fd"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_tcp</b> (myserver::Address::ptr address)</td></tr>
+<tr class="separator:a0cf988ce4cc81860cf214de12a7a43fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec91cc39d3666c712b779dffc815cedd"><td class="memItemLeft" align="right" valign="top"><a id="aec91cc39d3666c712b779dffc815cedd" name="aec91cc39d3666c712b779dffc815cedd"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_udp</b> (myserver::Address::ptr address)</td></tr>
+<tr class="separator:aec91cc39d3666c712b779dffc815cedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac801d00ea3304b8ae650ff635937dc71"><td class="memItemLeft" align="right" valign="top"><a id="ac801d00ea3304b8ae650ff635937dc71" name="ac801d00ea3304b8ae650ff635937dc71"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_tcp_socket</b> ()</td></tr>
+<tr class="separator:ac801d00ea3304b8ae650ff635937dc71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0cd89cfe17d3dac11049e553c679256"><td class="memItemLeft" align="right" valign="top"><a id="ae0cd89cfe17d3dac11049e553c679256" name="ae0cd89cfe17d3dac11049e553c679256"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_udp_socket</b> ()</td></tr>
+<tr class="separator:ae0cd89cfe17d3dac11049e553c679256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8790590f533ab39d9ac2306fb73326"><td class="memItemLeft" align="right" valign="top"><a id="aed8790590f533ab39d9ac2306fb73326" name="aed8790590f533ab39d9ac2306fb73326"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_tcp_socket6</b> ()</td></tr>
+<tr class="separator:aed8790590f533ab39d9ac2306fb73326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bef390e011fd661162d2bcb68c0b244"><td class="memItemLeft" align="right" valign="top"><a id="a4bef390e011fd661162d2bcb68c0b244" name="a4bef390e011fd661162d2bcb68c0b244"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_udp_socket6</b> ()</td></tr>
+<tr class="separator:a4bef390e011fd661162d2bcb68c0b244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af821a9e91f32bb907bc679a23927c0f9"><td class="memItemLeft" align="right" valign="top"><a id="af821a9e91f32bb907bc679a23927c0f9" name="af821a9e91f32bb907bc679a23927c0f9"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_unix_tcp_socket</b> ()</td></tr>
+<tr class="separator:af821a9e91f32bb907bc679a23927c0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20bf0ed3d8d6a00c5f2e1b3d747637d2"><td class="memItemLeft" align="right" valign="top"><a id="a20bf0ed3d8d6a00c5f2e1b3d747637d2" name="a20bf0ed3d8d6a00c5f2e1b3d747637d2"></a>
+static Socket::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>create_unix_udp_socket</b> ()</td></tr>
+<tr class="separator:a20bf0ed3d8d6a00c5f2e1b3d747637d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:afc3bf592d29549e8dd8af81c6e497c41"><td class="memItemLeft" align="right" valign="top"><a id="afc3bf592d29549e8dd8af81c6e497c41" name="afc3bf592d29549e8dd8af81c6e497c41"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_sock</b> ()</td></tr>
+<tr class="separator:afc3bf592d29549e8dd8af81c6e497c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf4c3f891a38bd46dc77505d619cd3a1"><td class="memItemLeft" align="right" valign="top"><a id="adf4c3f891a38bd46dc77505d619cd3a1" name="adf4c3f891a38bd46dc77505d619cd3a1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>new_sock</b> ()</td></tr>
+<tr class="separator:adf4c3f891a38bd46dc77505d619cd3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8c744eab22838de393923a2a98a3b63"><td class="memItemLeft" align="right" valign="top"><a id="ae8c744eab22838de393923a2a98a3b63" name="ae8c744eab22838de393923a2a98a3b63"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> (int sock)</td></tr>
+<tr class="separator:ae8c744eab22838de393923a2a98a3b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a467ad80b20c134bfe5a3c42d0bc09e7e"><td class="memItemLeft" align="right" valign="top"><a id="a467ad80b20c134bfe5a3c42d0bc09e7e" name="a467ad80b20c134bfe5a3c42d0bc09e7e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_sock</b></td></tr>
+<tr class="memdesc:a467ad80b20c134bfe5a3c42d0bc09e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">socket句柄 <br /></td></tr>
+<tr class="separator:a467ad80b20c134bfe5a3c42d0bc09e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4dd019c7c7fb377bd50664b709dc3ae"><td class="memItemLeft" align="right" valign="top"><a id="ad4dd019c7c7fb377bd50664b709dc3ae" name="ad4dd019c7c7fb377bd50664b709dc3ae"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_family</b></td></tr>
+<tr class="memdesc:ad4dd019c7c7fb377bd50664b709dc3ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">协议簇 <br /></td></tr>
+<tr class="separator:ad4dd019c7c7fb377bd50664b709dc3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5607005146fa5569f528d9762b17b65a"><td class="memItemLeft" align="right" valign="top"><a id="a5607005146fa5569f528d9762b17b65a" name="a5607005146fa5569f528d9762b17b65a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>
+<tr class="memdesc:a5607005146fa5569f528d9762b17b65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">类型 <br /></td></tr>
+<tr class="separator:a5607005146fa5569f528d9762b17b65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004b4b2e706c48a938643724619c30d3"><td class="memItemLeft" align="right" valign="top"><a id="a004b4b2e706c48a938643724619c30d3" name="a004b4b2e706c48a938643724619c30d3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_protocol</b></td></tr>
+<tr class="memdesc:a004b4b2e706c48a938643724619c30d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">协议 <br /></td></tr>
+<tr class="separator:a004b4b2e706c48a938643724619c30d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5bcadb8e3b4e8b01b48c1baa68895f0"><td class="memItemLeft" align="right" valign="top"><a id="af5bcadb8e3b4e8b01b48c1baa68895f0" name="af5bcadb8e3b4e8b01b48c1baa68895f0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_connected</b></td></tr>
+<tr class="memdesc:af5bcadb8e3b4e8b01b48c1baa68895f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否连接 <br /></td></tr>
+<tr class="separator:af5bcadb8e3b4e8b01b48c1baa68895f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a076b8ade7a28b35a7e46eb684a37f"><td class="memItemLeft" align="right" valign="top"><a id="a00a076b8ade7a28b35a7e46eb684a37f" name="a00a076b8ade7a28b35a7e46eb684a37f"></a>
+Address::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>m_local_address</b></td></tr>
+<tr class="memdesc:a00a076b8ade7a28b35a7e46eb684a37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">本地地址 <br /></td></tr>
+<tr class="separator:a00a076b8ade7a28b35a7e46eb684a37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1972b0e8e93bdfb1865d30847d388069"><td class="memItemLeft" align="right" valign="top"><a id="a1972b0e8e93bdfb1865d30847d388069" name="a1972b0e8e93bdfb1865d30847d388069"></a>
+Address::ptr&#160;</td><td class="memItemRight" valign="bottom"><b>m_remote_address</b></td></tr>
+<tr class="memdesc:a1972b0e8e93bdfb1865d30847d388069"><td class="mdescLeft">&#160;</td><td class="mdescRight">远端地址 <br /></td></tr>
+<tr class="separator:a1972b0e8e93bdfb1865d30847d388069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a0e0c9061f7edd7163e59091639b72672" name="a0e0c9061f7edd7163e59091639b72672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0c9061f7edd7163e59091639b72672">&#9670;&#160;</a></span>Family</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classmyserver_1_1_socket.html#a0e0c9061f7edd7163e59091639b72672">myserver::Socket::Family</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a0e0c9061f7edd7163e59091639b72672a822327617f7e42d02e1e0ec2a615be65" name="a0e0c9061f7edd7163e59091639b72672a822327617f7e42d02e1e0ec2a615be65"></a>IPv4&#160;</td><td class="fielddoc"><p>IPv4 socket </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0e0c9061f7edd7163e59091639b72672aa334513caaba656a894f00fb64273c74" name="a0e0c9061f7edd7163e59091639b72672aa334513caaba656a894f00fb64273c74"></a>IPv6&#160;</td><td class="fielddoc"><p>IPv6 socket </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0e0c9061f7edd7163e59091639b72672a3e855ed8fc969b03cf6739858b478502" name="a0e0c9061f7edd7163e59091639b72672a3e855ed8fc969b03cf6739858b478502"></a>UNIX&#160;</td><td class="fielddoc"><p>Unix socket </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a31fd519e5b7bf5de1846a7828eb18a3b" name="a31fd519e5b7bf5de1846a7828eb18a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31fd519e5b7bf5de1846a7828eb18a3b">&#9670;&#160;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classmyserver_1_1_socket.html#a31fd519e5b7bf5de1846a7828eb18a3b">myserver::Socket::Type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a31fd519e5b7bf5de1846a7828eb18a3bad1c758f81ccb3ea958f958203ac7ef1d" name="a31fd519e5b7bf5de1846a7828eb18a3bad1c758f81ccb3ea958f958203ac7ef1d"></a>TCP&#160;</td><td class="fielddoc"><p>TCP类型 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a31fd519e5b7bf5de1846a7828eb18a3badabccebd5f438838352f25324a10dd3c" name="a31fd519e5b7bf5de1846a7828eb18a3badabccebd5f438838352f25324a10dd3c"></a>UDP&#160;</td><td class="fielddoc"><p>UDP类型 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="socket_8hpp_source.html">socket.hpp</a></li>
+<li>myserver/socket.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

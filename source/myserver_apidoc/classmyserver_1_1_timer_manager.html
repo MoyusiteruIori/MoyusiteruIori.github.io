@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::TimerManager类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_timer_manager.html">TimerManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="classmyserver_1_1_timer_manager-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::TimerManager类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>定时器管理器  
+ <a href="classmyserver_1_1_timer_manager.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="timer_8hpp_source.html">timer.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 myserver::TimerManager 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_timer_manager.png" usemap="#myserver::TimerManager_map" alt=""/>
+  <map id="myserver::TimerManager_map" name="myserver::TimerManager_map">
+<area href="classmyserver_1_1_i_o_manager.html" title="IO 协程调度器" alt="myserver::IOManager" shape="rect" coords="0,56,153,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0c1e13ccc7467c212ce009d90789818a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a0c1e13ccc7467c212ce009d90789818a">TimerManager</a> ()</td></tr>
+<tr class="memdesc:a0c1e13ccc7467c212ce009d90789818a"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a0c1e13ccc7467c212ce009d90789818a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131480ea9d2fa06fd6573c8eba94ba29"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a131480ea9d2fa06fd6573c8eba94ba29">~TimerManager</a> ()</td></tr>
+<tr class="memdesc:a131480ea9d2fa06fd6573c8eba94ba29"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:a131480ea9d2fa06fd6573c8eba94ba29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d96a14c3ed1eeee737a20b7bc8eaab"><td class="memItemLeft" align="right" valign="top">Timer::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a53d96a14c3ed1eeee737a20b7bc8eaab">add_timer</a> (uint64_t ms, std::function&lt; void()&gt; cb, bool recurring=false)</td></tr>
+<tr class="memdesc:a53d96a14c3ed1eeee737a20b7bc8eaab"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加定时器  <br /></td></tr>
+<tr class="separator:a53d96a14c3ed1eeee737a20b7bc8eaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaf91bf708efa08008e8d5201d2b909b"><td class="memItemLeft" align="right" valign="top">Timer::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#aeaf91bf708efa08008e8d5201d2b909b">add_condition_timer</a> (uint64_t ms, std::function&lt; void()&gt; cb, std::weak_ptr&lt; void &gt; weak_cond, bool recurring=false)</td></tr>
+<tr class="memdesc:aeaf91bf708efa08008e8d5201d2b909b"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加条件定时器  <br /></td></tr>
+<tr class="separator:aeaf91bf708efa08008e8d5201d2b909b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646c1c8e869ab932c80714afed357a48"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a646c1c8e869ab932c80714afed357a48">next_timer</a> ()</td></tr>
+<tr class="memdesc:a646c1c8e869ab932c80714afed357a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取距离下一个定时器触发时间的时间间隔  <br /></td></tr>
+<tr class="separator:a646c1c8e869ab932c80714afed357a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35a66cb92f122420b65976ebecc849a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#af35a66cb92f122420b65976ebecc849a">list_expired_cb</a> (std::vector&lt; std::function&lt; void()&gt; &gt; &amp;cbs)</td></tr>
+<tr class="memdesc:af35a66cb92f122420b65976ebecc849a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取所有触发时间已到的定时器  <br /></td></tr>
+<tr class="separator:af35a66cb92f122420b65976ebecc849a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f6352d0d125e4569c7c2fe8b9470e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a40f6352d0d125e4569c7c2fe8b9470e7">has_timer</a> () const</td></tr>
+<tr class="memdesc:a40f6352d0d125e4569c7c2fe8b9470e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前是否有定时器  <br /></td></tr>
+<tr class="separator:a40f6352d0d125e4569c7c2fe8b9470e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a8bc7865791968e24e7b6889ed05903e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a8bc7865791968e24e7b6889ed05903e9">on_timer_insert_at_front</a> ()=0</td></tr>
+<tr class="memdesc:a8bc7865791968e24e7b6889ed05903e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">当新插入的定时器恰好是下一个触发的定时器时执行的回调  <br /></td></tr>
+<tr class="separator:a8bc7865791968e24e7b6889ed05903e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8021dbc8445620bda6b510cc6f9f45bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_timer_manager.html#a8021dbc8445620bda6b510cc6f9f45bf">add_timer</a> (Timer::ptr val, <a class="el" href="structmyserver_1_1_write_scoped_lock_impl.html">myserver::WriteLock</a> &amp;lock)</td></tr>
+<tr class="memdesc:a8021dbc8445620bda6b510cc6f9f45bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加定时器，并解除 lock 锁  <br /></td></tr>
+<tr class="separator:a8021dbc8445620bda6b510cc6f9f45bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a50de43af5bed41f30c071d8cce0e81bc"><td class="memItemLeft" align="right" valign="top"><a id="a50de43af5bed41f30c071d8cce0e81bc" name="a50de43af5bed41f30c071d8cce0e81bc"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>Timer</b></td></tr>
+<tr class="separator:a50de43af5bed41f30c071d8cce0e81bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定时器管理器 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0c1e13ccc7467c212ce009d90789818a" name="a0c1e13ccc7467c212ce009d90789818a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c1e13ccc7467c212ce009d90789818a">&#9670;&#160;</a></span>TimerManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::TimerManager::TimerManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+
+</div>
+</div>
+<a id="a131480ea9d2fa06fd6573c8eba94ba29" name="a131480ea9d2fa06fd6573c8eba94ba29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a131480ea9d2fa06fd6573c8eba94ba29">&#9670;&#160;</a></span>~TimerManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::TimerManager::~TimerManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aeaf91bf708efa08008e8d5201d2b909b" name="aeaf91bf708efa08008e8d5201d2b909b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaf91bf708efa08008e8d5201d2b909b">&#9670;&#160;</a></span>add_condition_timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timer::ptr myserver::TimerManager::add_condition_timer </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::weak_ptr&lt; void &gt;&#160;</td>
+          <td class="paramname"><em>weak_cond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>recurring</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加条件定时器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ms</td><td>定时器的间隔时间 </td></tr>
+    <tr><td class="paramname">cb</td><td>定时器的回调函数 </td></tr>
+    <tr><td class="paramname">weak_cond</td><td>满足 weak_cond 时回调才触发 </td></tr>
+    <tr><td class="paramname">recurring</td><td>是否是循环定时器 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Timer::ptr 指向定时器的共享指针 </dd></dl>
+
+</div>
+</div>
+<a id="a8021dbc8445620bda6b510cc6f9f45bf" name="a8021dbc8445620bda6b510cc6f9f45bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8021dbc8445620bda6b510cc6f9f45bf">&#9670;&#160;</a></span>add_timer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::TimerManager::add_timer </td>
+          <td>(</td>
+          <td class="paramtype">Timer::ptr&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmyserver_1_1_write_scoped_lock_impl.html">myserver::WriteLock</a> &amp;&#160;</td>
+          <td class="paramname"><em>lock</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>添加定时器，并解除 lock 锁 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>指向要添加的定时器的共享指针 </td></tr>
+    <tr><td class="paramname">lock</td><td>添加后解锁 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a53d96a14c3ed1eeee737a20b7bc8eaab" name="a53d96a14c3ed1eeee737a20b7bc8eaab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53d96a14c3ed1eeee737a20b7bc8eaab">&#9670;&#160;</a></span>add_timer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timer::ptr myserver::TimerManager::add_timer </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>recurring</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添加定时器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ms</td><td>定时器的间隔时间 </td></tr>
+    <tr><td class="paramname">cb</td><td>定时器的回调函数 </td></tr>
+    <tr><td class="paramname">recurring</td><td>是否是循环定时器 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Timer::ptr 指向定时器的共享指针 </dd></dl>
+
+</div>
+</div>
+<a id="a40f6352d0d125e4569c7c2fe8b9470e7" name="a40f6352d0d125e4569c7c2fe8b9470e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f6352d0d125e4569c7c2fe8b9470e7">&#9670;&#160;</a></span>has_timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::TimerManager::has_timer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>当前是否有定时器 </p>
+<dl class="section return"><dt>返回</dt><dd>true 是 </dd>
+<dd>
+false 否 </dd></dl>
+
+</div>
+</div>
+<a id="af35a66cb92f122420b65976ebecc849a" name="af35a66cb92f122420b65976ebecc849a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35a66cb92f122420b65976ebecc849a">&#9670;&#160;</a></span>list_expired_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::TimerManager::list_expired_cb </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::function&lt; void()&gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cbs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取所有触发时间已到的定时器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cbs</td><td>所有触发时间已到的定时器 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a646c1c8e869ab932c80714afed357a48" name="a646c1c8e869ab932c80714afed357a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a646c1c8e869ab932c80714afed357a48">&#9670;&#160;</a></span>next_timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t myserver::TimerManager::next_timer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取距离下一个定时器触发时间的时间间隔 </p>
+<dl class="section return"><dt>返回</dt><dd>uint64_t 距离下一个定时器触发时间的时间间隔 </dd></dl>
+
+</div>
+</div>
+<a id="a8bc7865791968e24e7b6889ed05903e9" name="a8bc7865791968e24e7b6889ed05903e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc7865791968e24e7b6889ed05903e9">&#9670;&#160;</a></span>on_timer_insert_at_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void myserver::TimerManager::on_timer_insert_at_front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当新插入的定时器恰好是下一个触发的定时器时执行的回调 </p>
+
+<p>在 <a class="el" href="classmyserver_1_1_i_o_manager.html#ac1acf6ed36f5c82a3b909b577b718a7b">myserver::IOManager</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="timer_8hpp_source.html">timer.hpp</a></li>
+<li>myserver/timer.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>
