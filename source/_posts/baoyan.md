@@ -6,7 +6,7 @@ tags:
 categories: 保研
 keywords: '保研, 清华'
 description: 智者千虑不如歪打正着
-cover: cover.jpeg
+cover: cover.JPG
 ---
 
 # 个人背景
