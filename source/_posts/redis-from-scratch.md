@@ -1005,4 +1005,641 @@ L_DONE:
 > - [06_client.cpp](https://build-your-own.org/redis/06/06_client.cpp.htm)
 > - [06_server.cpp](https://build-your-own.org/redis/06/06_server.cpp.htm)
 
+## 本章练习答案
+
+以下代码是译者自己的作业，不保证准确。
+
+```C++
+#include <assert.h>
+#include <cerrno>
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <netinet/ip.h>
+#include <sys/epoll.h>
+#include <sys/socket.h>
+
+#include <unordered_map>
+
+void die(const char* msg) {
+    fprintf(stderr, "Error at %s\n", msg);
+    exit(EXIT_FAILURE);
+}
+
+void msg(const char* msg) {
+    fprintf(stdout, "%s\n", msg);
+}
+
+static void set_fd_nb(int fd) {
+    errno = 0;
+    int flags = fcntl(fd, F_GETFL, 0);
+    if (errno) {
+        die("fcntl");
+    }
+
+    flags |= O_NONBLOCK;
+
+    errno = 0;
+    (void)fcntl(fd, F_SETFL, flags);
+    if (errno) {
+        die("fcntl");
+    }
+}
+
+
+constexpr size_t K_MAX_MSG = 4096;
+constexpr int PROTOCOL_HEAD_LEN = 4;
+constexpr int EPOLL_MAX_EVENTS = 128;
+
+struct Connection {
+    int epfd = -1;
+    struct epoll_event ev;
+    size_t first_req = 0;
+    size_t rbuf_size = 0;
+    uint8_t rbuf[K_MAX_MSG + 4];
+    size_t wbuf_size = 0;
+    size_t wbuf_sent = 0;
+    uint8_t wbuf[K_MAX_MSG + 4];
+    bool dead = false;
+
+    Connection(int connfd, int epfd) {
+        this->epfd = epfd;
+        ev.events = EPOLLIN;
+        ev.data.fd = connfd;
+        set_fd_nb(connfd);
+        if (epoll_ctl(epfd, EPOLL_CTL_ADD, ev.data.fd, &ev)) {
+            msg(strerror(errno));
+            die("EPOLL_CTL_ADD");
+        }
+    }
+
+    ~Connection() {
+        if (!dead) {
+            destroy();
+        }
+    }
+
+    void destroy() {
+        dead = true;
+        if (epoll_ctl(epfd, EPOLL_CTL_DEL, ev.data.fd, &ev)) {
+            msg(strerror(errno));
+            die("EPOLL_CTL_DEL");
+        }
+        close(ev.data.fd);
+        ev.data.fd = -1;
+    }
+
+    void switch_to_read() {
+        if (dead)   return;
+        assert(ev.events == EPOLLOUT);
+        ev.events = EPOLLIN;
+        if (epoll_ctl(epfd, EPOLL_CTL_MOD, ev.data.fd, &ev)) {
+            msg(strerror(errno));
+            die("EPOLL_CTL_MOD");
+        }
+    }
+
+    void switch_to_write() {
+        if (dead)   return;
+        assert(ev.events == EPOLLIN);
+        ev.events = EPOLLOUT;
+        if (epoll_ctl(epfd, EPOLL_CTL_MOD, ev.data.fd, &ev)) {
+            msg(strerror(errno));
+            die("EPOLL_CTL_MOD");
+        }
+    }
+
+    uint32_t rbuf_next_req_size() const {
+        if (rbuf_size < PROTOCOL_HEAD_LEN)
+            return 0;
+        uint32_t len = 0;
+        memcpy(&len, rbuf + first_req, PROTOCOL_HEAD_LEN);
+        if (len > K_MAX_MSG)
+            return 0;
+        if (rbuf_size < len + PROTOCOL_HEAD_LEN)
+            return 0;
+        return len + PROTOCOL_HEAD_LEN;
+    }
+
+    void state_req() {
+        assert(rbuf_size <= sizeof(rbuf));
+        assert(first_req <= sizeof(rbuf));
+        assert(wbuf_sent == 0 && wbuf_size == 0);
+        ssize_t rv = 0;
+        while (!dead) {
+            if (first_req > 0) {
+                memmove(rbuf, rbuf + first_req, rbuf_size);
+                first_req = 0;
+            }
+            do {
+                size_t cap = sizeof(rbuf) - rbuf_size;
+                rv = read(ev.data.fd, rbuf + rbuf_size, cap);
+            } while (rv < 0 && errno == EINTR);
+
+            if (rv < 0 && errno == EAGAIN) {
+                break;
+            }
+
+            if (rv < 0) {
+                msg("read error");
+                msg(strerror(errno));
+                destroy();
+                break;
+            }
+
+            if (rv == 0) {
+                if (rbuf_size > 0) {
+                    msg("unexpected EOF");
+                }
+                else {
+                    msg("EOF");
+                }
+                destroy();
+                break;
+            }
+
+            rbuf_size += (size_t)rv;
+            assert(rbuf_size < sizeof(rbuf));
+
+            // 尝试处理请求（清理 rbuf）
+            while (true) {
+                if (rbuf_size < PROTOCOL_HEAD_LEN) {
+                    break;
+                }
+                uint32_t len = 0;
+                memcpy(&len, rbuf + first_req, PROTOCOL_HEAD_LEN);
+                if (len > K_MAX_MSG) {
+                    msg("message too long");
+                    destroy();
+                    break;
+                }
+                // rbuf 中还未读进足够多的数据
+                if (4 + len > rbuf_size) {
+                    break;
+                }
+
+                printf("Client says: %.*s\n", len, rbuf + first_req + PROTOCOL_HEAD_LEN);
+                memcpy(wbuf, &len, PROTOCOL_HEAD_LEN);
+                memcpy(wbuf + PROTOCOL_HEAD_LEN, rbuf + first_req + PROTOCOL_HEAD_LEN, len);
+                wbuf_size += PROTOCOL_HEAD_LEN + len;
+
+                // 删除处理过的请求
+                first_req += len + PROTOCOL_HEAD_LEN;
+                rbuf_size -= len + PROTOCOL_HEAD_LEN;
+
+                // 改变状态
+                switch_to_write();
+                state_res();
+
+                if (ev.events != EPOLLIN) {
+                    break;
+                }
+            }
+        }
+    }
+
+    void state_res() {
+        while (!dead) {
+            ssize_t rv = 0;
+            do {
+                int remain = wbuf_size - wbuf_sent;
+                rv = write(ev.data.fd, wbuf + wbuf_sent, remain);
+            } while (rv < 0 && errno == EINTR);
+
+            if (rv < 0 && errno == EAGAIN) {
+                break;
+            }
+            if (rv < 0) {
+                msg("write error");
+                destroy();
+                break;
+            }
+
+            wbuf_sent += rv;
+            assert(wbuf_sent <= wbuf_size);
+            if (wbuf_sent == wbuf_size) {
+                wbuf_sent = wbuf_size = 0;
+                switch_to_read();
+                state_req();
+                break;
+            }
+        }
+    }
+};
+
+void add_new_connection(
+    int serverfd,
+    int epfd,
+    std::unordered_map<int, Connection*>& connections
+) {
+    sockaddr_in client_addr = {};
+    socklen_t client_addr_len = sizeof(client_addr);
+    int connfd = accept(serverfd, (sockaddr*)&client_addr, &client_addr_len);
+    if (connfd < 0) {
+        msg("accept failed");
+        return;
+    }
+    Connection* new_conn = new Connection(connfd, epfd);
+    auto it = connections.find(connfd);
+    if (it != connections.end() && it->second != nullptr) {
+        assert(it->second->dead);
+        delete it->second;
+        it->second = new_conn;
+    }
+    else {
+        connections[connfd] = new_conn;
+    }
+}
+
+int main() {
+    int serverfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (serverfd < 0) {
+        die("socket()");
+    }
+
+    int val = 1;
+    int rv = setsockopt(serverfd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(val));
+
+    sockaddr_in server_addr = {};
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(1234);
+    server_addr.sin_addr.s_addr = 0;
+    socklen_t server_addr_len = sizeof(server_addr);
+
+    rv = bind(serverfd, (const sockaddr*)&server_addr, server_addr_len);
+    if (rv < 0) {
+        die("bind()");
+    }
+
+    rv = listen(serverfd, 10);
+    if (rv < 0) {
+        die("listen()");
+    }
+
+    // 事件循环
+    int epfd = epoll_create(1024);
+    if (epfd < 0) {
+        die("epoll_create()");
+    }
+
+    std::unordered_map<int, Connection*> connections;
+
+    epoll_event server_ev = {};
+    server_ev.data.fd = serverfd;
+    server_ev.events = EPOLLIN;
+    rv = epoll_ctl(epfd, EPOLL_CTL_ADD, serverfd, &server_ev);
+    if (rv < 0) {
+        msg(strerror(errno));
+        die("EPOLL_CTL_ADD");
+    }
+
+    epoll_event events[EPOLL_MAX_EVENTS];
+    while (true) {
+        rv = epoll_wait(epfd, events, EPOLL_MAX_EVENTS, -1);
+        if (rv < 0) {
+            die(strerror(errno));
+        }
+
+        for (int i = 0; i < rv; ++i) {
+            if (events[i].data.fd == serverfd) {
+                add_new_connection(serverfd, epfd, connections);
+            }
+            else {
+                auto conn = connections[events[i].data.fd];
+                assert(conn != nullptr);
+                if (conn->ev.events == EPOLLIN) {
+                    conn->state_req();
+                }
+                else if (conn->ev.events == EPOLLOUT) {
+                    conn->state_res();
+                }
+            }
+        }
+
+    }   // end of event loop
+}
+```
+
+# 基础服务器：get、set、del
+
+注：之后的代码在上一章原本的基于 `poll` 的代码上继续修改，没有包含练习中的内容（如 `epoll` 、减少 `memmove` 的优化等）。
+
+有了上一章讲的事件循环，我们终于可以开始给服务器增加命令了。
+
+## 协议
+
+我们设计的“命令”是一系列的字符串，例如 `set key val` 。我们按照如下形式对命令进行编码：
+
+```
++------+-----+------+-----+------+-----+-----+------+
+| nstr | len | str1 | len | str2 | ... | len | strn |
++------+-----+------+-----+------+-----+-----+------+
+```
+
+`nstr` 表示字符串的数量，`len` 表示后面紧跟它的字符串的长度。他们都是 32 位整形。
+
+命令的响应是一个 32 位的状态码，后面跟一个响应字符串。
+
+## 处理请求
+
+从 `try_one_request` 函数入手：
+
+```C++
+static bool try_one_request(Conn* conn) {
+    if (conn->rbuf_size < 4) {
+        return false;
+    }
+    uint32_t len = 0;
+    memcpy(&len, conn->rbuf, 4);
+    if (len > k_max_msg) {
+        fprintf(stderr, "too long");
+        conn->state = STATE_END;
+        return false;
+    }
+    if (4 + len > conn->rbuf_size) {
+        return false;
+    }
+
+    // got one request, generate the response
+    uint32_t rescode = 0;
+    uint32_t wlen = 0;
+    int32_t err = do_request(
+        conn->rbuf + 4, len,
+        &rescode, conn->wbuf + 4 + 4, &wlen
+    );
+
+    if (err) {
+        return false;
+    }
+
+    wlen += 4;
+    memcpy(conn->wbuf, &wlen, 4);
+    memcpy(conn->wbuf + 4, &rescode, 4);
+    conn->wbuf_size = 4 + wlen;
+
+    // remove the request from the buffer
+    size_t remain = conn->rbuf_size - 4 - len;
+    if (remain) {
+        memmove(conn->rbuf, conn->rbuf + 4 + len, remain);
+    }
+    conn->rbuf_size = remain;
+
+    // change state
+    conn->state = STATE_RES;
+    state_res(conn);
+
+    return (conn->state == STATE_REQ);
+}
+```
+
+由 `do_request` 函数来处理请求，我们现在只支持 3 种命令，即 get 、set 、del。
+
+```C++
+static int32_t do_request(
+    const uint8_t* req, uint32_t reqlen,
+    uint32_t* rescode, uint8_t* res, uint32_t* reslen
+) {
+    std::vector<std::string> cmd;
+    if (parse_req(req, reqlen, cmd) != 0) {
+        printf("bad request\n");
+        return -1;
+    }
+    if (cmd.size() == 2 && cmd_is(cmd[0], "get")) {
+        *rescode = do_get(cmd, res, reslen);
+    }
+    else if (cmd.size() == 3 && cmd_is(cmd[0], "set")) {
+        *rescode = do_set(cmd, res, reslen);
+    }
+    else if (cmd.size() == 2 && cmd_is(cmd[0], "del")) {
+        *rescode = do_del(cmd, res, reslen);
+    }
+    else {
+        // illegal command
+        *rescode = RES_ERR;
+        const char* msg = "Unknown command";
+        strcpy((char*)res, msg);
+        *reslen = strlen(msg);
+        return 0;
+    }
+    return 0;
+}
+```
+
+## 命令解析
+
+用来解析命令的代码很简单粗暴：
+
+```C++
+static int32_t parse_req(
+    const uint8_t* data, size_t len, std::vector<std::string>& out
+) {
+    if (len < 4) {
+        return -1;
+    }
+
+    uint32_t n = 0;
+    memcpy(&n, data, 4);
+    if (n > k_max_args) {
+        return -1;
+    }
+
+    size_t pos = 4;
+    while (n--) {
+        if (pos + 4 > len) {
+            return -1;
+        }
+        uint32_t sz = 0;
+        memcpy(&sz, data + pos, 4);
+        if (pos + 4 + sz > len) {
+            return -1;
+        }
+        out.push_back(std::string((char*)&data[pos + 4], sz));
+        pos += 4 + sz;
+    }
+
+    if (pos != len) {
+        return -1;
+    }
+    return 0;
+}
+```
+
+## 响应命令
+
+3 种命令的“实现”如下：
+
+```C++
+enum {
+    RES_OK = 0,
+    RES_ERR = 1,
+    RES_NX = 2
+};
+
+static std::unordered_map<std::string, std::string> g_map;
+
+
+static uint32_t do_get(
+    const std::vector<std::string>& cmd, uint8_t* res, uint32_t* reslen
+) {
+    if (g_map.count(cmd[1]) == 0) {
+        return RES_NX;
+    }
+    std::string& val = g_map[cmd[1]];
+    assert(val.size() <= k_max_msg);
+    memcpy(res, val.data(), val.size());
+    *reslen = (uint32_t)val.size();
+    return RES_OK;
+}
+
+
+static uint32_t do_set(
+    const std::vector<std::string>& cmd, uint8_t* res, uint32_t* reslen
+) {
+    (void)res;
+    (void)reslen;
+    g_map[cmd[1]] = cmd[2];
+    return RES_OK;
+}
+
+
+static uint32_t do_del(
+    const std::vector<std::string>& cmd, uint8_t* res, uint32_t* reslen
+) {
+    (void)res;
+    (void)reslen;
+    g_map.erase(cmd[1]);
+    return RES_OK;
+}
+```
+
+## 客户端 & 测试
+
+现在该使用客户端对服务器进行测试了：
+
+```C++
+static int32_t send_req(int fd, const std::vector<std::string>& cmd) {
+    uint32_t len = 4;
+    for (const std::string& s : cmd) {
+        len += 4 + s.size();
+    }
+    if (len > 4 + k_max_msg) {
+        return -1;
+    }
+    char wbuf[4 + k_max_msg];
+    memcpy(wbuf, &len, 4);
+    uint32_t n = cmd.size();
+    memcpy(wbuf + 4, &n, 4);
+    size_t cur = 8;
+    for (const std::string& s : cmd) {
+        uint32_t p = (uint32_t)s.size();
+        memcpy(wbuf + cur, &p, 4);
+        memcpy(wbuf + cur + 4, s.data(), s.size());
+        cur += 4 + s.size();
+    }
+    return write_all(fd, wbuf, 4 + len);
+}
+
+static int32_t read_res(int fd) {
+    // 4 bytes header
+    uint32_t len = 0;
+    char rbuf[4 + k_max_msg + 1] = {};
+    errno = 0;
+    int32_t err = read_full(fd, rbuf, 4);
+    if (err) {
+        if (errno == 0) {
+            fprintf(stderr, "EOF\n");
+        }
+        else {
+            fprintf(stderr, "read() error\n");
+        }
+        return err;
+    }
+
+    memcpy(&len, rbuf, 4);
+    if (len > k_max_msg) {
+        fprintf(stderr, "reading message too long: %d.\n", len);
+        return -1;
+    }
+
+    // reply body
+    err = read_full(fd, rbuf + 4, len);
+    if (err) {
+        fprintf(stderr, "read() error\n");
+        return err;
+    }
+
+    // print the result
+    uint32_t rescode = 0;
+    if (len < 4) {
+        printf("bad response\n");
+        return -1;
+    }
+    memcpy(&rescode, rbuf + 4, 4);
+    printf("Server says: [%u] %.*s\n", rescode, len - 4, rbuf + 8);
+    return 0;
+}
+
+int main(int argc, char* argv[]) {
+    int fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (fd < 0) {
+        die("socket()");
+    }
+
+    struct sockaddr_in server_addr;
+    memset(&server_addr, 0, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(1234);
+    server_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+    int rv = connect(fd, (const sockaddr*)&server_addr, sizeof(server_addr));
+    if (rv < 0) {
+        die("connect()");
+    }
+
+
+    // multiple pipelined requests
+    std::vector<std::string> cmd;
+    for (int i = 1; i < argc; ++i) {
+        cmd.push_back(argv[i]);
+    }
+    int32_t err = send_req(fd, cmd);
+    if (err) {
+        goto L_DONE;
+    }
+    err = read_res(fd);
+    if (err) {
+        goto L_DONE;
+    }
+
+L_DONE:
+    close(fd);
+    return 0;
+}
+```
+
+测试命令：
+
+```
+$ ./client get k
+server says: [2]
+$ ./client set k v
+server says: [0]
+$ ./client get k
+server says: [0] v
+$ ./client del k
+server says: [0]
+$ ./client get k
+server says: [2]
+$ ./client aaa bbb
+server says: [1] Unknown cmd
+```
+
+本章源代码：
+
+> - [07_client.cpp](https://build-your-own.org/redis/07/07_client.cpp.htm)
+> - [07_server.cpp](https://build-your-own.org/redis/07/07_server.cpp.htm)
+
+
 未完待续。
