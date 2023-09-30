@@ -37,7 +37,7 @@ copy:
 social:
   fab fa-github: https://github.com/MoyusiteruIori || Github
   fas fa-envelope: y.meng1@outlook.com || Email
-  fab fa-twitter: https://twitter.com/111Iori || Twitter
+  # fab fa-twitter: https://twitter.com/111Iori || Twitter
   fab fa-qq: tencent://message/?uin=1037655483 || QQ
 # search (搜索)
 # --------------------------------------

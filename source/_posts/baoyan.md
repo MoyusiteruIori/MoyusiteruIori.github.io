@@ -1,5 +1,5 @@
 ---
-title: 2023 年（2024 届）流水账式计算机保研经验贴（清华-伯克利、上交软院、南软）
+title: 2023 年（2024 届）流水账式计算机保研经验帖（清华-伯克利、上交软院、南软）
 date: 2023-09-30 20:09:20
 tags:
     - 保研
@@ -27,7 +27,7 @@ cover: cover.JPG
 
 <div align=center> 
 
-{% asset_img cover.jpeg 最终去向 %}
+{% asset_img final.jpeg 最终去向 %}
 
 </div>
 
