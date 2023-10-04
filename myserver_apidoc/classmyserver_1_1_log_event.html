@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::LogEvent类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_log_event.html">LogEvent</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classmyserver_1_1_log_event-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::LogEvent类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>日志事件  
+ <a href="classmyserver_1_1_log_event.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="log_8hpp_source.html">log.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a338b57deec5abb6712a56fb5cf68d971"><td class="memItemLeft" align="right" valign="top"><a id="a338b57deec5abb6712a56fb5cf68d971" name="a338b57deec5abb6712a56fb5cf68d971"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_log_event.html">LogEvent</a> &gt;</td></tr>
+<tr class="separator:a338b57deec5abb6712a56fb5cf68d971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621099e72cee64631402587e1aa89737"><td class="memItemLeft" align="right" valign="top"><a id="a621099e72cee64631402587e1aa89737" name="a621099e72cee64631402587e1aa89737"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>constptr</b> = std::shared_ptr&lt; const <a class="el" href="classmyserver_1_1_log_event.html">LogEvent</a> &gt;</td></tr>
+<tr class="separator:a621099e72cee64631402587e1aa89737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af2f0b11f4117f07f4e7184a3385651a5"><td class="memItemLeft" align="right" valign="top"><a id="af2f0b11f4117f07f4e7184a3385651a5" name="af2f0b11f4117f07f4e7184a3385651a5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LogEvent</b> (std::string <a class="el" href="classmyserver_1_1_log_event.html#ae0a6cd17fa07d724219d79551fd2cd42">file</a>, uint32_t <a class="el" href="classmyserver_1_1_log_event.html#aeb56ccfe0ca6d1c8c6172392243e78d1">line</a>, uint32_t <a class="el" href="classmyserver_1_1_log_event.html#abbc56bebeaf7e842847ed960df0e144b">elapse</a>, int64_t <a class="el" href="classmyserver_1_1_log_event.html#a9b748270d11f07080a313e6785a1bfcb">thread_id</a>, uint32_t <a class="el" href="classmyserver_1_1_log_event.html#ae6c69eebfaa76f928f717ea69f9f7479">fiber_id</a>, uint64_t <a class="el" href="classmyserver_1_1_log_event.html#ae0e48274368e65975dad6fb888b9449e">time</a>, const std::string &amp;thread_name)</td></tr>
+<tr class="separator:af2f0b11f4117f07f4e7184a3385651a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a6cd17fa07d724219d79551fd2cd42"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#ae0a6cd17fa07d724219d79551fd2cd42">file</a> () const</td></tr>
+<tr class="memdesc:ae0a6cd17fa07d724219d79551fd2cd42"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取生成日志的代码所在的文件名  <br /></td></tr>
+<tr class="separator:ae0a6cd17fa07d724219d79551fd2cd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb56ccfe0ca6d1c8c6172392243e78d1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#aeb56ccfe0ca6d1c8c6172392243e78d1">line</a> () const</td></tr>
+<tr class="memdesc:aeb56ccfe0ca6d1c8c6172392243e78d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取生成日志的代码所在的行号  <br /></td></tr>
+<tr class="separator:aeb56ccfe0ca6d1c8c6172392243e78d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc56bebeaf7e842847ed960df0e144b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#abbc56bebeaf7e842847ed960df0e144b">elapse</a> () const</td></tr>
+<tr class="memdesc:abbc56bebeaf7e842847ed960df0e144b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取生成日志时程序已经运行的毫秒数  <br /></td></tr>
+<tr class="separator:abbc56bebeaf7e842847ed960df0e144b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b748270d11f07080a313e6785a1bfcb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#a9b748270d11f07080a313e6785a1bfcb">thread_id</a> () const</td></tr>
+<tr class="memdesc:a9b748270d11f07080a313e6785a1bfcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取生成日志的线程 id  <br /></td></tr>
+<tr class="separator:a9b748270d11f07080a313e6785a1bfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c69eebfaa76f928f717ea69f9f7479"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#ae6c69eebfaa76f928f717ea69f9f7479">fiber_id</a> () const</td></tr>
+<tr class="memdesc:ae6c69eebfaa76f928f717ea69f9f7479"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取生成日志的协程 id  <br /></td></tr>
+<tr class="separator:ae6c69eebfaa76f928f717ea69f9f7479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e48274368e65975dad6fb888b9449e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#ae0e48274368e65975dad6fb888b9449e">time</a> () const</td></tr>
+<tr class="memdesc:ae0e48274368e65975dad6fb888b9449e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取生成日志的时间  <br /></td></tr>
+<tr class="separator:ae0e48274368e65975dad6fb888b9449e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae874a2410e2c9c786f7e324670efe3f4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#ae874a2410e2c9c786f7e324670efe3f4">threadname</a> () const</td></tr>
+<tr class="memdesc:ae874a2410e2c9c786f7e324670efe3f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取生成日志的线程名称  <br /></td></tr>
+<tr class="separator:ae874a2410e2c9c786f7e324670efe3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5a2b791957fff775de1c42d1d03d58"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#a9f5a2b791957fff775de1c42d1d03d58">content</a> () const</td></tr>
+<tr class="memdesc:a9f5a2b791957fff775de1c42d1d03d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取日志内容  <br /></td></tr>
+<tr class="separator:a9f5a2b791957fff775de1c42d1d03d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab77584a8ea8a515fc2888476a24949e"><td class="memItemLeft" align="right" valign="top">std::stringstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_log_event.html#aab77584a8ea8a515fc2888476a24949e">ss</a> ()</td></tr>
+<tr class="memdesc:aab77584a8ea8a515fc2888476a24949e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取日志事件的字符串流  <br /></td></tr>
+<tr class="separator:aab77584a8ea8a515fc2888476a24949e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>日志事件 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a9f5a2b791957fff775de1c42d1d03d58" name="a9f5a2b791957fff775de1c42d1d03d58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5a2b791957fff775de1c42d1d03d58">&#9670;&#160;</a></span>content()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::LogEvent::content </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取日志内容 </p>
+<dl class="section return"><dt>返回</dt><dd>std::string 日志内容 </dd></dl>
+
+</div>
+</div>
+<a id="abbc56bebeaf7e842847ed960df0e144b" name="abbc56bebeaf7e842847ed960df0e144b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc56bebeaf7e842847ed960df0e144b">&#9670;&#160;</a></span>elapse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t myserver::LogEvent::elapse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取生成日志时程序已经运行的毫秒数 </p>
+<dl class="section return"><dt>返回</dt><dd>生成日志时程序已经运行的毫秒数 </dd></dl>
+
+</div>
+</div>
+<a id="ae6c69eebfaa76f928f717ea69f9f7479" name="ae6c69eebfaa76f928f717ea69f9f7479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c69eebfaa76f928f717ea69f9f7479">&#9670;&#160;</a></span>fiber_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t myserver::LogEvent::fiber_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取生成日志的协程 id </p>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 生成日志的协程 id </dd></dl>
+
+</div>
+</div>
+<a id="ae0a6cd17fa07d724219d79551fd2cd42" name="ae0a6cd17fa07d724219d79551fd2cd42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a6cd17fa07d724219d79551fd2cd42">&#9670;&#160;</a></span>file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::LogEvent::file </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取生成日志的代码所在的文件名 </p>
+<dl class="section return"><dt>返回</dt><dd>std::string 生成日志的文件名 </dd></dl>
+
+</div>
+</div>
+<a id="aeb56ccfe0ca6d1c8c6172392243e78d1" name="aeb56ccfe0ca6d1c8c6172392243e78d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb56ccfe0ca6d1c8c6172392243e78d1">&#9670;&#160;</a></span>line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t myserver::LogEvent::line </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取生成日志的代码所在的行号 </p>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 生成日志的行号 </dd></dl>
+
+</div>
+</div>
+<a id="aab77584a8ea8a515fc2888476a24949e" name="aab77584a8ea8a515fc2888476a24949e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab77584a8ea8a515fc2888476a24949e">&#9670;&#160;</a></span>ss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stringstream &amp; myserver::LogEvent::ss </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取日志事件的字符串流 </p>
+<dl class="section return"><dt>返回</dt><dd>std::stringstream&amp; 日志事件的字符串流 </dd></dl>
+
+</div>
+</div>
+<a id="a9b748270d11f07080a313e6785a1bfcb" name="a9b748270d11f07080a313e6785a1bfcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b748270d11f07080a313e6785a1bfcb">&#9670;&#160;</a></span>thread_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t myserver::LogEvent::thread_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取生成日志的线程 id </p>
+<dl class="section return"><dt>返回</dt><dd>uint32_t 生成日志的线程 id </dd></dl>
+
+</div>
+</div>
+<a id="ae874a2410e2c9c786f7e324670efe3f4" name="ae874a2410e2c9c786f7e324670efe3f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae874a2410e2c9c786f7e324670efe3f4">&#9670;&#160;</a></span>threadname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::LogEvent::threadname </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取生成日志的线程名称 </p>
+<dl class="section return"><dt>返回</dt><dd>std::string 生成日志的线程名称 </dd></dl>
+
+</div>
+</div>
+<a id="ae0e48274368e65975dad6fb888b9449e" name="ae0e48274368e65975dad6fb888b9449e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e48274368e65975dad6fb888b9449e">&#9670;&#160;</a></span>time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t myserver::LogEvent::time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取生成日志的时间 </p>
+<dl class="section return"><dt>返回</dt><dd>uint64_t 生成日志的时间 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="log_8hpp_source.html">log.hpp</a></li>
+<li>myserver/log.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

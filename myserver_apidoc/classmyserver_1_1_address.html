@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::Address类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_address.html">Address</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classmyserver_1_1_address-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::Address类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>地址基类  
+ <a href="classmyserver_1_1_address.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="address_8hpp_source.html">address.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 myserver::Address 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_address.png" usemap="#myserver::Address_map" alt=""/>
+  <map id="myserver::Address_map" name="myserver::Address_map">
+<area href="classmyserver_1_1_i_p_address.html" title="IP 地址" alt="myserver::IPAddress" shape="rect" coords="89,56,258,80"/>
+<area href="classmyserver_1_1_unix_address.html" title="Unix 地址" alt="myserver::UnixAddress" shape="rect" coords="268,56,437,80"/>
+<area href="classmyserver_1_1_unknown_address.html" title="未知类型地址" alt="myserver::UnknownAddress" shape="rect" coords="447,56,616,80"/>
+<area href="classmyserver_1_1_i_pv4_address.html" title="IPv4 地址" alt="myserver::IPv4Address" shape="rect" coords="0,112,169,136"/>
+<area href="classmyserver_1_1_i_pv6_address.html" title="IPv6 地址" alt="myserver::IPv6Address" shape="rect" coords="179,112,348,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a7f7cdee1477d2179e624555f9ac26cbe"><td class="memItemLeft" align="right" valign="top"><a id="a7f7cdee1477d2179e624555f9ac26cbe" name="a7f7cdee1477d2179e624555f9ac26cbe"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_address.html">Address</a> &gt;</td></tr>
+<tr class="separator:a7f7cdee1477d2179e624555f9ac26cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aedf0061ae264f0095f0c1fb708c2e7aa"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#aedf0061ae264f0095f0c1fb708c2e7aa">~Address</a> ()</td></tr>
+<tr class="memdesc:aedf0061ae264f0095f0c1fb708c2e7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:aedf0061ae264f0095f0c1fb708c2e7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66cf31a9faba57f250f14b3edaa5450"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a> () const</td></tr>
+<tr class="memdesc:af66cf31a9faba57f250f14b3edaa5450"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前地址的地址族  <br /></td></tr>
+<tr class="separator:af66cf31a9faba57f250f14b3edaa5450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46df95c34813299a135fecb2d5b33a68"><td class="memItemLeft" align="right" valign="top">virtual const sockaddr *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#a46df95c34813299a135fecb2d5b33a68">addr</a> () const =0</td></tr>
+<tr class="memdesc:a46df95c34813299a135fecb2d5b33a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部地址  <br /></td></tr>
+<tr class="separator:a46df95c34813299a135fecb2d5b33a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3ba692f97f8c8dd7186265adb33a45"><td class="memItemLeft" align="right" valign="top">virtual sockaddr *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#aad3ba692f97f8c8dd7186265adb33a45">addr</a> ()=0</td></tr>
+<tr class="memdesc:aad3ba692f97f8c8dd7186265adb33a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部地址  <br /></td></tr>
+<tr class="separator:aad3ba692f97f8c8dd7186265adb33a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8a8ace203fb051200ee9727770ff90"><td class="memItemLeft" align="right" valign="top">virtual socklen_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#afd8a8ace203fb051200ee9727770ff90">length</a> () const =0</td></tr>
+<tr class="memdesc:afd8a8ace203fb051200ee9727770ff90"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取地址长度  <br /></td></tr>
+<tr class="separator:afd8a8ace203fb051200ee9727770ff90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1a7ccc37ff34243beea7927a51e066"><td class="memItemLeft" align="right" valign="top">virtual std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#a8a1a7ccc37ff34243beea7927a51e066">insert</a> (std::ostream &amp;os) const =0</td></tr>
+<tr class="memdesc:a8a1a7ccc37ff34243beea7927a51e066"><td class="mdescLeft">&#160;</td><td class="mdescRight">地址序列化写入输出流  <br /></td></tr>
+<tr class="separator:a8a1a7ccc37ff34243beea7927a51e066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d271b739e1498ee5642f634d9bd4aa0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#a0d271b739e1498ee5642f634d9bd4aa0">to_string</a> () const</td></tr>
+<tr class="memdesc:a0d271b739e1498ee5642f634d9bd4aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">地址转字符串  <br /></td></tr>
+<tr class="separator:a0d271b739e1498ee5642f634d9bd4aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55be04bbabd5507d0ec4665c9efa32bb"><td class="memItemLeft" align="right" valign="top"><a id="a55be04bbabd5507d0ec4665c9efa32bb" name="a55be04bbabd5507d0ec4665c9efa32bb"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="classmyserver_1_1_address.html">Address</a> &amp;rhs) const</td></tr>
+<tr class="separator:a55be04bbabd5507d0ec4665c9efa32bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38aeca391e013906a63bbd277747a686"><td class="memItemLeft" align="right" valign="top"><a id="a38aeca391e013906a63bbd277747a686" name="a38aeca391e013906a63bbd277747a686"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classmyserver_1_1_address.html">Address</a> &amp;rhs) const</td></tr>
+<tr class="separator:a38aeca391e013906a63bbd277747a686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e00fcb2b66fff029172e270fb60e6d"><td class="memItemLeft" align="right" valign="top"><a id="a40e00fcb2b66fff029172e270fb60e6d" name="a40e00fcb2b66fff029172e270fb60e6d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classmyserver_1_1_address.html">Address</a> &amp;rhs) const</td></tr>
+<tr class="separator:a40e00fcb2b66fff029172e270fb60e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:aa7a4942c7eca6b19f29ea02d8f58efe0"><td class="memItemLeft" align="right" valign="top">static Address::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#aa7a4942c7eca6b19f29ea02d8f58efe0">create</a> (const sockaddr *<a class="el" href="classmyserver_1_1_address.html#a46df95c34813299a135fecb2d5b33a68">addr</a>, socklen_t addrlen)</td></tr>
+<tr class="memdesc:aa7a4942c7eca6b19f29ea02d8f58efe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个地址  <br /></td></tr>
+<tr class="separator:aa7a4942c7eca6b19f29ea02d8f58efe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a595e738193cc3f5c1a9185b055bbc881"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#a595e738193cc3f5c1a9185b055bbc881">lookup</a> (std::vector&lt; Address::ptr &gt; &amp;result, const std::string &amp;host, int <a class="el" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a>=AF_INET, int type=0, int protocol=0)</td></tr>
+<tr class="memdesc:a595e738193cc3f5c1a9185b055bbc881"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据域名返回对应的所有地址  <br /></td></tr>
+<tr class="separator:a595e738193cc3f5c1a9185b055bbc881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b48f527941422770504418ae3980c9"><td class="memItemLeft" align="right" valign="top">static Address::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#ad0b48f527941422770504418ae3980c9">lookup_any</a> (const std::string &amp;host, int <a class="el" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a>=AF_INET, int type=0, int protocol=0)</td></tr>
+<tr class="memdesc:ad0b48f527941422770504418ae3980c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据域名返回对应的一个地址  <br /></td></tr>
+<tr class="separator:ad0b48f527941422770504418ae3980c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91bc75fdfef937538338e5e02bf03aba"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_i_p_address.html">IPAddress</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#a91bc75fdfef937538338e5e02bf03aba">lookup_any_ipaddr</a> (const std::string &amp;host, int <a class="el" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a>=AF_INET, int type=0, int protocol=0)</td></tr>
+<tr class="memdesc:a91bc75fdfef937538338e5e02bf03aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据域名返回对应的一个 IP 地址  <br /></td></tr>
+<tr class="separator:a91bc75fdfef937538338e5e02bf03aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac986c4b42baf987711ad66d687761f6e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#ac986c4b42baf987711ad66d687761f6e">interface_addresses</a> (std::multimap&lt; std::string, std::pair&lt; Address::ptr, uint32_t &gt; &gt; &amp;result, int <a class="el" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a>=AF_INET)</td></tr>
+<tr class="memdesc:ac986c4b42baf987711ad66d687761f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取所有网卡和对应的地址  <br /></td></tr>
+<tr class="separator:ac986c4b42baf987711ad66d687761f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0876bc60f332d155eac7e71f19e8f1a0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_address.html#a0876bc60f332d155eac7e71f19e8f1a0">interface_addresses</a> (std::vector&lt; std::pair&lt; Address::ptr, uint32_t &gt; &gt; &amp;result, const std::string &amp;iface, int <a class="el" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a>=AF_INET)</td></tr>
+<tr class="memdesc:a0876bc60f332d155eac7e71f19e8f1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取所有网卡和对应的地址  <br /></td></tr>
+<tr class="separator:a0876bc60f332d155eac7e71f19e8f1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>地址基类 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aedf0061ae264f0095f0c1fb708c2e7aa" name="aedf0061ae264f0095f0c1fb708c2e7aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf0061ae264f0095f0c1fb708c2e7aa">&#9670;&#160;</a></span>~Address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual myserver::Address::~Address </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a46df95c34813299a135fecb2d5b33a68" name="a46df95c34813299a135fecb2d5b33a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46df95c34813299a135fecb2d5b33a68">&#9670;&#160;</a></span>addr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const sockaddr * myserver::Address::addr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取内部地址 </p>
+<dl class="section return"><dt>返回</dt><dd>const sockaddr* 内部地址 </dd></dl>
+
+<p>在 <a class="el" href="classmyserver_1_1_i_pv4_address.html#a0fe8912b64a5437c7cb8a41fdf0340bb">myserver::IPv4Address</a>, <a class="el" href="classmyserver_1_1_i_pv6_address.html#a3b90cf65819c6d54fd460e5fa02a7850">myserver::IPv6Address</a>, <a class="el" href="classmyserver_1_1_unix_address.html#a2d19a0f0d99103e7a61f58c5b1019c19">myserver::UnixAddress</a> , 以及 <a class="el" href="classmyserver_1_1_unknown_address.html#a13d21ce600794b5d70023eb9823d0e78">myserver::UnknownAddress</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aad3ba692f97f8c8dd7186265adb33a45" name="aad3ba692f97f8c8dd7186265adb33a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3ba692f97f8c8dd7186265adb33a45">&#9670;&#160;</a></span>addr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual sockaddr * myserver::Address::addr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取内部地址 </p>
+<dl class="section return"><dt>返回</dt><dd>sockaddr* 内部地址 </dd></dl>
+
+<p>在 <a class="el" href="classmyserver_1_1_i_pv4_address.html#aba93494e0914312dd7409e32d02e4188">myserver::IPv4Address</a>, <a class="el" href="classmyserver_1_1_i_pv6_address.html#a4d2dc7ec46cfeed6db3c58f258d99fb4">myserver::IPv6Address</a>, <a class="el" href="classmyserver_1_1_unix_address.html#a523ba42833d571985ef39ea1e9f1b444">myserver::UnixAddress</a> , 以及 <a class="el" href="classmyserver_1_1_unknown_address.html#a731b0f52b8cede161ecff83eb09996a3">myserver::UnknownAddress</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aa7a4942c7eca6b19f29ea02d8f58efe0" name="aa7a4942c7eca6b19f29ea02d8f58efe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a4942c7eca6b19f29ea02d8f58efe0">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Address::ptr myserver::Address::create </td>
+          <td>(</td>
+          <td class="paramtype">const sockaddr *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">socklen_t&#160;</td>
+          <td class="paramname"><em>addrlen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建一个地址 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>内部地址类型 </td></tr>
+    <tr><td class="paramname">addrlen</td><td>地址长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Address::ptr 指向地址对象的指针 </dd></dl>
+
+</div>
+</div>
+<a id="af66cf31a9faba57f250f14b3edaa5450" name="af66cf31a9faba57f250f14b3edaa5450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af66cf31a9faba57f250f14b3edaa5450">&#9670;&#160;</a></span>family()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int myserver::Address::family </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前地址的地址族 </p>
+<dl class="section return"><dt>返回</dt><dd>int 地址族 </dd></dl>
+
+</div>
+</div>
+<a id="a8a1a7ccc37ff34243beea7927a51e066" name="a8a1a7ccc37ff34243beea7927a51e066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1a7ccc37ff34243beea7927a51e066">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::ostream &amp; myserver::Address::insert </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>地址序列化写入输出流 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::ostream&amp; 输出流 </dd></dl>
+
+<p>在 <a class="el" href="classmyserver_1_1_i_pv4_address.html#afa347786ac51973dd68b49cee22f6d70">myserver::IPv4Address</a>, <a class="el" href="classmyserver_1_1_i_pv6_address.html#aca0e7bc8afa84db1d677d9694bc8a1e8">myserver::IPv6Address</a>, <a class="el" href="classmyserver_1_1_unix_address.html#a34a649c521cbc67cfef7e5891f83e80c">myserver::UnixAddress</a> , 以及 <a class="el" href="classmyserver_1_1_unknown_address.html#afc3b3eb22247a76dddb91e2c652ffd4c">myserver::UnknownAddress</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ac986c4b42baf987711ad66d687761f6e" name="ac986c4b42baf987711ad66d687761f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac986c4b42baf987711ad66d687761f6e">&#9670;&#160;</a></span>interface_addresses() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::Address::interface_addresses </td>
+          <td>(</td>
+          <td class="paramtype">std::multimap&lt; std::string, std::pair&lt; Address::ptr, uint32_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>family</em> = <code>AF_INET</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取所有网卡和对应的地址 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>所有网卡和对应的地址，每个 map 结点结构为 网卡 - &lt; 地址指针, 网络号长度 &gt; </td></tr>
+    <tr><td class="paramname">family</td><td>地址族 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 获取到地址 </dd>
+<dd>
+false 获取结果为空 </dd></dl>
+
+</div>
+</div>
+<a id="a0876bc60f332d155eac7e71f19e8f1a0" name="a0876bc60f332d155eac7e71f19e8f1a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0876bc60f332d155eac7e71f19e8f1a0">&#9670;&#160;</a></span>interface_addresses() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::Address::interface_addresses </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; Address::ptr, uint32_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>iface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>family</em> = <code>AF_INET</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取所有网卡和对应的地址 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>所有网卡和对应的地址，每个数组元素结构为 &lt; 地址指针, 网络号长度 &gt; </td></tr>
+    <tr><td class="paramname">family</td><td>地址族 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 获取到地址 </dd>
+<dd>
+false 获取结果为空 </dd></dl>
+
+</div>
+</div>
+<a id="afd8a8ace203fb051200ee9727770ff90" name="afd8a8ace203fb051200ee9727770ff90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8a8ace203fb051200ee9727770ff90">&#9670;&#160;</a></span>length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual socklen_t myserver::Address::length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取地址长度 </p>
+<dl class="section return"><dt>返回</dt><dd>socklen_t 地址长度 </dd></dl>
+
+<p>在 <a class="el" href="classmyserver_1_1_i_pv4_address.html#a0d89e21469ae1b0fa73823203bdf0526">myserver::IPv4Address</a>, <a class="el" href="classmyserver_1_1_i_pv6_address.html#a141e2c8f9005e081c822060b747152c8">myserver::IPv6Address</a>, <a class="el" href="classmyserver_1_1_unix_address.html#a02286536941bf83b6233508289de8c22">myserver::UnixAddress</a> , 以及 <a class="el" href="classmyserver_1_1_unknown_address.html#a888d5c577618ef81c5cc309d68f62a2f">myserver::UnknownAddress</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a595e738193cc3f5c1a9185b055bbc881" name="a595e738193cc3f5c1a9185b055bbc881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595e738193cc3f5c1a9185b055bbc881">&#9670;&#160;</a></span>lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::Address::lookup </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; Address::ptr &gt; &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>family</em> = <code>AF_INET</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>protocol</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据域名返回对应的所有地址 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>域名对应的所有地址 </td></tr>
+    <tr><td class="paramname">host</td><td>域名 </td></tr>
+    <tr><td class="paramname">family</td><td>地址族 </td></tr>
+    <tr><td class="paramname">type</td><td>类型 </td></tr>
+    <tr><td class="paramname">protocol</td><td>协议 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 有对应地址 </dd>
+<dd>
+false 无对于地址 </dd></dl>
+
+</div>
+</div>
+<a id="ad0b48f527941422770504418ae3980c9" name="ad0b48f527941422770504418ae3980c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b48f527941422770504418ae3980c9">&#9670;&#160;</a></span>lookup_any()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Address::ptr myserver::Address::lookup_any </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>family</em> = <code>AF_INET</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>protocol</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据域名返回对应的一个地址 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>域名 </td></tr>
+    <tr><td class="paramname">family</td><td>地址族 </td></tr>
+    <tr><td class="paramname">type</td><td>类型 </td></tr>
+    <tr><td class="paramname">protocol</td><td>协议 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Address::ptr 指向对应域名的一个地址的共享指针 </dd></dl>
+
+</div>
+</div>
+<a id="a91bc75fdfef937538338e5e02bf03aba" name="a91bc75fdfef937538338e5e02bf03aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91bc75fdfef937538338e5e02bf03aba">&#9670;&#160;</a></span>lookup_any_ipaddr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IPAddress::ptr myserver::Address::lookup_any_ipaddr </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>family</em> = <code>AF_INET</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>protocol</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据域名返回对应的一个 IP 地址 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>域名 </td></tr>
+    <tr><td class="paramname">family</td><td>地址族 </td></tr>
+    <tr><td class="paramname">type</td><td>类型 </td></tr>
+    <tr><td class="paramname">protocol</td><td>协议 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;IPAddress&gt; 指向对应域名的一个 IP 地址的共享指针 </dd></dl>
+
+</div>
+</div>
+<a id="a0d271b739e1498ee5642f634d9bd4aa0" name="a0d271b739e1498ee5642f634d9bd4aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d271b739e1498ee5642f634d9bd4aa0">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::Address::to_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>地址转字符串 </p>
+<dl class="section return"><dt>返回</dt><dd>std::string 转换结果字符串 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="address_8hpp_source.html">address.hpp</a></li>
+<li>myserver/address.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

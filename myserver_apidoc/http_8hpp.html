@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver/http/http.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a222a28e5c087e1a4c54aff1012688fe.html">myserver</a></li><li class="navelem"><a class="el" href="dir_33ed82a56b3a930ec8e2307f96312ea4.html">http</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">http.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>http 模块  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;boost/lexical_cast.hpp&gt;</code><br />
+</div>
+<p><a href="http_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyserver_1_1http_1_1_case_insensitive_less.html">myserver::http::CaseInsensitiveLess</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">忽略大小写比较仿函数  <a href="structmyserver_1_1http_1_1_case_insensitive_less.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_request.html">myserver::http::HttpRequest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP 请求结构  <a href="classmyserver_1_1http_1_1_http_request.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1http_1_1_http_response.html">myserver::http::HttpResponse</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP 响应结构体  <a href="classmyserver_1_1http_1_1_http_response.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a062873fd30d66c26468d4f1bd73e2976"><td class="memItemLeft" align="right" valign="top"><a id="a062873fd30d66c26468d4f1bd73e2976" name="a062873fd30d66c26468d4f1bd73e2976"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HTTP_METHOD_MAP</b>(XX)</td></tr>
+<tr class="separator:a062873fd30d66c26468d4f1bd73e2976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbba37710a56ceabef05d8e3e7ed5939"><td class="memItemLeft" align="right" valign="top"><a id="acbba37710a56ceabef05d8e3e7ed5939" name="acbba37710a56ceabef05d8e3e7ed5939"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HTTP_STATUS_MAP</b>(XX)</td></tr>
+<tr class="separator:acbba37710a56ceabef05d8e3e7ed5939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001751e2abb71763b08651bec986b6f7"><td class="memItemLeft" align="right" valign="top"><a id="a001751e2abb71763b08651bec986b6f7" name="a001751e2abb71763b08651bec986b6f7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>XX</b>(num,  name,  string)&#160;&#160;&#160;name = num,</td></tr>
+<tr class="separator:a001751e2abb71763b08651bec986b6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0ee7714b452bc90aa69d6fac7cb69f"><td class="memItemLeft" align="right" valign="top"><a id="a2b0ee7714b452bc90aa69d6fac7cb69f" name="a2b0ee7714b452bc90aa69d6fac7cb69f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>XX</b>(code,  name,  desc)&#160;&#160;&#160;name = code,</td></tr>
+<tr class="separator:a2b0ee7714b452bc90aa69d6fac7cb69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a339f68e9dc3d89f314c83a5f4a34f2ed"><td class="memItemLeft" align="right" valign="top"><a id="a339f68e9dc3d89f314c83a5f4a34f2ed" name="a339f68e9dc3d89f314c83a5f4a34f2ed"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8hpp.html#a339f68e9dc3d89f314c83a5f4a34f2ed">myserver::http::HttpMethod</a> { <b>XX</b>
+, <b>INVALID_METHOD</b>
+ }</td></tr>
+<tr class="memdesc:a339f68e9dc3d89f314c83a5f4a34f2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP 方法枚举 <br /></td></tr>
+<tr class="separator:a339f68e9dc3d89f314c83a5f4a34f2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2772b7f2a026d3d4f2d6e2fa2ffc389"><td class="memItemLeft" align="right" valign="top"><a id="aa2772b7f2a026d3d4f2d6e2fa2ffc389" name="aa2772b7f2a026d3d4f2d6e2fa2ffc389"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8hpp.html#aa2772b7f2a026d3d4f2d6e2fa2ffc389">myserver::http::HttpStatus</a> { <b>XX</b>
+ }</td></tr>
+<tr class="memdesc:aa2772b7f2a026d3d4f2d6e2fa2ffc389"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTP 状态枚举 <br /></td></tr>
+<tr class="separator:aa2772b7f2a026d3d4f2d6e2fa2ffc389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa9d28bbe5a0b383cac3dc3268150a43a"><td class="memItemLeft" align="right" valign="top">HttpMethod&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8cpp.html#aa9d28bbe5a0b383cac3dc3268150a43a">myserver::http::string_to_http_method</a> (const std::string &amp;m)</td></tr>
+<tr class="memdesc:aa9d28bbe5a0b383cac3dc3268150a43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串方法名转成 HTTP 方法枚举  <br /></td></tr>
+<tr class="separator:aa9d28bbe5a0b383cac3dc3268150a43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f86fca53fa9d18a13538e8f8da7532"><td class="memItemLeft" align="right" valign="top">HttpMethod&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8cpp.html#ad2f86fca53fa9d18a13538e8f8da7532">myserver::http::chars_to_http_method</a> (const char *m)</td></tr>
+<tr class="memdesc:ad2f86fca53fa9d18a13538e8f8da7532"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串指针转换成 HTTP 方法枚举  <br /></td></tr>
+<tr class="separator:ad2f86fca53fa9d18a13538e8f8da7532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb565597e0c8b17a064ea9291806dd0d"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8cpp.html#afb565597e0c8b17a064ea9291806dd0d">myserver::http::http_method_to_string</a> (const HttpMethod &amp;m)</td></tr>
+<tr class="memdesc:afb565597e0c8b17a064ea9291806dd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 HTTP 方法枚举转换成字符串  <br /></td></tr>
+<tr class="separator:afb565597e0c8b17a064ea9291806dd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4fdda162579314373d05df4430072ee"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8cpp.html#ad4fdda162579314373d05df4430072ee">myserver::http::http_status_to_string</a> (const HttpStatus &amp;s)</td></tr>
+<tr class="memdesc:ad4fdda162579314373d05df4430072ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 HTTP 状态枚举转换成字符串  <br /></td></tr>
+<tr class="separator:ad4fdda162579314373d05df4430072ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e43b44f5cd53536ca1fc0e23ed09f4"><td class="memTemplParams" colspan="2">template&lt;class MapType , class T &gt; <br />
+requires requires (MapType m) { m.find() == m.end(); }</td></tr>
+<tr class="memitem:aa2e43b44f5cd53536ca1fc0e23ed09f4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="http_8hpp.html#aa2e43b44f5cd53536ca1fc0e23ed09f4">myserver::http::check_get_as</a> (const MapType &amp;m, const std::string &amp;key, T &amp;val, const T &amp;def=T())</td></tr>
+<tr class="memdesc:aa2e43b44f5cd53536ca1fc0e23ed09f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 Map 中的 key 值,并转成对应类型,返回是否成功  <br /></td></tr>
+<tr class="separator:aa2e43b44f5cd53536ca1fc0e23ed09f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4a3db05cde809b3e0dcffec38e5a8e"><td class="memTemplParams" colspan="2">template&lt;class MapType , class T &gt; <br />
+requires requires (MapType m) { m.find() == m.end(); }</td></tr>
+<tr class="memitem:a3c4a3db05cde809b3e0dcffec38e5a8e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="http_8hpp.html#a3c4a3db05cde809b3e0dcffec38e5a8e">myserver::http::get_as</a> (const MapType &amp;m, const std::string &amp;key, const T &amp;def=T())</td></tr>
+<tr class="memdesc:a3c4a3db05cde809b3e0dcffec38e5a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 Map 中的 key 值,并转成对应类型  <br /></td></tr>
+<tr class="separator:a3c4a3db05cde809b3e0dcffec38e5a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e11c3ee3d6eafb5316a73d6e26da58e"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8cpp.html#a6e11c3ee3d6eafb5316a73d6e26da58e">myserver::http::operator&lt;&lt;</a> (std::ostream &amp;os, const HttpRequest &amp;req)</td></tr>
+<tr class="memdesc:a6e11c3ee3d6eafb5316a73d6e26da58e"><td class="mdescLeft">&#160;</td><td class="mdescRight">流式输出 <a class="el" href="classmyserver_1_1http_1_1_http_request.html" title="HTTP 请求结构">HttpRequest</a>  <br /></td></tr>
+<tr class="separator:a6e11c3ee3d6eafb5316a73d6e26da58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a78b00504ba2826fbfbfda79680f08"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="http_8cpp.html#a95a78b00504ba2826fbfbfda79680f08">myserver::http::operator&lt;&lt;</a> (std::ostream &amp;os, const HttpResponse &amp;rsp)</td></tr>
+<tr class="memdesc:a95a78b00504ba2826fbfbfda79680f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">流式输出 <a class="el" href="classmyserver_1_1http_1_1_http_response.html" title="HTTP 响应结构体">HttpResponse</a>  <br /></td></tr>
+<tr class="separator:a95a78b00504ba2826fbfbfda79680f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>http 模块 </p>
+<dl class="section author"><dt>作者</dt><dd>Moyusiteruiori (<a href="#" onclick="location.href='mai'+'lto:'+'y.m'+'en'+'g1@'+'ou'+'tlo'+'ok'+'.co'+'m'; return false;">y.men<span class="obfuscator">.nosp@m.</span>g1@o<span class="obfuscator">.nosp@m.</span>utloo<span class="obfuscator">.nosp@m.</span>k.co<span class="obfuscator">.nosp@m.</span>m</a>) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2023-04-04</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2023 </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="ad2f86fca53fa9d18a13538e8f8da7532" name="ad2f86fca53fa9d18a13538e8f8da7532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2f86fca53fa9d18a13538e8f8da7532">&#9670;&#160;</a></span>chars_to_http_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HttpMethod myserver::http::chars_to_http_method </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将字符串指针转换成 HTTP 方法枚举 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>字符串方法枚举 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>HTTP 方法枚举 </dd></dl>
+
+</div>
+</div>
+<a id="aa2e43b44f5cd53536ca1fc0e23ed09f4" name="aa2e43b44f5cd53536ca1fc0e23ed09f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2e43b44f5cd53536ca1fc0e23ed09f4">&#9670;&#160;</a></span>check_get_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MapType , class T &gt; <br />
+requires requires (MapType m) { m.find() == m.end(); }</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myserver::http::check_get_as </td>
+          <td>(</td>
+          <td class="paramtype">const MapType &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 Map 中的 key 值,并转成对应类型,返回是否成功 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Map 数据结构 </td></tr>
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">val</td><td>保存转换后的值 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>转换成功, val 为对应的值 </td></tr>
+    <tr><td class="paramname">false</td><td>不存在或者转换失败 val = def </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3c4a3db05cde809b3e0dcffec38e5a8e" name="a3c4a3db05cde809b3e0dcffec38e5a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c4a3db05cde809b3e0dcffec38e5a8e">&#9670;&#160;</a></span>get_as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MapType , class T &gt; <br />
+requires requires (MapType m) { m.find() == m.end(); }</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T myserver::http::get_as </td>
+          <td>(</td>
+          <td class="paramtype">const MapType &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>def</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取 Map 中的 key 值,并转成对应类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Map 数据结构 </td></tr>
+    <tr><td class="paramname">key</td><td>关键字 </td></tr>
+    <tr><td class="paramname">def</td><td>默认值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>如果存在且转换成功返回对应的值,否则返回默认值 </dd></dl>
+
+</div>
+</div>
+<a id="afb565597e0c8b17a064ea9291806dd0d" name="afb565597e0c8b17a064ea9291806dd0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb565597e0c8b17a064ea9291806dd0d">&#9670;&#160;</a></span>http_method_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * myserver::http::http_method_to_string </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="http_8hpp.html#a339f68e9dc3d89f314c83a5f4a34f2ed">HttpMethod</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将 HTTP 方法枚举转换成字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>HTTP 方法枚举 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>字符串 </dd></dl>
+
+</div>
+</div>
+<a id="ad4fdda162579314373d05df4430072ee" name="ad4fdda162579314373d05df4430072ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4fdda162579314373d05df4430072ee">&#9670;&#160;</a></span>http_status_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * myserver::http::http_status_to_string </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="http_8hpp.html#aa2772b7f2a026d3d4f2d6e2fa2ffc389">HttpStatus</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将 HTTP 状态枚举转换成字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>HTT P状态枚举 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>字符串 </dd></dl>
+
+</div>
+</div>
+<a id="a6e11c3ee3d6eafb5316a73d6e26da58e" name="a6e11c3ee3d6eafb5316a73d6e26da58e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e11c3ee3d6eafb5316a73d6e26da58e">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; myserver::http::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmyserver_1_1http_1_1_http_request.html">HttpRequest</a> &amp;&#160;</td>
+          <td class="paramname"><em>req</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>流式输出 HttpRequest </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流 </td></tr>
+    <tr><td class="paramname">req</td><td>HTTP 请求 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>输出流 </dd></dl>
+
+</div>
+</div>
+<a id="a95a78b00504ba2826fbfbfda79680f08" name="a95a78b00504ba2826fbfbfda79680f08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a78b00504ba2826fbfbfda79680f08">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; myserver::http::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmyserver_1_1http_1_1_http_response.html">HttpResponse</a> &amp;&#160;</td>
+          <td class="paramname"><em>rsp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>流式输出 HttpResponse </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流 </td></tr>
+    <tr><td class="paramname">rsp</td><td>HTTP 响应 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>输出流 </dd></dl>
+
+</div>
+</div>
+<a id="aa9d28bbe5a0b383cac3dc3268150a43a" name="aa9d28bbe5a0b383cac3dc3268150a43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d28bbe5a0b383cac3dc3268150a43a">&#9670;&#160;</a></span>string_to_http_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HttpMethod myserver::http::string_to_http_method </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将字符串方法名转成 HTTP 方法枚举 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>HTTP 方法 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>HTTP 方法枚举 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

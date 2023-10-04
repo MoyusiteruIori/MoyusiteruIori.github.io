@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::ConfigVarBase类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_config_var_base.html">ConfigVarBase</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classmyserver_1_1_config_var_base-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::ConfigVarBase类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>配置变量基类  
+ <a href="classmyserver_1_1_config_var_base.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="config_8hpp_source.html">config.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 myserver::ConfigVarBase 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_config_var_base.png" usemap="#myserver::ConfigVarBase_map" alt=""/>
+  <map id="myserver::ConfigVarBase_map" name="myserver::ConfigVarBase_map">
+<area href="classmyserver_1_1_config_var.html" title="配置变量" alt="myserver::ConfigVar&lt; T, FromStr, ToStr &gt;" shape="rect" coords="0,56,253,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a1471aa7307b6b22ad8be12a6077ba9a4"><td class="memItemLeft" align="right" valign="top"><a id="a1471aa7307b6b22ad8be12a6077ba9a4" name="a1471aa7307b6b22ad8be12a6077ba9a4"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_config_var_base.html">ConfigVarBase</a> &gt;</td></tr>
+<tr class="separator:a1471aa7307b6b22ad8be12a6077ba9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32fc8ac90ecb52537e0914cbbbd3b58"><td class="memItemLeft" align="right" valign="top"><a id="af32fc8ac90ecb52537e0914cbbbd3b58" name="af32fc8ac90ecb52537e0914cbbbd3b58"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>constptr</b> = std::shared_ptr&lt; const <a class="el" href="classmyserver_1_1_config_var_base.html">ConfigVarBase</a> &gt;</td></tr>
+<tr class="separator:af32fc8ac90ecb52537e0914cbbbd3b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae7b566cd7aa8356dbcc8b300bdb1e0f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_config_var_base.html#ae7b566cd7aa8356dbcc8b300bdb1e0f0">ConfigVarBase</a> (const std::string &amp;<a class="el" href="classmyserver_1_1_config_var_base.html#a98a1a4e41d944fde89bb34acc0399885">name</a>, const std::string &amp;<a class="el" href="classmyserver_1_1_config_var_base.html#a8ee8d718d59df52af516c635505654e2">description</a>=&quot;&quot;)</td></tr>
+<tr class="memdesc:ae7b566cd7aa8356dbcc8b300bdb1e0f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:ae7b566cd7aa8356dbcc8b300bdb1e0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ff66265339c58f9398174f356b65df"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_config_var_base.html#ad3ff66265339c58f9398174f356b65df">~ConfigVarBase</a> ()</td></tr>
+<tr class="memdesc:ad3ff66265339c58f9398174f356b65df"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:ad3ff66265339c58f9398174f356b65df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a1a4e41d944fde89bb34acc0399885"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_config_var_base.html#a98a1a4e41d944fde89bb34acc0399885">name</a> () const</td></tr>
+<tr class="memdesc:a98a1a4e41d944fde89bb34acc0399885"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取配置变量名称  <br /></td></tr>
+<tr class="separator:a98a1a4e41d944fde89bb34acc0399885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee8d718d59df52af516c635505654e2"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_config_var_base.html#a8ee8d718d59df52af516c635505654e2">description</a> () const</td></tr>
+<tr class="memdesc:a8ee8d718d59df52af516c635505654e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取配置变量描述  <br /></td></tr>
+<tr class="separator:a8ee8d718d59df52af516c635505654e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada66879a32034ae4c6c42da074566b6b"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_config_var_base.html#ada66879a32034ae4c6c42da074566b6b">to_string</a> () const =0</td></tr>
+<tr class="memdesc:ada66879a32034ae4c6c42da074566b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置变量转换为字符串  <br /></td></tr>
+<tr class="separator:ada66879a32034ae4c6c42da074566b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd834f13c036130d07ef1ae03b3b0ca"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_config_var_base.html#a9bd834f13c036130d07ef1ae03b3b0ca">from_string</a> (const std::string &amp;str)=0</td></tr>
+<tr class="memdesc:a9bd834f13c036130d07ef1ae03b3b0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">从字符串生成配置变量  <br /></td></tr>
+<tr class="separator:a9bd834f13c036130d07ef1ae03b3b0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a72229bc41d8edf88a4f231a51ee06b93"><td class="memItemLeft" align="right" valign="top"><a id="a72229bc41d8edf88a4f231a51ee06b93" name="a72229bc41d8edf88a4f231a51ee06b93"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_name</b></td></tr>
+<tr class="memdesc:a72229bc41d8edf88a4f231a51ee06b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置变量名称 <br /></td></tr>
+<tr class="separator:a72229bc41d8edf88a4f231a51ee06b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7b448bc1150beebf86d162292a5dac"><td class="memItemLeft" align="right" valign="top"><a id="a1a7b448bc1150beebf86d162292a5dac" name="a1a7b448bc1150beebf86d162292a5dac"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_description</b></td></tr>
+<tr class="memdesc:a1a7b448bc1150beebf86d162292a5dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">配置变量描述 <br /></td></tr>
+<tr class="separator:a1a7b448bc1150beebf86d162292a5dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>配置变量基类 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae7b566cd7aa8356dbcc8b300bdb1e0f0" name="ae7b566cd7aa8356dbcc8b300bdb1e0f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b566cd7aa8356dbcc8b300bdb1e0f0">&#9670;&#160;</a></span>ConfigVarBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::ConfigVarBase::ConfigVarBase </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>description</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>配置变量名称 </td></tr>
+    <tr><td class="paramname">description</td><td>配置变量描述 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad3ff66265339c58f9398174f356b65df" name="ad3ff66265339c58f9398174f356b65df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ff66265339c58f9398174f356b65df">&#9670;&#160;</a></span>~ConfigVarBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual myserver::ConfigVarBase::~ConfigVarBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a8ee8d718d59df52af516c635505654e2" name="a8ee8d718d59df52af516c635505654e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee8d718d59df52af516c635505654e2">&#9670;&#160;</a></span>description()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; myserver::ConfigVarBase::description </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取配置变量描述 </p>
+<dl class="section return"><dt>返回</dt><dd>const std::string&amp; 配置变量描述 </dd></dl>
+
+</div>
+</div>
+<a id="a9bd834f13c036130d07ef1ae03b3b0ca" name="a9bd834f13c036130d07ef1ae03b3b0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd834f13c036130d07ef1ae03b3b0ca">&#9670;&#160;</a></span>from_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool myserver::ConfigVarBase::from_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从字符串生成配置变量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>源字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 解析成功 </dd>
+<dd>
+false 解析失败 </dd></dl>
+
+<p>在 <a class="el" href="classmyserver_1_1_config_var.html#aae6a00c70612dd3862585bf19c193e84">myserver::ConfigVar&lt; T, FromStr, ToStr &gt;</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a98a1a4e41d944fde89bb34acc0399885" name="a98a1a4e41d944fde89bb34acc0399885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a1a4e41d944fde89bb34acc0399885">&#9670;&#160;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; myserver::ConfigVarBase::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取配置变量名称 </p>
+<dl class="section return"><dt>返回</dt><dd>const std::string&amp; 配置变量名称 </dd></dl>
+
+</div>
+</div>
+<a id="ada66879a32034ae4c6c42da074566b6b" name="ada66879a32034ae4c6c42da074566b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada66879a32034ae4c6c42da074566b6b">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string myserver::ConfigVarBase::to_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>配置变量转换为字符串 </p>
+<dl class="section return"><dt>返回</dt><dd>std::string 转换结果字符串 </dd></dl>
+
+<p>在 <a class="el" href="classmyserver_1_1_config_var.html#a062b35d8bd299cd53d9f4ef7d5ea2113">myserver::ConfigVar&lt; T, FromStr, ToStr &gt;</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="config_8hpp_source.html">config.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

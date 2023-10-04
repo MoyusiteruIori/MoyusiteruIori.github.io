@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver/address.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a222a28e5c087e1a4c54aff1012688fe.html">myserver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">address.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="address_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef __MYSERVER_ADDRESS_HPP__</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define __MYSERVER_ADDRESS_HPP__</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;sys/un.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span>myserver {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">class </span>IPAddress;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classmyserver_1_1_address.html">   30</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_address.html">Address</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;Address&gt;;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">static</span> Address::ptr <a class="code hl_function" href="classmyserver_1_1_address.html#aa7a4942c7eca6b19f29ea02d8f58efe0">create</a>(<span class="keyword">const</span> sockaddr *<a class="code hl_function" href="classmyserver_1_1_address.html#a46df95c34813299a135fecb2d5b33a68">addr</a>, socklen_t addrlen);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmyserver_1_1_address.html#a595e738193cc3f5c1a9185b055bbc881">lookup</a>(std::vector&lt;Address::ptr&gt;&amp; result, </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                           <span class="keyword">const</span> std::string&amp; host, </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                           <span class="keywordtype">int</span> <a class="code hl_function" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a> = AF_INET, </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                           <span class="keywordtype">int</span> type = 0, </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                           <span class="keywordtype">int</span> protocol = 0);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">static</span> Address::ptr <a class="code hl_function" href="classmyserver_1_1_address.html#ad0b48f527941422770504418ae3980c9">lookup_any</a>(<span class="keyword">const</span> std::string&amp; host, </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                       <span class="keywordtype">int</span> <a class="code hl_function" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a> = AF_INET, </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                       <span class="keywordtype">int</span> type = 0, </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                       <span class="keywordtype">int</span> protocol = 0);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">static</span> std::shared_ptr&lt;IPAddress&gt; <a class="code hl_function" href="classmyserver_1_1_address.html#a91bc75fdfef937538338e5e02bf03aba">lookup_any_ipaddr</a>(<span class="keyword">const</span> std::string&amp; host, </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                                       <span class="keywordtype">int</span> <a class="code hl_function" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a> = AF_INET, </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                                       <span class="keywordtype">int</span> type = 0, </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                                       <span class="keywordtype">int</span> protocol = 0);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmyserver_1_1_address.html#ac986c4b42baf987711ad66d687761f6e">interface_addresses</a>(std::multimap&lt;std::string, std::pair&lt;Address::ptr, uint32_t&gt;&gt;&amp; result,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                 <span class="keywordtype">int</span> <a class="code hl_function" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a> = AF_INET);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmyserver_1_1_address.html#ac986c4b42baf987711ad66d687761f6e">interface_addresses</a>(std::vector&lt;std::pair&lt;Address::ptr, uint32_t&gt; &gt;&amp;result,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                                      <span class="keyword">const</span> std::string&amp; iface,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                      <span class="keywordtype">int</span> <a class="code hl_function" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a> = AF_INET);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classmyserver_1_1_address.html#aedf0061ae264f0095f0c1fb708c2e7aa">  115</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classmyserver_1_1_address.html#aedf0061ae264f0095f0c1fb708c2e7aa">~Address</a>() {}</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classmyserver_1_1_address.html#a46df95c34813299a135fecb2d5b33a68">  129</a></span>        <span class="keyword">virtual</span> <span class="keyword">const</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_address.html#a46df95c34813299a135fecb2d5b33a68">addr</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classmyserver_1_1_address.html#aad3ba692f97f8c8dd7186265adb33a45">  136</a></span>        <span class="keyword">virtual</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_address.html#aad3ba692f97f8c8dd7186265adb33a45">addr</a>() = 0;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classmyserver_1_1_address.html#afd8a8ace203fb051200ee9727770ff90">  143</a></span>        <span class="keyword">virtual</span> socklen_t <a class="code hl_function" href="classmyserver_1_1_address.html#afd8a8ace203fb051200ee9727770ff90">length</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classmyserver_1_1_address.html#a8a1a7ccc37ff34243beea7927a51e066">  151</a></span>        <span class="keyword">virtual</span> std::ostream&amp; <a class="code hl_function" href="classmyserver_1_1_address.html#a8a1a7ccc37ff34243beea7927a51e066">insert</a>(std::ostream&amp; os) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        std::string <a class="code hl_function" href="classmyserver_1_1_address.html#a0d271b739e1498ee5642f634d9bd4aa0">to_string</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code hl_class" href="classmyserver_1_1_address.html">Address</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_class" href="classmyserver_1_1_address.html">Address</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code hl_class" href="classmyserver_1_1_address.html">Address</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    };</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_p_address.html">  166</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_i_p_address.html">IPAddress</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmyserver_1_1_address.html">Address</a> {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;IPAddress&gt;;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keyword">static</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_p_address.html#a4c674350fcaaf965d31eae5a6073a846">create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* address, uint16_t <a class="code hl_function" href="classmyserver_1_1_i_p_address.html#a49b3afd28fa018814fa4ea97d9c517d4">port</a> = 0);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_p_address.html#abc6f347ed753925c0f07099f4ec8396d">  185</a></span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_p_address.html#abc6f347ed753925c0f07099f4ec8396d">broadcast_address</a>(uint32_t prefix_len) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_p_address.html#a9c6a4920611a549f3de75e190cdc2d1f">  193</a></span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_p_address.html#a9c6a4920611a549f3de75e190cdc2d1f">network_address</a>(uint32_t prefix_len) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_p_address.html#a4ea0e64ffa9b4470e41485956901716b">  201</a></span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_p_address.html#a4ea0e64ffa9b4470e41485956901716b">subnet_mask</a>(uint32_t prefix_len) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_p_address.html#a49b3afd28fa018814fa4ea97d9c517d4">  208</a></span>        <span class="keyword">virtual</span> uint16_t <a class="code hl_function" href="classmyserver_1_1_i_p_address.html#a49b3afd28fa018814fa4ea97d9c517d4">port</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_p_address.html#ab534e11bf64744c83862d82d808ed35c">  215</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_i_p_address.html#ab534e11bf64744c83862d82d808ed35c">set_port</a>(uint16_t v) = 0;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    };</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_pv4_address.html">  219</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_i_pv4_address.html">IPv4Address</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmyserver_1_1_i_p_address.html">IPAddress</a> {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;IPv4Address&gt;;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="keyword">static</span> IPv4Address::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#add6bebbb898f8ee06c627b369cb5c268">create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* address, uint16_t <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a9d2bcf69def71ec6eb8e691eec52a9df">port</a> = 0);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        <a class="code hl_class" href="classmyserver_1_1_i_pv4_address.html">IPv4Address</a>(uint32_t address = INADDR_ANY, uint16_t <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a9d2bcf69def71ec6eb8e691eec52a9df">port</a> = 0);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <a class="code hl_class" href="classmyserver_1_1_i_pv4_address.html">IPv4Address</a>(<span class="keyword">const</span> sockaddr_in&amp; address);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keyword">virtual</span> <span class="keyword">const</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a0fe8912b64a5437c7cb8a41fdf0340bb">addr</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keyword">virtual</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a0fe8912b64a5437c7cb8a41fdf0340bb">addr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keyword">virtual</span> socklen_t <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a0d89e21469ae1b0fa73823203bdf0526">length</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keyword">virtual</span> std::ostream&amp; <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#afa347786ac51973dd68b49cee22f6d70">insert</a>(std::ostream&amp; os) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#aed3aa4d53f5506f414c1dbcb52a2b57a">broadcast_address</a>(uint32_t prefix_len) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a5f28dfe6633ea8fa53af28c2db97b570">network_address</a>(uint32_t prefix_len) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a95c909e6cd0ee8e221e408ba0ddcfbed">subnet_mask</a>(uint32_t prefix_len) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <span class="keyword">virtual</span> uint16_t <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a9d2bcf69def71ec6eb8e691eec52a9df">port</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_i_pv4_address.html#a859f4f8b5c57a007593ddf20885ba2f8">set_port</a>(uint16_t v) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        sockaddr_in m_addr; </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    };</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classmyserver_1_1_i_pv6_address.html">  319</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_i_pv6_address.html">IPv6Address</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmyserver_1_1_i_p_address.html">IPAddress</a> {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;IPv6Address&gt;;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keyword">static</span> IPv6Address::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#aed117a5b06ce134cdbd6632c69928692">create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* address, uint16_t <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#aec84a41105b52f8be9766302dc8f8f88">port</a> = 0);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#abaec421663f65b41e6599436da64bda8">IPv6Address</a>();</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#abaec421663f65b41e6599436da64bda8">IPv6Address</a>(<span class="keyword">const</span> uint8_t address[16], uint16_t <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#aec84a41105b52f8be9766302dc8f8f88">port</a> = 0);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#abaec421663f65b41e6599436da64bda8">IPv6Address</a>(<span class="keyword">const</span> sockaddr_in6&amp; address);</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <span class="keyword">virtual</span> <span class="keyword">const</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#a3b90cf65819c6d54fd460e5fa02a7850">addr</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        <span class="keyword">virtual</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#a3b90cf65819c6d54fd460e5fa02a7850">addr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        <span class="keyword">virtual</span> socklen_t <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#a141e2c8f9005e081c822060b747152c8">length</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        <span class="keyword">virtual</span> std::ostream&amp; <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#aca0e7bc8afa84db1d677d9694bc8a1e8">insert</a>(std::ostream&amp; os) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#a12142645051cfc70ac499013a335e892">broadcast_address</a>(uint32_t prefix_len) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        </div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#a5a9e6e42624e56a2a5ecb7487197a8a2">network_address</a>(uint32_t prefix_len) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        </div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        <span class="keyword">virtual</span> IPAddress::ptr <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#ac4281a1c4a0fc4a7beb81b80939231ad">subnet_mask</a>(uint32_t prefix_len) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>        <span class="keyword">virtual</span> uint16_t <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#aec84a41105b52f8be9766302dc8f8f88">port</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>        </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_i_pv6_address.html#a7c6e50913c5a5b52c1f66e9826396339">set_port</a>(uint16_t v) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        sockaddr_in6 m_addr;    </div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    };</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="classmyserver_1_1_unix_address.html">  425</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_unix_address.html">UnixAddress</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmyserver_1_1_address.html">Address</a> {</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;UnixAddress&gt;;</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        <a class="code hl_function" href="classmyserver_1_1_unix_address.html#ac6162f033a9848eecee3fb2185ec8e7f">UnixAddress</a>();</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span> </div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>        <a class="code hl_function" href="classmyserver_1_1_unix_address.html#ac6162f033a9848eecee3fb2185ec8e7f">UnixAddress</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classmyserver_1_1_unix_address.html#aa72442023baca9fce4cfdd8be77c53d8">path</a>);</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="keyword">virtual</span> <span class="keyword">const</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_unix_address.html#a2d19a0f0d99103e7a61f58c5b1019c19">addr</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span> </div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>        <span class="keyword">virtual</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_unix_address.html#a2d19a0f0d99103e7a61f58c5b1019c19">addr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>        <span class="keyword">virtual</span> socklen_t <a class="code hl_function" href="classmyserver_1_1_unix_address.html#a02286536941bf83b6233508289de8c22">length</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span> </div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmyserver_1_1_unix_address.html#a093d40dbf71a9a467195a74acaf0508c">set_length</a>(uint32_t v);</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span> </div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        std::string <a class="code hl_function" href="classmyserver_1_1_unix_address.html#aa72442023baca9fce4cfdd8be77c53d8">path</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span> </div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>        <span class="keyword">virtual</span> std::ostream&amp; <a class="code hl_function" href="classmyserver_1_1_unix_address.html#a34a649c521cbc67cfef7e5891f83e80c">insert</a>(std::ostream&amp; os) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span> </div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>        <span class="keyword">struct </span>sockaddr_un m_addr;  </div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>        socklen_t m_length;         </div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    };</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span> </div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno"><a class="line" href="classmyserver_1_1_unknown_address.html">  491</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmyserver_1_1_unknown_address.html">UnknownAddress</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmyserver_1_1_address.html">Address</a> {</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>        <span class="keyword">using </span>ptr = std::shared_ptr&lt;UnixAddress&gt;;</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>        <a class="code hl_class" href="classmyserver_1_1_unknown_address.html">UnknownAddress</a>(<span class="keyword">const</span> sockaddr&amp; <a class="code hl_function" href="classmyserver_1_1_unknown_address.html#a13d21ce600794b5d70023eb9823d0e78">addr</a>);</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span> </div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>        <a class="code hl_class" href="classmyserver_1_1_unknown_address.html">UnknownAddress</a>(<span class="keywordtype">int</span> <a class="code hl_function" href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">family</a>);</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span> </div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        <span class="keyword">virtual</span> <span class="keyword">const</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_unknown_address.html#a13d21ce600794b5d70023eb9823d0e78">addr</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span> </div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>        <span class="keyword">virtual</span> sockaddr* <a class="code hl_function" href="classmyserver_1_1_unknown_address.html#a13d21ce600794b5d70023eb9823d0e78">addr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span> </div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>        <span class="keyword">virtual</span> socklen_t <a class="code hl_function" href="classmyserver_1_1_unknown_address.html#a888d5c577618ef81c5cc309d68f62a2f">length</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span> </div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>        <span class="keyword">virtual</span> std::ostream&amp; <a class="code hl_function" href="classmyserver_1_1_unknown_address.html#afc3b3eb22247a76dddb91e2c652ffd4c">insert</a>(std::ostream&amp; os) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>        sockaddr m_addr;    </div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    };</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span> </div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>}</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span> </div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html"><div class="ttname"><a href="classmyserver_1_1_address.html">myserver::Address</a></div><div class="ttdoc">地址基类</div><div class="ttdef"><b>Definition:</b> address.hpp:30</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_a0d271b739e1498ee5642f634d9bd4aa0"><div class="ttname"><a href="classmyserver_1_1_address.html#a0d271b739e1498ee5642f634d9bd4aa0">myserver::Address::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">地址转字符串</div><div class="ttdef"><b>Definition:</b> address.cpp:232</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_a46df95c34813299a135fecb2d5b33a68"><div class="ttname"><a href="classmyserver_1_1_address.html#a46df95c34813299a135fecb2d5b33a68">myserver::Address::addr</a></div><div class="ttdeci">virtual const sockaddr * addr() const =0</div><div class="ttdoc">获取内部地址</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_a595e738193cc3f5c1a9185b055bbc881"><div class="ttname"><a href="classmyserver_1_1_address.html#a595e738193cc3f5c1a9185b055bbc881">myserver::Address::lookup</a></div><div class="ttdeci">static bool lookup(std::vector&lt; Address::ptr &gt; &amp;result, const std::string &amp;host, int family=AF_INET, int type=0, int protocol=0)</div><div class="ttdoc">根据域名返回对应的所有地址</div><div class="ttdef"><b>Definition:</b> address.cpp:61</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_a8a1a7ccc37ff34243beea7927a51e066"><div class="ttname"><a href="classmyserver_1_1_address.html#a8a1a7ccc37ff34243beea7927a51e066">myserver::Address::insert</a></div><div class="ttdeci">virtual std::ostream &amp; insert(std::ostream &amp;os) const =0</div><div class="ttdoc">地址序列化写入输出流</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_a91bc75fdfef937538338e5e02bf03aba"><div class="ttname"><a href="classmyserver_1_1_address.html#a91bc75fdfef937538338e5e02bf03aba">myserver::Address::lookup_any_ipaddr</a></div><div class="ttdeci">static std::shared_ptr&lt; IPAddress &gt; lookup_any_ipaddr(const std::string &amp;host, int family=AF_INET, int type=0, int protocol=0)</div><div class="ttdoc">根据域名返回对应的一个 IP 地址</div><div class="ttdef"><b>Definition:</b> address.cpp:135</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_aa7a4942c7eca6b19f29ea02d8f58efe0"><div class="ttname"><a href="classmyserver_1_1_address.html#aa7a4942c7eca6b19f29ea02d8f58efe0">myserver::Address::create</a></div><div class="ttdeci">static Address::ptr create(const sockaddr *addr, socklen_t addrlen)</div><div class="ttdoc">创建一个地址</div><div class="ttdef"><b>Definition:</b> address.cpp:41</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_aad3ba692f97f8c8dd7186265adb33a45"><div class="ttname"><a href="classmyserver_1_1_address.html#aad3ba692f97f8c8dd7186265adb33a45">myserver::Address::addr</a></div><div class="ttdeci">virtual sockaddr * addr()=0</div><div class="ttdoc">获取内部地址</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_ac986c4b42baf987711ad66d687761f6e"><div class="ttname"><a href="classmyserver_1_1_address.html#ac986c4b42baf987711ad66d687761f6e">myserver::Address::interface_addresses</a></div><div class="ttdeci">static bool interface_addresses(std::multimap&lt; std::string, std::pair&lt; Address::ptr, uint32_t &gt; &gt; &amp;result, int family=AF_INET)</div><div class="ttdoc">获取所有网卡和对应的地址</div><div class="ttdef"><b>Definition:</b> address.cpp:151</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_ad0b48f527941422770504418ae3980c9"><div class="ttname"><a href="classmyserver_1_1_address.html#ad0b48f527941422770504418ae3980c9">myserver::Address::lookup_any</a></div><div class="ttdeci">static Address::ptr lookup_any(const std::string &amp;host, int family=AF_INET, int type=0, int protocol=0)</div><div class="ttdoc">根据域名返回对应的一个地址</div><div class="ttdef"><b>Definition:</b> address.cpp:124</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_aedf0061ae264f0095f0c1fb708c2e7aa"><div class="ttname"><a href="classmyserver_1_1_address.html#aedf0061ae264f0095f0c1fb708c2e7aa">myserver::Address::~Address</a></div><div class="ttdeci">virtual ~Address()</div><div class="ttdoc">析构函数</div><div class="ttdef"><b>Definition:</b> address.hpp:115</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_af66cf31a9faba57f250f14b3edaa5450"><div class="ttname"><a href="classmyserver_1_1_address.html#af66cf31a9faba57f250f14b3edaa5450">myserver::Address::family</a></div><div class="ttdeci">int family() const</div><div class="ttdoc">获取当前地址的地址族</div><div class="ttdef"><b>Definition:</b> address.cpp:228</div></div>
+<div class="ttc" id="aclassmyserver_1_1_address_html_afd8a8ace203fb051200ee9727770ff90"><div class="ttname"><a href="classmyserver_1_1_address.html#afd8a8ace203fb051200ee9727770ff90">myserver::Address::length</a></div><div class="ttdeci">virtual socklen_t length() const =0</div><div class="ttdoc">获取地址长度</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_p_address_html"><div class="ttname"><a href="classmyserver_1_1_i_p_address.html">myserver::IPAddress</a></div><div class="ttdoc">IP 地址</div><div class="ttdef"><b>Definition:</b> address.hpp:166</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_p_address_html_a49b3afd28fa018814fa4ea97d9c517d4"><div class="ttname"><a href="classmyserver_1_1_i_p_address.html#a49b3afd28fa018814fa4ea97d9c517d4">myserver::IPAddress::port</a></div><div class="ttdeci">virtual uint16_t port() const =0</div><div class="ttdoc">获取端口号</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_p_address_html_a4c674350fcaaf965d31eae5a6073a846"><div class="ttname"><a href="classmyserver_1_1_i_p_address.html#a4c674350fcaaf965d31eae5a6073a846">myserver::IPAddress::create</a></div><div class="ttdeci">static IPAddress::ptr create(const char *address, uint16_t port=0)</div><div class="ttdoc">创建一个 IP 地址</div><div class="ttdef"><b>Definition:</b> address.cpp:262</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_p_address_html_a4ea0e64ffa9b4470e41485956901716b"><div class="ttname"><a href="classmyserver_1_1_i_p_address.html#a4ea0e64ffa9b4470e41485956901716b">myserver::IPAddress::subnet_mask</a></div><div class="ttdeci">virtual IPAddress::ptr subnet_mask(uint32_t prefix_len) const =0</div><div class="ttdoc">获取 IP 子网的子网掩码</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_p_address_html_a9c6a4920611a549f3de75e190cdc2d1f"><div class="ttname"><a href="classmyserver_1_1_i_p_address.html#a9c6a4920611a549f3de75e190cdc2d1f">myserver::IPAddress::network_address</a></div><div class="ttdeci">virtual IPAddress::ptr network_address(uint32_t prefix_len) const =0</div><div class="ttdoc">获取 IP 子网的网络地址</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_p_address_html_ab534e11bf64744c83862d82d808ed35c"><div class="ttname"><a href="classmyserver_1_1_i_p_address.html#ab534e11bf64744c83862d82d808ed35c">myserver::IPAddress::set_port</a></div><div class="ttdeci">virtual void set_port(uint16_t v)=0</div><div class="ttdoc">设置端口号</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_p_address_html_abc6f347ed753925c0f07099f4ec8396d"><div class="ttname"><a href="classmyserver_1_1_i_p_address.html#abc6f347ed753925c0f07099f4ec8396d">myserver::IPAddress::broadcast_address</a></div><div class="ttdeci">virtual IPAddress::ptr broadcast_address(uint32_t prefix_len) const =0</div><div class="ttdoc">获取 IP 子网的广播地址</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html">myserver::IPv4Address</a></div><div class="ttdoc">IPv4 地址</div><div class="ttdef"><b>Definition:</b> address.hpp:219</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_a0d89e21469ae1b0fa73823203bdf0526"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#a0d89e21469ae1b0fa73823203bdf0526">myserver::IPv4Address::length</a></div><div class="ttdeci">virtual socklen_t length() const override</div><div class="ttdoc">获取地址长度</div><div class="ttdef"><b>Definition:</b> address.cpp:324</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_a0fe8912b64a5437c7cb8a41fdf0340bb"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#a0fe8912b64a5437c7cb8a41fdf0340bb">myserver::IPv4Address::addr</a></div><div class="ttdeci">virtual const sockaddr * addr() const override</div><div class="ttdoc">获取内部地址</div><div class="ttdef"><b>Definition:</b> address.cpp:316</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_a5f28dfe6633ea8fa53af28c2db97b570"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#a5f28dfe6633ea8fa53af28c2db97b570">myserver::IPv4Address::network_address</a></div><div class="ttdeci">virtual IPAddress::ptr network_address(uint32_t prefix_len) const override</div><div class="ttdoc">获取 IPv4 子网的网络地址</div><div class="ttdef"><b>Definition:</b> address.cpp:349</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_a859f4f8b5c57a007593ddf20885ba2f8"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#a859f4f8b5c57a007593ddf20885ba2f8">myserver::IPv4Address::set_port</a></div><div class="ttdeci">virtual void set_port(uint16_t v) override</div><div class="ttdoc">设置端口号</div><div class="ttdef"><b>Definition:</b> address.cpp:374</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_a95c909e6cd0ee8e221e408ba0ddcfbed"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#a95c909e6cd0ee8e221e408ba0ddcfbed">myserver::IPv4Address::subnet_mask</a></div><div class="ttdeci">virtual IPAddress::ptr subnet_mask(uint32_t prefix_len) const override</div><div class="ttdoc">获取 IPv4 子网的子网掩码</div><div class="ttdef"><b>Definition:</b> address.cpp:360</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_a9d2bcf69def71ec6eb8e691eec52a9df"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#a9d2bcf69def71ec6eb8e691eec52a9df">myserver::IPv4Address::port</a></div><div class="ttdeci">virtual uint16_t port() const override</div><div class="ttdoc">获取端口号</div><div class="ttdef"><b>Definition:</b> address.cpp:370</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_add6bebbb898f8ee06c627b369cb5c268"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#add6bebbb898f8ee06c627b369cb5c268">myserver::IPv4Address::create</a></div><div class="ttdeci">static IPv4Address::ptr create(const char *address, uint16_t port=0)</div><div class="ttdoc">创建一个 IPv4 地址</div><div class="ttdef"><b>Definition:</b> address.cpp:302</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_aed3aa4d53f5506f414c1dbcb52a2b57a"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#aed3aa4d53f5506f414c1dbcb52a2b57a">myserver::IPv4Address::broadcast_address</a></div><div class="ttdeci">virtual IPAddress::ptr broadcast_address(uint32_t prefix_len) const override</div><div class="ttdoc">获取 IPv4 子网的广播地址</div><div class="ttdef"><b>Definition:</b> address.cpp:338</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv4_address_html_afa347786ac51973dd68b49cee22f6d70"><div class="ttname"><a href="classmyserver_1_1_i_pv4_address.html#afa347786ac51973dd68b49cee22f6d70">myserver::IPv4Address::insert</a></div><div class="ttdeci">virtual std::ostream &amp; insert(std::ostream &amp;os) const override</div><div class="ttdoc">IPv4 地址序列化写入输出流</div><div class="ttdef"><b>Definition:</b> address.cpp:328</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html">myserver::IPv6Address</a></div><div class="ttdoc">IPv6 地址</div><div class="ttdef"><b>Definition:</b> address.hpp:319</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_a12142645051cfc70ac499013a335e892"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#a12142645051cfc70ac499013a335e892">myserver::IPv6Address::broadcast_address</a></div><div class="ttdeci">virtual IPAddress::ptr broadcast_address(uint32_t prefix_len) const override</div><div class="ttdoc">获取 IPv6 子网的广播地址</div><div class="ttdef"><b>Definition:</b> address.cpp:444</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_a141e2c8f9005e081c822060b747152c8"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#a141e2c8f9005e081c822060b747152c8">myserver::IPv6Address::length</a></div><div class="ttdeci">virtual socklen_t length() const override</div><div class="ttdoc">获取地址长度</div><div class="ttdef"><b>Definition:</b> address.cpp:416</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_a3b90cf65819c6d54fd460e5fa02a7850"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#a3b90cf65819c6d54fd460e5fa02a7850">myserver::IPv6Address::addr</a></div><div class="ttdeci">virtual const sockaddr * addr() const override</div><div class="ttdoc">获取内部地址</div><div class="ttdef"><b>Definition:</b> address.cpp:408</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_a5a9e6e42624e56a2a5ecb7487197a8a2"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#a5a9e6e42624e56a2a5ecb7487197a8a2">myserver::IPv6Address::network_address</a></div><div class="ttdeci">virtual IPAddress::ptr network_address(uint32_t prefix_len) const override</div><div class="ttdoc">获取 IPv6 子网的网络地址</div><div class="ttdef"><b>Definition:</b> address.cpp:453</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_a7c6e50913c5a5b52c1f66e9826396339"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#a7c6e50913c5a5b52c1f66e9826396339">myserver::IPv6Address::set_port</a></div><div class="ttdeci">virtual void set_port(uint16_t v) override</div><div class="ttdoc">设置端口号</div><div class="ttdef"><b>Definition:</b> address.cpp:477</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_abaec421663f65b41e6599436da64bda8"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#abaec421663f65b41e6599436da64bda8">myserver::IPv6Address::IPv6Address</a></div><div class="ttdeci">IPv6Address()</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>Definition:</b> address.cpp:378</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_ac4281a1c4a0fc4a7beb81b80939231ad"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#ac4281a1c4a0fc4a7beb81b80939231ad">myserver::IPv6Address::subnet_mask</a></div><div class="ttdeci">virtual IPAddress::ptr subnet_mask(uint32_t prefix_len) const override</div><div class="ttdoc">获取 IPv6 子网的子网掩码</div><div class="ttdef"><b>Definition:</b> address.cpp:462</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_aca0e7bc8afa84db1d677d9694bc8a1e8"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#aca0e7bc8afa84db1d677d9694bc8a1e8">myserver::IPv6Address::insert</a></div><div class="ttdeci">virtual std::ostream &amp; insert(std::ostream &amp;os) const override</div><div class="ttdoc">IPv6 地址序列化写入输出流</div><div class="ttdef"><b>Definition:</b> address.cpp:420</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_aec84a41105b52f8be9766302dc8f8f88"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#aec84a41105b52f8be9766302dc8f8f88">myserver::IPv6Address::port</a></div><div class="ttdeci">virtual uint16_t port() const override</div><div class="ttdoc">获取端口号</div><div class="ttdef"><b>Definition:</b> address.cpp:473</div></div>
+<div class="ttc" id="aclassmyserver_1_1_i_pv6_address_html_aed117a5b06ce134cdbd6632c69928692"><div class="ttname"><a href="classmyserver_1_1_i_pv6_address.html#aed117a5b06ce134cdbd6632c69928692">myserver::IPv6Address::create</a></div><div class="ttdeci">static IPv6Address::ptr create(const char *address, uint16_t port=0)</div><div class="ttdoc">创建一个 IPv6 地址</div><div class="ttdef"><b>Definition:</b> address.cpp:394</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unix_address_html"><div class="ttname"><a href="classmyserver_1_1_unix_address.html">myserver::UnixAddress</a></div><div class="ttdoc">Unix 地址</div><div class="ttdef"><b>Definition:</b> address.hpp:425</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unix_address_html_a02286536941bf83b6233508289de8c22"><div class="ttname"><a href="classmyserver_1_1_unix_address.html#a02286536941bf83b6233508289de8c22">myserver::UnixAddress::length</a></div><div class="ttdeci">virtual socklen_t length() const override</div><div class="ttdoc">获取地址长度</div><div class="ttdef"><b>Definition:</b> address.cpp:511</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unix_address_html_a093d40dbf71a9a467195a74acaf0508c"><div class="ttname"><a href="classmyserver_1_1_unix_address.html#a093d40dbf71a9a467195a74acaf0508c">myserver::UnixAddress::set_length</a></div><div class="ttdeci">void set_length(uint32_t v)</div><div class="ttdoc">设置地址长度</div><div class="ttdef"><b>Definition:</b> address.cpp:515</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unix_address_html_a2d19a0f0d99103e7a61f58c5b1019c19"><div class="ttname"><a href="classmyserver_1_1_unix_address.html#a2d19a0f0d99103e7a61f58c5b1019c19">myserver::UnixAddress::addr</a></div><div class="ttdeci">virtual const sockaddr * addr() const override</div><div class="ttdoc">获取内部地址</div><div class="ttdef"><b>Definition:</b> address.cpp:503</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unix_address_html_a34a649c521cbc67cfef7e5891f83e80c"><div class="ttname"><a href="classmyserver_1_1_unix_address.html#a34a649c521cbc67cfef7e5891f83e80c">myserver::UnixAddress::insert</a></div><div class="ttdeci">virtual std::ostream &amp; insert(std::ostream &amp;os) const override</div><div class="ttdoc">Unix 地址序列化写入输出流</div><div class="ttdef"><b>Definition:</b> address.cpp:531</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unix_address_html_aa72442023baca9fce4cfdd8be77c53d8"><div class="ttname"><a href="classmyserver_1_1_unix_address.html#aa72442023baca9fce4cfdd8be77c53d8">myserver::UnixAddress::path</a></div><div class="ttdeci">std::string path() const</div><div class="ttdoc">获取地址路径</div><div class="ttdef"><b>Definition:</b> address.cpp:519</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unix_address_html_ac6162f033a9848eecee3fb2185ec8e7f"><div class="ttname"><a href="classmyserver_1_1_unix_address.html#ac6162f033a9848eecee3fb2185ec8e7f">myserver::UnixAddress::UnixAddress</a></div><div class="ttdeci">UnixAddress()</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>Definition:</b> address.cpp:483</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unknown_address_html"><div class="ttname"><a href="classmyserver_1_1_unknown_address.html">myserver::UnknownAddress</a></div><div class="ttdoc">未知类型地址</div><div class="ttdef"><b>Definition:</b> address.hpp:491</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unknown_address_html_a13d21ce600794b5d70023eb9823d0e78"><div class="ttname"><a href="classmyserver_1_1_unknown_address.html#a13d21ce600794b5d70023eb9823d0e78">myserver::UnknownAddress::addr</a></div><div class="ttdeci">virtual const sockaddr * addr() const override</div><div class="ttdoc">获取内部地址</div><div class="ttdef"><b>Definition:</b> address.cpp:548</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unknown_address_html_a888d5c577618ef81c5cc309d68f62a2f"><div class="ttname"><a href="classmyserver_1_1_unknown_address.html#a888d5c577618ef81c5cc309d68f62a2f">myserver::UnknownAddress::length</a></div><div class="ttdeci">virtual socklen_t length() const override</div><div class="ttdoc">获取地址长度</div><div class="ttdef"><b>Definition:</b> address.cpp:556</div></div>
+<div class="ttc" id="aclassmyserver_1_1_unknown_address_html_afc3b3eb22247a76dddb91e2c652ffd4c"><div class="ttname"><a href="classmyserver_1_1_unknown_address.html#afc3b3eb22247a76dddb91e2c652ffd4c">myserver::UnknownAddress::insert</a></div><div class="ttdeci">virtual std::ostream &amp; insert(std::ostream &amp;os) const override</div><div class="ttdoc">IPv4 地址序列化写入输出流</div><div class="ttdef"><b>Definition:</b> address.cpp:560</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

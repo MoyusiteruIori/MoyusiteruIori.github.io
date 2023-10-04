@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver/endian.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a222a28e5c087e1a4c54aff1012688fe.html">myserver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">endian.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>字节序转换模块  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;byteswap.h&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+</div>
+<p><a href="endian_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a80ef3a0d8f08df6cf434d4102e6f631d"><td class="memItemLeft" align="right" valign="top"><a id="a80ef3a0d8f08df6cf434d4102e6f631d" name="a80ef3a0d8f08df6cf434d4102e6f631d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MYSERVER_LITTLE_ENDIAN</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a80ef3a0d8f08df6cf434d4102e6f631d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a2e3058a1db629ce3469ea83eedf0c"><td class="memItemLeft" align="right" valign="top"><a id="ac9a2e3058a1db629ce3469ea83eedf0c" name="ac9a2e3058a1db629ce3469ea83eedf0c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MYSERVER_BIG_ENDIAN</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ac9a2e3058a1db629ce3469ea83eedf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7ee20cbce1ebe49ebe83ee6c53d479"><td class="memItemLeft" align="right" valign="top"><a id="a7c7ee20cbce1ebe49ebe83ee6c53d479" name="a7c7ee20cbce1ebe49ebe83ee6c53d479"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MYSERVER_BYTE_ORDER</b>&#160;&#160;&#160;MYSERVER_BIG_ENDIAN</td></tr>
+<tr class="memdesc:a7c7ee20cbce1ebe49ebe83ee6c53d479"><td class="mdescLeft">&#160;</td><td class="mdescRight">主机字节序 <br /></td></tr>
+<tr class="separator:a7c7ee20cbce1ebe49ebe83ee6c53d479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a3e0b7b9f67250f9fb354e831498abf3c"><td class="memTemplParams" colspan="2"><a id="a3e0b7b9f67250f9fb354e831498abf3c" name="a3e0b7b9f67250f9fb354e831498abf3c"></a>
+template&lt;typename T &gt; <br />
+requires std::convertible_to&lt;T, uint16_t&gt; &amp;&amp; (sizeof(T) == sizeof(uint16_t))</td></tr>
+<tr class="memitem:a3e0b7b9f67250f9fb354e831498abf3c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>myserver::byteswap</b> (T value)</td></tr>
+<tr class="separator:a3e0b7b9f67250f9fb354e831498abf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0ac76ed48f9bedba448ee1f1720935"><td class="memTemplParams" colspan="2"><a id="a0d0ac76ed48f9bedba448ee1f1720935" name="a0d0ac76ed48f9bedba448ee1f1720935"></a>
+template&lt;typename T &gt; <br />
+requires std::convertible_to&lt;T, uint32_t&gt; &amp;&amp; (sizeof(T) == sizeof(uint32_t))</td></tr>
+<tr class="memitem:a0d0ac76ed48f9bedba448ee1f1720935"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>myserver::byteswap</b> (T value)</td></tr>
+<tr class="separator:a0d0ac76ed48f9bedba448ee1f1720935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e8de77f3016e67c57a7268ce046e16c"><td class="memTemplParams" colspan="2"><a id="a8e8de77f3016e67c57a7268ce046e16c" name="a8e8de77f3016e67c57a7268ce046e16c"></a>
+template&lt;typename T &gt; <br />
+requires std::convertible_to&lt;T, uint64_t&gt; &amp;&amp; (sizeof(T) == sizeof(uint64_t))</td></tr>
+<tr class="memitem:a8e8de77f3016e67c57a7268ce046e16c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>myserver::byteswap</b> (T value)</td></tr>
+<tr class="separator:a8e8de77f3016e67c57a7268ce046e16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7be073997bf2ab524d3478a78683c60"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab7be073997bf2ab524d3478a78683c60"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#ab7be073997bf2ab524d3478a78683c60">myserver::byteswap_on_little_endian</a> (T t)</td></tr>
+<tr class="memdesc:ab7be073997bf2ab524d3478a78683c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">字节序转换  <br /></td></tr>
+<tr class="separator:ab7be073997bf2ab524d3478a78683c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4caaa68fc1b3357590d9cf1c77f093ce"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4caaa68fc1b3357590d9cf1c77f093ce"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#a4caaa68fc1b3357590d9cf1c77f093ce">myserver::byteswap_on_big_endian</a> (T t)</td></tr>
+<tr class="memdesc:a4caaa68fc1b3357590d9cf1c77f093ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">字节序转换  <br /></td></tr>
+<tr class="separator:a4caaa68fc1b3357590d9cf1c77f093ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>字节序转换模块 </p>
+<dl class="section author"><dt>作者</dt><dd>Moyusiteruiori (<a href="#" onclick="location.href='mai'+'lto:'+'y.m'+'en'+'g1@'+'ou'+'tlo'+'ok'+'.co'+'m'; return false;">y.men<span class="obfuscator">.nosp@m.</span>g1@o<span class="obfuscator">.nosp@m.</span>utloo<span class="obfuscator">.nosp@m.</span>k.co<span class="obfuscator">.nosp@m.</span>m</a>) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2023-03-015</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2023 </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a4caaa68fc1b3357590d9cf1c77f093ce" name="a4caaa68fc1b3357590d9cf1c77f093ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4caaa68fc1b3357590d9cf1c77f093ce">&#9670;&#160;</a></span>byteswap_on_big_endian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T myserver::byteswap_on_big_endian </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字节序转换 </p>
+<p>在小端序主机上将保持不变，大端序主机上将转换为小端序</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换的数值类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>要转换的数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>T 转换结果 </dd></dl>
+
+</div>
+</div>
+<a id="ab7be073997bf2ab524d3478a78683c60" name="ab7be073997bf2ab524d3478a78683c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7be073997bf2ab524d3478a78683c60">&#9670;&#160;</a></span>byteswap_on_little_endian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T myserver::byteswap_on_little_endian </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字节序转换 </p>
+<p>在小端序主机上将转换为大端序，大端序主机上将保持不变</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>转换的数值类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>要转换的数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>T 转换结果 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

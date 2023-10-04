@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyServer: myserver::Logger类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MyServer<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">一个 Linux 高性能 C++ 服务器框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>myserver</b></li><li class="navelem"><a class="el" href="classmyserver_1_1_logger.html">Logger</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="classmyserver_1_1_logger-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">myserver::Logger类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>日志器 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 关联一组 Appender ，使用一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 输出日志时，向其关联的所有 Appender 输出日志 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 包含一个日志等级，日志等级不低于 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 等级时才会试图向其关联的 Appender 输出日志 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 包含一个 Formatter，作为关联到该 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 的 Appender 的默认格式化器  
+ <a href="classmyserver_1_1_logger.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="log_8hpp_source.html">log.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 myserver::Logger 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classmyserver_1_1_logger.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a817e94505f52f71a025cacd8361b57a2"><td class="memItemLeft" align="right" valign="top"><a id="a817e94505f52f71a025cacd8361b57a2" name="a817e94505f52f71a025cacd8361b57a2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ptr</b> = std::shared_ptr&lt; <a class="el" href="classmyserver_1_1_logger.html">Logger</a> &gt;</td></tr>
+<tr class="separator:a817e94505f52f71a025cacd8361b57a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09e56a0f52dcfd52e462ecd8b61936c"><td class="memItemLeft" align="right" valign="top"><a id="ab09e56a0f52dcfd52e462ecd8b61936c" name="ab09e56a0f52dcfd52e462ecd8b61936c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>constptr</b> = std::shared_ptr&lt; const <a class="el" href="classmyserver_1_1_logger.html">Logger</a> &gt;</td></tr>
+<tr class="separator:ab09e56a0f52dcfd52e462ecd8b61936c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a9015a87cee87cafe87383fdf8284218a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a9015a87cee87cafe87383fdf8284218a">Logger</a> (const std::string &amp;name=&quot;root&quot;)</td></tr>
+<tr class="memdesc:a9015a87cee87cafe87383fdf8284218a"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个日志器  <br /></td></tr>
+<tr class="separator:a9015a87cee87cafe87383fdf8284218a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab467406987c144eb8fde325e4885ef4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#ab467406987c144eb8fde325e4885ef4e">log</a> (LogLevel::Level level, LogEvent::constptr event) const</td></tr>
+<tr class="memdesc:ab467406987c144eb8fde325e4885ef4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出一条日志  <br /></td></tr>
+<tr class="separator:ab467406987c144eb8fde325e4885ef4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf669e68f312c921ffe51802de87b76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#adbf669e68f312c921ffe51802de87b76">disable</a> ()</td></tr>
+<tr class="memdesc:adbf669e68f312c921ffe51802de87b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用一个日志器，清除其关联的所有 Appender  <br /></td></tr>
+<tr class="separator:adbf669e68f312c921ffe51802de87b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1445ecac3c8e5b0152b9cf72daadddfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a1445ecac3c8e5b0152b9cf72daadddfd">debug</a> (LogEvent::constptr event)</td></tr>
+<tr class="memdesc:a1445ecac3c8e5b0152b9cf72daadddfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 debug 级别的日志  <br /></td></tr>
+<tr class="separator:a1445ecac3c8e5b0152b9cf72daadddfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79899f55eeb8ab6a285c46480e30d0f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a79899f55eeb8ab6a285c46480e30d0f8">info</a> (LogEvent::constptr event)</td></tr>
+<tr class="memdesc:a79899f55eeb8ab6a285c46480e30d0f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 info 级别的日志  <br /></td></tr>
+<tr class="separator:a79899f55eeb8ab6a285c46480e30d0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603c4b792bb1b41030c1720a05db4413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a603c4b792bb1b41030c1720a05db4413">warn</a> (LogEvent::constptr event)</td></tr>
+<tr class="memdesc:a603c4b792bb1b41030c1720a05db4413"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 warn 级别的日志  <br /></td></tr>
+<tr class="separator:a603c4b792bb1b41030c1720a05db4413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89109441b31205bab7a0487e7fc5952c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a89109441b31205bab7a0487e7fc5952c">error</a> (LogEvent::constptr event)</td></tr>
+<tr class="memdesc:a89109441b31205bab7a0487e7fc5952c"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 error 级别的日志  <br /></td></tr>
+<tr class="separator:a89109441b31205bab7a0487e7fc5952c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99edbca69c8100ee3b9d293f4215da0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a99edbca69c8100ee3b9d293f4215da0d">fatal</a> (LogEvent::constptr event)</td></tr>
+<tr class="memdesc:a99edbca69c8100ee3b9d293f4215da0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出 fatal 级别的日志  <br /></td></tr>
+<tr class="separator:a99edbca69c8100ee3b9d293f4215da0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a0a644c16ce6ae0d2f1a7ed5ebc29e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a4a0a644c16ce6ae0d2f1a7ed5ebc29e7">add_appender</a> (LogAppender::ptr appender)</td></tr>
+<tr class="memdesc:a4a0a644c16ce6ae0d2f1a7ed5ebc29e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">新增一个关联的 Appender  <br /></td></tr>
+<tr class="separator:a4a0a644c16ce6ae0d2f1a7ed5ebc29e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b1b1473bacdb53594620f8f18edc13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#aa1b1b1473bacdb53594620f8f18edc13">del_appender</a> (LogAppender::ptr appender)</td></tr>
+<tr class="memdesc:aa1b1b1473bacdb53594620f8f18edc13"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除一个关联的 Appender  <br /></td></tr>
+<tr class="separator:aa1b1b1473bacdb53594620f8f18edc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac297d6ba73bab04db581b7cc0e549d1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#ac297d6ba73bab04db581b7cc0e549d1d">clear_appenders</a> ()</td></tr>
+<tr class="memdesc:ac297d6ba73bab04db581b7cc0e549d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除所有关联的 Appender  <br /></td></tr>
+<tr class="separator:ac297d6ba73bab04db581b7cc0e549d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4ec09e72303f8f4c3523a95f64d614"><td class="memItemLeft" align="right" valign="top">LogLevel::Level&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a9d4ec09e72303f8f4c3523a95f64d614">get_level</a> () const</td></tr>
+<tr class="memdesc:a9d4ec09e72303f8f4c3523a95f64d614"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取日志器等级  <br /></td></tr>
+<tr class="separator:a9d4ec09e72303f8f4c3523a95f64d614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e300d5198daa8b0e989a8822d3c3417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a6e300d5198daa8b0e989a8822d3c3417">set_level</a> (LogLevel::Level level)</td></tr>
+<tr class="memdesc:a6e300d5198daa8b0e989a8822d3c3417"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置日志器等级  <br /></td></tr>
+<tr class="separator:a6e300d5198daa8b0e989a8822d3c3417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c2bf4941597818d5003eac0b83861c"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a23c2bf4941597818d5003eac0b83861c">get_name</a> () const</td></tr>
+<tr class="memdesc:a23c2bf4941597818d5003eac0b83861c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取日志器名称  <br /></td></tr>
+<tr class="separator:a23c2bf4941597818d5003eac0b83861c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79d51d1a255257dae9b5d64b17b656f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#ae79d51d1a255257dae9b5d64b17b656f">set_formatter</a> (LogFormatter::ptr fmtr)</td></tr>
+<tr class="memdesc:ae79d51d1a255257dae9b5d64b17b656f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置日志器的格式化器  <br /></td></tr>
+<tr class="separator:ae79d51d1a255257dae9b5d64b17b656f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bca6740ed149fb48f94053ddbb1a237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a3bca6740ed149fb48f94053ddbb1a237">set_formatter</a> (const std::string &amp;pattern)</td></tr>
+<tr class="memdesc:a3bca6740ed149fb48f94053ddbb1a237"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置日志器的格式化器  <br /></td></tr>
+<tr class="separator:a3bca6740ed149fb48f94053ddbb1a237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f452c7e448e847b95aa215d31e17b4"><td class="memItemLeft" align="right" valign="top">LogFormatter::ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a25f452c7e448e847b95aa215d31e17b4">get_formatter</a> ()</td></tr>
+<tr class="memdesc:a25f452c7e448e847b95aa215d31e17b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取日志器的格式化器  <br /></td></tr>
+<tr class="separator:a25f452c7e448e847b95aa215d31e17b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622710c1a376bbb18cae5be3e5cca584"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmyserver_1_1_logger.html#a622710c1a376bbb18cae5be3e5cca584">info</a> () const</td></tr>
+<tr class="memdesc:a622710c1a376bbb18cae5be3e5cca584"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前日志器的信息字符串  <br /></td></tr>
+<tr class="separator:a622710c1a376bbb18cae5be3e5cca584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:ae81bd90d1e6df3c68d194c0ff954a13b"><td class="memItemLeft" align="right" valign="top"><a id="ae81bd90d1e6df3c68d194c0ff954a13b" name="ae81bd90d1e6df3c68d194c0ff954a13b"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>_LoggerManager</b></td></tr>
+<tr class="separator:ae81bd90d1e6df3c68d194c0ff954a13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>日志器 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 关联一组 Appender ，使用一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 输出日志时，向其关联的所有 Appender 输出日志 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 包含一个日志等级，日志等级不低于 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 等级时才会试图向其关联的 Appender 输出日志 一个 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 包含一个 Formatter，作为关联到该 <a class="el" href="classmyserver_1_1_logger.html" title="日志器 一个 Logger 关联一组 Appender ，使用一个 Logger 输出日志时，向其关联的所有 Appender 输出日志 一个 Logger 包含一个日志等级，日志等级不低于 Logge...">Logger</a> 的 Appender 的默认格式化器 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a9015a87cee87cafe87383fdf8284218a" name="a9015a87cee87cafe87383fdf8284218a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9015a87cee87cafe87383fdf8284218a">&#9670;&#160;</a></span>Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myserver::Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;root&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造一个日志器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>日志器名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a4a0a644c16ce6ae0d2f1a7ed5ebc29e7" name="a4a0a644c16ce6ae0d2f1a7ed5ebc29e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0a644c16ce6ae0d2f1a7ed5ebc29e7">&#9670;&#160;</a></span>add_appender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::add_appender </td>
+          <td>(</td>
+          <td class="paramtype">LogAppender::ptr&#160;</td>
+          <td class="paramname"><em>appender</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>新增一个关联的 Appender </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">appender</td><td>关联的 Appender </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac297d6ba73bab04db581b7cc0e549d1d" name="ac297d6ba73bab04db581b7cc0e549d1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac297d6ba73bab04db581b7cc0e549d1d">&#9670;&#160;</a></span>clear_appenders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::clear_appenders </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清除所有关联的 Appender </p>
+
+</div>
+</div>
+<a id="a1445ecac3c8e5b0152b9cf72daadddfd" name="a1445ecac3c8e5b0152b9cf72daadddfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1445ecac3c8e5b0152b9cf72daadddfd">&#9670;&#160;</a></span>debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::debug </td>
+          <td>(</td>
+          <td class="paramtype">LogEvent::constptr&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 debug 级别的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1b1b1473bacdb53594620f8f18edc13" name="aa1b1b1473bacdb53594620f8f18edc13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b1b1473bacdb53594620f8f18edc13">&#9670;&#160;</a></span>del_appender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::del_appender </td>
+          <td>(</td>
+          <td class="paramtype">LogAppender::ptr&#160;</td>
+          <td class="paramname"><em>appender</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除一个关联的 Appender </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">appender</td><td>指向要删除的关联 Appender 的共享指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adbf669e68f312c921ffe51802de87b76" name="adbf669e68f312c921ffe51802de87b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf669e68f312c921ffe51802de87b76">&#9670;&#160;</a></span>disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::disable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>禁用一个日志器，清除其关联的所有 Appender </p>
+
+</div>
+</div>
+<a id="a89109441b31205bab7a0487e7fc5952c" name="a89109441b31205bab7a0487e7fc5952c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89109441b31205bab7a0487e7fc5952c">&#9670;&#160;</a></span>error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::error </td>
+          <td>(</td>
+          <td class="paramtype">LogEvent::constptr&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 error 级别的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99edbca69c8100ee3b9d293f4215da0d" name="a99edbca69c8100ee3b9d293f4215da0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99edbca69c8100ee3b9d293f4215da0d">&#9670;&#160;</a></span>fatal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::fatal </td>
+          <td>(</td>
+          <td class="paramtype">LogEvent::constptr&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 fatal 级别的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a25f452c7e448e847b95aa215d31e17b4" name="a25f452c7e448e847b95aa215d31e17b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f452c7e448e847b95aa215d31e17b4">&#9670;&#160;</a></span>get_formatter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LogFormatter::ptr myserver::Logger::get_formatter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取日志器的格式化器 </p>
+<dl class="section return"><dt>返回</dt><dd>LogFormatter::ptr 指向格式化器的共享指针 </dd></dl>
+
+</div>
+</div>
+<a id="a9d4ec09e72303f8f4c3523a95f64d614" name="a9d4ec09e72303f8f4c3523a95f64d614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d4ec09e72303f8f4c3523a95f64d614">&#9670;&#160;</a></span>get_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LogLevel::Level myserver::Logger::get_level </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取日志器等级 </p>
+<dl class="section return"><dt>返回</dt><dd>LogLevel::Level 日志器等级 </dd></dl>
+
+</div>
+</div>
+<a id="a23c2bf4941597818d5003eac0b83861c" name="a23c2bf4941597818d5003eac0b83861c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c2bf4941597818d5003eac0b83861c">&#9670;&#160;</a></span>get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; myserver::Logger::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取日志器名称 </p>
+<dl class="section return"><dt>返回</dt><dd>const std::string&amp; 日志器名称 </dd></dl>
+
+</div>
+</div>
+<a id="a622710c1a376bbb18cae5be3e5cca584" name="a622710c1a376bbb18cae5be3e5cca584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622710c1a376bbb18cae5be3e5cca584">&#9670;&#160;</a></span>info() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myserver::Logger::info </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前日志器的信息字符串 </p>
+<dl class="section return"><dt>返回</dt><dd>std::string 当前日志器的信息字符串 </dd></dl>
+
+</div>
+</div>
+<a id="a79899f55eeb8ab6a285c46480e30d0f8" name="a79899f55eeb8ab6a285c46480e30d0f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79899f55eeb8ab6a285c46480e30d0f8">&#9670;&#160;</a></span>info() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::info </td>
+          <td>(</td>
+          <td class="paramtype">LogEvent::constptr&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 info 级别的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab467406987c144eb8fde325e4885ef4e" name="ab467406987c144eb8fde325e4885ef4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab467406987c144eb8fde325e4885ef4e">&#9670;&#160;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::log </td>
+          <td>(</td>
+          <td class="paramtype">LogLevel::Level&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LogEvent::constptr&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出一条日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>日志等级 </td></tr>
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3bca6740ed149fb48f94053ddbb1a237" name="a3bca6740ed149fb48f94053ddbb1a237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bca6740ed149fb48f94053ddbb1a237">&#9670;&#160;</a></span>set_formatter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::set_formatter </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pattern</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置日志器的格式化器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>格式化器的模式串 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae79d51d1a255257dae9b5d64b17b656f" name="ae79d51d1a255257dae9b5d64b17b656f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79d51d1a255257dae9b5d64b17b656f">&#9670;&#160;</a></span>set_formatter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::set_formatter </td>
+          <td>(</td>
+          <td class="paramtype">LogFormatter::ptr&#160;</td>
+          <td class="paramname"><em>fmtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置日志器的格式化器 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmtr</td><td>格式化器的共享指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6e300d5198daa8b0e989a8822d3c3417" name="a6e300d5198daa8b0e989a8822d3c3417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e300d5198daa8b0e989a8822d3c3417">&#9670;&#160;</a></span>set_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::set_level </td>
+          <td>(</td>
+          <td class="paramtype">LogLevel::Level&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置日志器等级 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>日志器等级 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a603c4b792bb1b41030c1720a05db4413" name="a603c4b792bb1b41030c1720a05db4413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603c4b792bb1b41030c1720a05db4413">&#9670;&#160;</a></span>warn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myserver::Logger::warn </td>
+          <td>(</td>
+          <td class="paramtype">LogEvent::constptr&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>输出 warn 级别的日志 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>日志事件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>myserver/<a class="el" href="log_8hpp_source.html">log.hpp</a></li>
+<li>myserver/log.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>
