@@ -1,5 +1,5 @@
 ---
-title: rcore 课程笔记
+title: rCore 操作系统中的上下文切换
 date: 2022-11-04 21:28:00
 tags:
     - OS
@@ -7,11 +7,9 @@ tags:
     - Rust
 categories: 操作系统
 keywords: 'Rust, OS, 操作系统'
-description: 清华大学 rCore 操作系统课程笔记
+description: rCore Lab ch1 到 ch3 的几点记录
 cover: cover.png
 ---
-
-rcore课程笔记，还在听课中，所以先胡乱记下，以后再排版和按章节整理。
 
 1. 程序的函数调用和返回是在栈上增加与减少栈帧，而 trap 是换栈，自己以前一直概念混淆了。
 
